@@ -1,0 +1,11 @@
+import { chromium } from "playwright-core";
+const base = process.argv[2] || "http://127.0.0.1:8100"; const out = process.argv[3] || "/workspace/eventscope/.run/shot5-local";
+const b = await chromium.launch({ executablePath: "/usr/bin/google-chrome", args: ["--no-sandbox"] });
+const p = await (await b.newContext({ viewport: { width: 1360, height: 1000 } })).newPage();
+await p.goto(base + "/?tab=live", { waitUntil: "load", timeout: 180000 }); await p.waitForSelector(".drop", { timeout: 180000 }); await p.waitForTimeout(3000);
+await p.screenshot({ path: `${out}-main.png` });
+await p.click('#nav button[data-t="agent"]'); await p.waitForTimeout(1500); await p.screenshot({ path: `${out}-agent-nowallet.png` });
+await p.click("#connect"); await p.waitForTimeout(1500); await p.screenshot({ path: `${out}-connect-nowallet.png` });
+await p.selectOption("#who", "amy"); await p.click('#nav button[data-t="coll"]'); await p.waitForSelector("#coll .cc", { timeout: 120000 }); await p.waitForTimeout(2500);
+await p.screenshot({ path: `${out}-demo-amy-collection.png` });
+await b.close(); console.log("ok", out);

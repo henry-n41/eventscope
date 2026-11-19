@@ -1,0 +1,23 @@
+{
+ "network": "testnet",
+ "operator": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+ "deployed_at": "2026-11-19T10:51:37.818Z",
+ "token": {
+  "name": "eurdemo",
+  "symbol": "EUR-demo",
+  "decimals": 6,
+  "index": "13069",
+  "module_ref": "ff62722dcd0822497f14926ca5f34c984c825cab9504e89f90b18ff4cfb91212",
+  "deploy_tx": "ade7802cd711dbd0083e2c29bdff33736b6b13801c9c2bf4f9eef06364ef9aec",
+  "init_tx": "2e6ba74c26a9f48d8e25726796b98b8aaaf64f43b9c1f27d0027ddd1b3ee37dc",
+  "metadata_url": "http://127.0.0.1:8100/eur-demo.json"
+ },
+ "pot": {
+  "name": "eventscope",
+  "index": "13070",
+  "module_ref": "d7fc03aab6a6bdbd4830285984409ed5d2fa445a66f46c8df63a48b49b47f68e",
+  "deploy_tx": "edded6ab4d627a0a6d26bdd2d9dd68883ffaee5db2a03debe76930d9b7e0a451",
+  "init_tx": "f8e604ee4f523b7cd75ed815a356fa1a397100d5034103fb99d5be78e680ad02",
+  "verifier": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn"
+ }
+}

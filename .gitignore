@@ -1,0 +1,12 @@
+# keys and secrets: never commit
+.secrets/
+*.pem
+*.key
+.env
+.env.*
+# runtime data (the public seed copy lives in data/seed)
+.run/
+# build output and dependencies
+target/
+node_modules/
+contracts/*/target/

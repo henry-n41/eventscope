@@ -1,0 +1,21 @@
+[package]
+name = "eventscope"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[features]
+default = []
+bump_alloc = ["concordium-std/bump_alloc"]
+
+[dependencies]
+concordium-std = "11.0"
+concordium-cis2 = "7.0"
+
+[dev-dependencies]
+concordium-std = "11.0"
+concordium-smart-contract-testing = "5"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EventScope · collect cards on real events</title>
+<style>
+:root{--bg:#0b0912;--panel:#14111d;--line:#2a2438;--ink:#f4f4f5;--mute:#a1a1aa;--dim:#71717a;--vio:#a78bfa;--gold:#fbbf24;--ok:#34d399;--bad:#fb7185}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,#2e1065 0,transparent 60%),radial-gradient(900px 500px at 110% 0,#3b0764 0,transparent 55%),var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+a{color:var(--vio)}header{position:sticky;top:0;z-index:5;background:rgba(11,9,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1220px;margin:0 auto;padding:0 20px}.bar{display:flex;align-items:center;gap:14px;height:64px}
+.logo{font-weight:900;letter-spacing:.5px;font-size:20px;background:linear-gradient(90deg,#c4b5fd,#f0abfc,#fcd34d);-webkit-background-clip:text;color:transparent}
+.tag{color:var(--mute);font-size:13px}.sp{flex:1}
+nav{display:flex;gap:6px}nav button{background:none;border:0;color:var(--mute);font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer;font-size:14px}
+nav button.on{background:#221b33;color:#fff}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;color:var(--mute);background:#120f1a;white-space:nowrap}
+.chip.ok{color:var(--ok);border-color:#065f46}.chip.bad{color:var(--bad);border-color:#881337}.chip.gold{color:var(--gold);border-color:#78350f}
+select,input{background:#120f1a;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:7px 10px;font:inherit}
+.btn{background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;border:0;border-radius:11px;padding:9px 14px;font-weight:800;cursor:pointer;font-size:14px}
+.btn.ghost{background:#211a30;color:#e9d5ff}.btn.small{padding:6px 10px;font-size:12px;border-radius:9px}.btn:disabled{opacity:.5;cursor:wait}
+.btn.warn{background:linear-gradient(135deg,#be123c,#9f1239)}
+main{padding:22px 0 60px}h2{font-size:22px;margin:4px 0 2px}.sub{color:var(--mute);font-size:13px;margin-bottom:14px}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}.cats button{border:1px solid var(--line);background:#120f1a;color:var(--mute);border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer}
+.cats button.on{color:#fff;border-color:#7c3aed;background:#2a1a4a}
+.drops{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px}
+.drop{background:linear-gradient(180deg,#171223,#110d19);border:1px solid var(--line);border-radius:18px;padding:14px;position:relative;overflow:hidden}
+.drop .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.drop h3{margin:0;font-size:15px}.drop .meta{color:var(--dim);font-size:12px}
+.drop .pot{text-align:right}.drop .pot b{font-size:18px;color:#fde68a}.drop .pot div{font-size:11px;color:var(--dim)}
+.picks{display:flex;gap:10px;margin-top:12px}.pick{flex:1;text-align:center}.pick img{width:100%;border-radius:10px;display:block;transition:transform .15s}
+.pick img:hover{transform:translateY(-4px) rotate(-1deg)}.pick .btn{width:100%;margin-top:7px}.pick .n{font-size:11px;color:var(--dim);margin-top:4px}
+.ribbon{position:absolute;top:12px;right:-34px;transform:rotate(35deg);background:#7c3aed;color:#fff;font-size:10px;font-weight:900;padding:3px 40px;letter-spacing:1px}
+.ribbon.final{background:#059669}.ribbon.posted{background:#d97706}.ribbon.wait{background:#475569}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.cc{position:relative}.cc img{width:100%;display:block;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.cc.lost img{filter:grayscale(.85) brightness(.6)}.cc .badge{position:absolute;left:50%;transform:translateX(-50%);top:46%;padding:7px 14px;border-radius:12px;font-weight:900;font-size:16px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.badge.won{background:linear-gradient(135deg,#10b981,#065f46);color:#fff;border:2px solid #a7f3d0}.badge.lost{background:#27272a;color:#a1a1aa}.badge.posted{background:#b45309;color:#fff;font-size:12px}
+.badge.refunded{background:#334155;color:#e2e8f0;font-size:13px}.cc .cap{font-size:12px;color:var(--mute);margin-top:6px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:110px}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--mute)}.stat.legendary b{color:#fbbf24}.stat.epic b{color:#c084fc}.stat.rare b{color:#38bdf8}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}.cols{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 12px;font-size:13px}.kv div:nth-child(odd){color:var(--dim)}
+.meter{height:12px;background:#221b33;border-radius:99px;overflow:hidden;margin:8px 0}.meter i{display:block;height:100%;background:linear-gradient(90deg,#34d399,#fbbf24,#fb7185)}
+.log{font-size:13px;max-height:520px;overflow:auto}.log div{border-top:1px solid var(--line);padding:8px 0}.log time{color:var(--dim);font-size:11px;margin-right:6px}
+.ap{border:1px solid #92400e;background:#2a1a06;border-radius:12px;padding:10px;margin:8px 0;font-size:13px}
+.packstage{display:flex;gap:26px;align-items:center;flex-wrap:wrap}.packstage>img{width:240px;border-radius:18px;box-shadow:0 20px 60px rgba(192,38,211,.35);cursor:pointer;transition:transform .2s}
+.packstage>img:hover{transform:scale(1.03) rotate(-2deg)}.reveal{display:flex;gap:16px;flex-wrap:wrap}.reveal .cc{width:200px;animation:flip .7s ease both}
+@keyframes flip{from{transform:rotateY(90deg) scale(.8);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:1250px){.tag{display:none}}#ver:empty{display:none}
+.demosel{display:flex;flex-direction:column;font-size:10px;color:var(--mut,#9a92b0);gap:2px}.demosel select{font-size:12px}
+#connect.connected{background:transparent;border:1px solid var(--line)}
+.steps{counter-reset:st;margin:10px 0;padding:0;list-style:none}.steps li{padding:6px 0 6px 30px;position:relative}.steps li:before{counter-increment:st;content:counter(st);position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:#2a2238;text-align:center;font-size:12px;line-height:20px}.steps li.done:before{content:"✓";background:#065f46}
+#toast{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:8px;z-index:9;max-width:460px}#toast div{background:#1c1628;border:1px solid var(--line);border-left:4px solid var(--vio);padding:10px 12px;border-radius:12px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#toast .ok{border-left-color:var(--ok)}#toast .bad{border-left-color:var(--bad)}
+.muted{color:var(--dim);font-size:12px}.hide{display:none!important}.foot{color:var(--dim);font-size:12px;margin-top:30px}
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+</style></head>
+<body>
+<header><div class="wrap bar">
+ <div><div class="logo">EVENTSCOPE</div><div class="tag">Collect cards on real events. Winning cards pay out.</div></div>
+ <nav id="nav"><button data-t="live" class="on">Live drops</button><button data-t="packs">Packs</button><button data-t="coll">My collection</button><button data-t="agent">My agent</button><button data-t="results">Results desk</button></nav>
+ <div class="sp"></div>
+ <button id="connect" class="btn small">Connect wallet</button><span id="acctchip" class="chip hide"></span>
+ <label class="demosel" title="Demo people use test keys held by the server. Your own wallet is the real way to play."><span>Try as a demo person</span>
+ <select id="who"><option value="wallet">No, use my wallet</option><option value="amy">Amy (DE, 31)</option><option value="cal">Cal (FR, 38)</option><option value="ben">Ben (UK, 36)</option></select></label>
+ <span id="demobadge" class="chip gold hide">DEMO PERSON</span>
+ <span id="bal" class="chip">…</span><span id="ver" class="chip">…</span><button id="verify" class="btn small">Verify age 18+</button>
+</div></header>
+<div class="wrap"><main>
+ <section id="t-live">
+  <div class="hero"><div><h2>Live drops</h2><div class="sub" id="feedsub">Real fixtures, prices and weather, pulled automatically from public sources and minted on Concordium testnet. Results are posted by an accountable results agent with a hash of the source.</div></div><div id="feedstats" class="row"></div></div>
+  <div class="cats" id="cats"></div><div class="drops" id="drops"></div>
+ </section>
+ <section id="t-packs" class="hide"><h2>Packs</h2><div class="sub">A pack is 3 cards on 3 different live events, picked at random, bought in one transaction (all or nothing). €6 in EUR-demo play money.</div>
+  <div class="packstage"><img id="packimg" src="/art/pack.svg" alt="pack"><div><button id="openpack" class="btn">Open a Matchday pack · €6</button><p class="muted">Your daily cap applies to packs too.</p></div></div>
+  <h3 style="margin-top:26px">Your pulls</h3><div class="reveal" id="reveal"></div></section>
+ <section id="t-coll" class="hide"><h2>My collection</h2><div class="sub" id="collsub"></div><div class="stats" id="stats"></div><div class="grid" id="coll"></div></section>
+ <section id="t-agent" class="hide"><h2>My buyer agent</h2>
+  <div id="vagent"></div>
+  <div id="amyagent" class="hide"><div class="sub"><span class="chip gold">DEMO PERSON</span> Amy's AI agent is registered in Concordium's Agent Registry under her verified account. It picks and buys cards for her from its own wallet. The prize pot reads the registry on chain at every buy and enforces Amy's daily cap and self-exclusion. The agent cannot change either.</div>
+  <div class="cols"><div class="panel" id="agentcard"></div><div class="panel"><b>Amy's limits (signed by Amy, enforced by the pot)</b><div id="limits"></div></div></div>
+  <div class="cols" style="margin-top:18px"><div class="panel"><div class="row" style="justify-content:space-between"><b>Agent activity</b><div class="row"><label class="muted"><input type="checkbox" class="cat" value="crypto" checked> crypto</label><label class="muted"><input type="checkbox" class="cat" value="weather" checked> weather</label><label class="muted"><input type="checkbox" class="cat" value="football" checked> football</label><label class="muted"><input type="checkbox" class="cat" value="basketball"> basketball</label><button id="runagent" class="btn small">Let my agent pick 3 cards</button></div></div><div class="log" id="agentlog"></div></div>
+  <div class="panel"><b>Waiting for Amy's approval</b><div id="approvals" class="muted">Nothing waiting.</div></div></div></div></section>
+ <section id="t-results" class="hide"><h2>Results desk</h2><div class="sub">The results agent (a registered agent, owned by EventScope's operator account) reads each event's official source, posts the result with the SHA-256 of the exact source response, waits out a dispute window, then finalizes and pays winners automatically. Download any evidence file and hash it yourself.</div>
+  <div class="cols"><div class="panel"><b>Posted and final</b><div id="resultlist"></div></div><div class="panel"><b>Agent log</b><div class="log" id="resultlog"></div></div></div></section>
+ <div class="foot" id="foot"></div>
+</main></div>
+<div id="toast"></div>
+<script type="module">
+import * as W from "/app.js";
+const $=id=>document.getElementById(id), api=async(p,b)=>{const r=await fetch(p,b?{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(b)}:{});return r.json()};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L=(u,t="explorer")=>u?` <a href="${u}" target="_blank">${t}</a>`:"";
+const toast=(h,c="")=>{const d=document.createElement("div");d.className=c;d.innerHTML=h;$("toast").prepend(d);setTimeout(()=>d.remove(),c==="bad"?14000:9000)};
+let cfg,events=[],cat="all",tab="live",walletAccount=null;
+const CATS={all:"All",football:"⚽ Football",basketball:"🏀 Basketball",hockey:"🏒 Hockey","american-football":"🏈 NFL",crypto:"🪙 Crypto",weather:"☁️ Weather"};
+const who=()=>$("who").value,isWallet=()=>who()==="wallet",acct=()=>isWallet()?walletAccount:cfg?.demo_people?.[who()],nm=()=>isWallet()?"You":who()[0].toUpperCase()+who().slice(1);
+const left=t=>{let s=Math.max(0,(Date.parse(t)-Date.now())/1000);const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=Math.floor(s%60);return d?`${d}d ${h}h`:h?`${h}h ${m}m`:`${m}:${String(x).padStart(2,"0")}`};
+async function busy(btn,fn){if(btn)btn.disabled=true;try{await fn()}catch(e){toast(esc(e.message||e),"bad")}if(btn)btn.disabled=false}
+// ---------- header
+async function head(){const w=isWallet();$("connect").classList.toggle("hide",!w||!!walletAccount);$("acctchip").classList.toggle("hide",!w||!walletAccount);$("demobadge").classList.toggle("hide",w);
+ if(walletAccount)$("acctchip").textContent="wallet "+walletAccount.slice(0,6)+"…"+walletAccount.slice(-4);
+ const a=acct();if(!a){$("bal").textContent=w?"connect your wallet to play":"";$("ver").textContent="";$("ver").className="chip";$("verify").classList.add("hide");return}
+ const p=await api(`/api/player?account=${a}`);$("bal").innerHTML=`€${p.tokens_eur} <span class="muted">EUR-demo</span>`;
+ const paused=p.paused_until&&Date.parse(p.paused_until)>Date.now();
+ $("ver").className="chip "+(paused?"bad":p.allowed_until?"ok":"bad");$("ver").textContent=paused?`paused until ${new Date(p.paused_until).toLocaleDateString()}`:p.allowed_until?`✓ verified 18+ · €${p.left_today_eur} left today`:"not verified";
+ $("verify").classList.toggle("hide",!!p.allowed_until);return p}
+// ---------- live
+function drawCats(){const n={all:events.length};events.forEach(e=>n[e.category]=(n[e.category]||0)+1);
+ $("cats").innerHTML=Object.keys(CATS).filter(k=>n[k]).map(k=>`<button class="${k===cat?"on":""}" data-c="${k}">${CATS[k]} <span class="muted">${n[k]}</span></button>`).join("");
+ $("cats").querySelectorAll("button").forEach(b=>b.onclick=()=>{cat=b.dataset.c;drawLive()})}
+function ribbon(e){if(e.status==="final")return`<div class="ribbon final">FINAL</div>`;if(e.status==="result_posted")return`<div class="ribbon posted">RESULT POSTED</div>`;if(e.status==="awaiting_result")return`<div class="ribbon wait">AWAITING RESULT</div>`;if(e.status==="cancelled")return`<div class="ribbon wait">REFUNDED</div>`;return""}
+function drawLive(){drawCats();const order={live:0,result_posted:1,awaiting_result:2,final:3,cancelled:4};
+ const list=events.filter(e=>cat==="all"||e.category===cat).sort((a,b)=>order[a.status]-order[b.status]||Date.parse(a.closes_at)-Date.parse(b.closes_at)).slice(0,60);
+ $("drops").innerHTML=list.map(e=>{const m=e.meta||{};const sub=m.league||(e.category==="crypto"?"Crypto · Coinbase":e.category==="weather"?`Weather · ${m.city} · Open-Meteo`:e.category);
+  const st=e.status==="live"?`closes in <b>${left(e.closes_at)}</b>`:e.status==="result_posted"?`<b style="color:#fbbf24">${esc(e.outcomes[e.proposal.outcome])}</b> · disputes close in ${left(e.proposal.dispute_until)}`:e.status==="final"?`Won: <b style="color:#34d399">${esc(e.outcomes[e.winner])}</b>${e.result?.summary?` · ${esc(e.result.summary)}`:""}`:e.status==="awaiting_result"?"waiting for the official result":"cancelled, all refunded";
+  return`<div class="drop" data-id="${e.id}">${ribbon(e)}<div class="top"><div><div class="meta">${esc(sub)} · #${e.id}</div><h3>${esc(e.title)}</h3><div class="meta">${st}</div></div><div class="pot"><b>€${e.pot_eur}</b><div>prize pot</div></div></div>
+  <div class="picks">${e.outcomes.map((o,i)=>`<div class="pick"><img loading="lazy" src="/art/${e.id}/${i}.svg?minted=${e.cards_sold[i]}" alt="${esc(o)}" style="${e.winner!=null&&e.winner!==i?"filter:grayscale(.9) brightness(.55)":""}">
+   ${e.status==="live"?`<button class="btn small" data-buy="${e.id}:${i}">Collect · €${e.card_price_eur}</button>`:""}<div class="n">${e.cards_sold[i]} minted</div></div>`).join("")}</div></div>`}).join("")||`<div class="muted">No events in this category right now.</div>`;
+ $("drops").querySelectorAll("[data-buy]").forEach(b=>b.onclick=()=>busy(b,async()=>{const[id,o]=b.dataset.buy.split(":").map(Number);await buy(id,o)}));
+ const c={};events.filter(e=>e.status==="live").forEach(e=>c[e.category]=1);
+ $("feedstats").innerHTML=`<span class="chip">${events.filter(e=>e.status==="live").length} live</span><span class="chip">${Object.keys(c).length} categories</span><span class="chip gold">${events.filter(e=>e.status==="final").length} settled by the results agent</span>`}
+async function loadEvents(){events=(await api("/api/events")).events||[];if(tab==="live")drawLive()}
+async function buy(id,o){const e=events.find(x=>x.id===id);
+ if(isWallet()){if(!walletAccount)throw new Error("Connect your wallet first");const r=await W.buy(walletAccount,id,o,1);if(!r.ok)return toast(`Refused before paying: ${esc(r.refused_with||r.error)}`,"bad");toast("Approve in your wallet… then waiting for the chain");const s=await W.waitTx(r.hash);toast(`Card ${s.outcome||s.status}`+L(s.link),s.outcome==="success"?"ok":"bad");}
+ else{const r=await api("/api/demo/buy",{who:who(),event_id:id,outcome:o,count:1});
+  if(!r.ok)return toast(`${nm()} refused before paying: <b>${esc(r.refused_with)}</b>. Nothing was charged.`,"bad");
+  const c=r.cards?.[0];toast(`${nm()} collected <b>${esc(e.outcomes[o])}</b> ${c?`#${String(c.serial).padStart(3,"0")} (${c.rarity})`:""} for €${r.paid_eur}. Network fee paid by EventScope.`+L(r.tx_link),"ok")}
+ await loadEvents();head()}
+// ---------- packs
+$("openpack").onclick=e=>busy(e.target,async()=>{let r;
+ if(isWallet()){if(!walletAccount)throw new Error("Connect your wallet first");r=await W.pack(walletAccount);if(!r.ok)return toast(`Refused: ${esc(r.refused_with)}`,"bad");const s=await W.waitTx(r.hash);r={ok:s.outcome==="success",tx_link:s.link,cards:null}}
+ else r=await api("/api/demo/pack",{who:who()});
+ if(!r.ok)return toast(`Pack refused before paying: <b>${esc(r.refused_with)}</b>`,"bad");
+ $("packimg").style.transform="scale(.9) rotate(8deg)";setTimeout(()=>$("packimg").style.transform="",600);
+ const cards=r.cards||[];$("reveal").innerHTML=cards.map((c,i)=>`<div class="cc" style="animation-delay:${i*.35}s"><img src="/art/${c.event_id}/${c.outcome}.svg?serial=${c.serial}"><div class="cap">#${String(c.serial).padStart(3,"0")} · ${c.rarity}</div></div>`).join("")+$("reveal").innerHTML;
+ toast(`Pack opened: ${cards.length} cards for €${r.paid_eur} in one transaction`+L(r.tx_link),"ok");loadEvents();head()});
+// ---------- collection
+async function drawColl(){const a=acct();if(!a){$("coll").innerHTML="";$("stats").innerHTML="";$("collsub").textContent="Connect your wallet to see your cards, or try the site as a demo person.";return}
+ const c=await api(`/api/collection?account=${a}`);const s=c.stats;
+ $("collsub").innerHTML=`${nm()}'s cards. Serial numbers are per outcome: #001 is Legendary, #002 to #003 Epic, #004 to #010 Rare. Prizes are paid automatically after the dispute window.`;
+ $("stats").innerHTML=`<div class="stat"><b>${s.total}</b><span>cards</span></div><div class="stat legendary"><b>${s.legendary}</b><span>legendary</span></div><div class="stat epic"><b>${s.epic}</b><span>epic</span></div><div class="stat rare"><b>${s.rare}</b><span>rare</span></div><div class="stat"><b>${s.common}</b><span>common</span></div><div class="stat"><b style="color:#34d399">€${s.won_eur}</b><span>won so far (${s.won} winning cards)</span></div>`;
+ $("coll").innerHTML=c.cards.map(x=>{const b=x.status==="won"?`<div class="badge won">Won €${x.won_eur}</div>`:x.status==="lost"?`<div class="badge lost">Lost</div>`:x.status==="refunded"?`<div class="badge refunded">Refunded €${x.won_eur||""}</div>`:x.status==="result_posted"?`<div class="badge posted">Result: ${esc(x.proposal_outcome)} · ${left(x.dispute_until)}</div>`:"";
+  return`<div class="cc ${x.status==="lost"?"lost":""}"><img loading="lazy" src="${x.art}">${b}<div class="cap">${esc(x.title)}<br>${x.status==="live"?"live":x.status==="awaiting_result"?"waiting for result":x.status.replace("_"," ")}${x.agent_id?` · bought by agent #${x.agent_id}`:""}${x.claimable_eur!=="0.00"?` · <a href="#" data-claim="${x.event_id}">claim €${x.claimable_eur}</a>`:""}${L(x.link,"tx")}</div></div>`}).join("")||`<div class="muted">No cards yet. Collect one from Live drops or open a pack.</div>`;
+ $("coll").querySelectorAll("[data-claim]").forEach(el=>el.onclick=ev=>{ev.preventDefault();busy(null,async()=>{const r=isWallet()?await W.claim(walletAccount,Number(el.dataset.claim)):await api("/api/demo/claim",{who:who(),event_id:Number(el.dataset.claim)});toast(r.ok?`Claimed €${r.received_eur||r.amount_eur}`+L(r.tx_link):`Cannot claim: ${esc(r.refused_with)}`,r.ok?"ok":"bad");drawColl()})})}
+// ---------- agent
+async function drawAgent(){$("amyagent").classList.toggle("hide",isWallet()||who()!=="amy");$("vagent").classList.toggle("hide",!isWallet()&&who()==="amy");
+ if(isWallet())return drawVisitorAgent();if(who()!=="amy"){$("vagent").innerHTML=`<div class="panel"><span class="chip gold">DEMO PERSON</span> Only the demo person Amy has a ready-made agent. Switch to Amy, or connect your own wallet and create your own agent.</div>`;return}
+ const g=await api("/api/agent");if(!g.registered){$("agentcard").textContent="Agent not registered";return}
+ const r=g.registry_record||{};const p=await api(`/api/player?account=${g.owner}`);
+ $("agentcard").innerHTML=`<div class="row" style="justify-content:space-between"><b>Amy's EventScope Buyer Agent</b><span class="chip ${r.status==="Active"?"ok":"bad"}">registry: ${esc(r.status||"?")}</span></div>
+ <div class="kv" style="margin-top:10px"><div>Registry entry</div><div>CIS-8004 agent #${g.token_id} on contract 12802,0 ${L(cfg.registry.link,"contract")}</div><div>Owner (verified)</div><div>${esc(g.owner)} ${L("https://ccdexplorer.io/testnet/account/"+g.owner,"account")}</div>
+ <div>Agent wallet</div><div>${esc(g.wallet)} · €${g.wallet_eur} EUR-demo</div><div>Linked in the pot</div><div>${g.linked_in_pot?`✓ the pot read the registry on chain: owner ${esc(g.linked_in_pot.owner.slice(0,8))}…, agent #${g.linked_in_pot.agent_id}`:"no"}</div>
+ <div>Agent card</div><div><a href="${g.card_url}" target="_blank">agent card JSON</a> · SHA-256 pinned on chain (${esc((r.metadata_hash_hex||"").slice(0,16))}…)</div><div>Network fees</div><div>paid by EventScope (sponsored transactions)</div></div>
+ <div class="row" style="margin-top:12px"><button class="btn small ghost" id="topup">Amy: move €10 to the agent</button></div>`;
+ const pct=Math.min(100,100*Number(p.spent_today_eur)/Math.max(0.01,Number(p.daily_cap_eur)+Number(p.extra_today_eur)));const paused=p.paused_until&&Date.parse(p.paused_until)>Date.now();
+ $("limits").innerHTML=`<div class="meter"><i style="width:${pct}%"></i></div><div class="kv"><div>Daily cap</div><div>€${p.daily_cap_eur} (house maximum €${cfg.max_daily_eur})</div><div>Spent today</div><div>€${p.spent_today_eur} by Amy and her agent together</div><div>Approved extra today</div><div>€${p.extra_today_eur}</div><div>Left today</div><div><b>€${p.left_today_eur}</b></div><div>Self-exclusion</div><div>${paused?`<b style="color:#fb7185">paused until ${new Date(p.paused_until).toLocaleString()}</b> (nobody can shorten it)`:"not paused"}</div></div>
+ <div class="row" style="margin-top:12px"><input id="capin" type="number" min="2" step="2" value="${Number(p.daily_cap_eur)}" style="width:90px"><button class="btn small ghost" id="setcap">Amy: set daily cap</button><button class="btn small warn" id="pause">Pause me for 30 days</button></div>`;
+ $("agentlog").innerHTML=g.log.map(x=>`<div><time>${new Date(x.at).toLocaleTimeString()}</time>${esc(x.text)}${L(x.link)}</div>`).join("")||`<div class="muted">The agent has not run yet.</div>`;
+ const w=g.approvals.filter(a=>a.status==="waiting");
+ $("approvals").innerHTML=w.length?w.map(a=>{const e=events.find(x=>x.id===a.event_id);return`<div class="ap"><b>Your agent wants to go over your daily cap.</b><br>#${a.event_id} ${esc(e?.title)}: “${esc(e?.outcomes[a.outcome])}” · €${(Number(a.amount)/1e6).toFixed(2)}<br><span class="muted">Why: ${esc(a.reason)}</span><div class="row" style="margin-top:8px"><button class="btn small" data-ap="${a.id}" data-amt="${Number(a.amount)/1e6}">Approve €${(Number(a.amount)/1e6).toFixed(2)} (Amy signs)</button><button class="btn small ghost" data-no="${a.id}">Say no</button></div></div>`}).join(""):`<span class="muted">Nothing waiting. If the agent hits the cap, it asks here, and the pot refuses it until Amy herself signs an approval.</span>`;
+ $("approvals").querySelectorAll("[data-ap]").forEach(b=>b.onclick=()=>busy(b,async()=>{const r=await api("/api/demo/call",{who:"amy",entrypoint:"approveExtra",amount_eur:Number(b.dataset.amt),approval_id:b.dataset.ap});if(!r.ok)return toast(esc(r.refused_with),"bad");toast("Amy approved"+L(r.tx_link),"ok");const t=await api("/api/agent/retry",{approval_id:b.dataset.ap});toast(t.action==="bought"?`Agent bought it after approval`+L(t.link):`Agent: ${esc(t.action)} ${esc(t.refused_with||"")}`,t.action==="bought"?"ok":"bad");drawAgent();head()}));
+ $("approvals").querySelectorAll("[data-no]").forEach(b=>b.onclick=()=>toast("Declined. The agent will not buy it."));
+ $("topup").onclick=e=>busy(e.target,async()=>{const r=await api("/api/demo/agent/topup",{amount_eur:10});toast(r.ok?"€10 moved to the agent's wallet"+L(r.tx_link):"failed",r.ok?"ok":"bad");drawAgent();head()});
+ $("setcap").onclick=e=>busy(e.target,async()=>{const r=await api("/api/demo/call",{who:"amy",entrypoint:"setLimits",daily_cap_eur:Number($("capin").value)});toast(r.ok?`Amy's daily cap set to €${$("capin").value}`+L(r.tx_link):esc(r.refused_with),r.ok?"ok":"bad");drawAgent()});
+ $("pause").onclick=e=>{if(!confirm("Pause Amy and her agent for 30 days? Nobody can undo this early."))return;busy(e.target,async()=>{const r=await api("/api/demo/call",{who:"amy",entrypoint:"pauseMe",days:30});toast(r.ok?"Amy is paused for 30 days, agent included"+L(r.tx_link):esc(r.refused_with),r.ok?"ok":"bad");drawAgent();head()})}}
+$("runagent").onclick=e=>busy(e.target,async()=>{const cats=[...document.querySelectorAll(".cat:checked")].map(x=>x.value);toast("Agent is reading the sources and picking…");const r=await api("/api/agent/run",{categories:cats,cards:3});
+ for(const a of r.actions||[])toast(a.action==="bought"?`Agent bought a card for Amy (€${a.paid_eur})`+L(a.link):a.action==="needs_approval"?"Agent hit Amy's daily cap: waiting for her approval":`Agent: ${esc(a.action)} ${esc(a.refused_with||"")}`,a.action==="bought"?"ok":"bad");drawAgent();loadEvents();head()});
+// ---------- your own agent (real wallet)
+const cats3=()=>[...document.querySelectorAll(".vcat:checked")].map(x=>x.value);
+async function signStep(label,fn){toast(`${label}: approve in your wallet…`);const r=await fn();if(!r.ok){toast(`${label} refused: ${esc(r.refused_with||r.error)}`,"bad");return null}
+ const s=await W.waitTx(r.hash);toast(`${label}: ${s.outcome||s.status}`+L(s.link),s.outcome==="success"?"ok":"bad");return s.outcome==="success"?r.hash:null}
+async function drawVisitorAgent(){const V=$("vagent");
+ if(!walletAccount){V.innerHTML=`<div class="panel"><b>Your own buyer agent</b><p class="muted">Connect your Concordium wallet (testnet) and verify 18+ first. Then you can register an AI agent in Concordium's Agent Registry under your own account, fund it, set its limits and let it collect cards for you.</p><button class="btn" onclick="document.getElementById('connect').click()">Connect wallet</button></div>`;return}
+ const g=await api(`/api/wallet/agent?account=${walletAccount}`);const p=g.player||{};const ag=g.agent;const verified=p.allowed_until&&Date.parse(p.allowed_until)>Date.now();
+ const pct=Math.min(100,100*Number(p.spent_today_eur)/Math.max(0.01,Number(p.daily_cap_eur)+Number(p.extra_today_eur)));const paused=p.paused_until&&Date.parse(p.paused_until)>Date.now();
+ const limits=`<div class="panel"><b>Your limits (you sign them, the pot enforces them)</b><div class="meter"><i style="width:${pct}%"></i></div><div class="kv"><div>Daily cap</div><div>€${p.daily_cap_eur} (house maximum €${cfg.max_daily_eur})</div><div>Spent today</div><div>€${p.spent_today_eur} by you and your agent together</div><div>Approved extra today</div><div>€${p.extra_today_eur}</div><div>Left today</div><div><b>€${p.left_today_eur}</b></div><div>Self-exclusion</div><div>${paused?`<b style="color:#fb7185">paused until ${new Date(p.paused_until).toLocaleString()}</b> (nobody can shorten it)`:"not paused"}</div></div>
+  <div class="row" style="margin-top:12px"><input id="vcap" type="number" min="2" step="2" value="${Number(p.daily_cap_eur)}" style="width:90px"><button class="btn small ghost" id="vsetcap">Set my daily cap</button><button class="btn small warn" id="vpause">Pause me for 30 days</button></div></div>`;
+ let left_;
+ if(!verified)left_=`<div class="panel"><b>Your own buyer agent</b><p class="muted">Verify 18+ first (button at the top). The agent can only buy for a verified owner.</p></div>`;
+ else if(!g.available)left_=`<div class="panel"><b>Your own buyer agent</b><p class="muted">Agents are not available on this server right now.</p></div>`;
+ else{const st=ag?.step||"none";const done=k=>({registered:1,wallet:2,linked:3})[st]>=k||(k===1&&ag?.token_id)||(k===3&&ag?.linked_in_pot);
+  const ready=!!ag?.linked_in_pot;const r=ag?.registry_record||{};
+  left_=`<div class="panel"><div class="row" style="justify-content:space-between"><b>Your EventScope buyer agent</b>${ag?.token_id?`<span class="chip ${r.status==="Active"?"ok":"bad"}">registry: ${esc(r.status||"?")}</span>`:""}</div>
+  <ol class="steps"><li class="${done(1)?"done":""}">Register the agent in Concordium's Agent Registry under your account${ag?.token_id?` (agent #${ag.token_id})`:""}</li><li class="${(r.agent_wallet&&r.agent_wallet===ag?.wallet)?"done":""}">Give it its own wallet (EventScope's agent wallet signs, you approve)</li><li class="${ready?"done":""}">Link it in the prize pot (the pot reads the registry on chain)</li></ol>
+  ${ready?"":`<button class="btn" id="vsetup">${ag?.token_id?"Continue setup":"Create my agent"} (up to 3 wallet approvals)</button><p class="muted">Network fees are paid by EventScope. ${g.pool_free!=null&&!ag?`${g.pool_free} agent wallets free.`:""}</p>`}
+  ${ag?`<div class="kv" style="margin-top:10px"><div>Agent wallet</div><div>${esc(ag.wallet)} · €${ag.wallet_eur} EUR-demo</div><div>Agent card</div><div><a href="${ag.card_url}" target="_blank">agent card JSON</a></div><div>Registry</div><div>contract 12802,0 ${L(cfg.registry.link,"explorer")}</div></div>`:""}
+  ${ready?`<div class="row" style="margin-top:12px"><button class="btn small ghost" id="vtopup">Move €6 to my agent</button></div>
+   <div class="row" style="margin-top:12px"><label class="muted"><input type="checkbox" class="vcat" value="crypto" checked> crypto</label><label class="muted"><input type="checkbox" class="vcat" value="weather" checked> weather</label><label class="muted"><input type="checkbox" class="vcat" value="football" checked> football</label><label class="muted"><input type="checkbox" class="vcat" value="basketball"> basketball</label><button id="vrun" class="btn small">Let my agent pick 3 cards</button></div>`:""}</div>`}
+ const w=(g.approvals||[]).filter(a=>a.status==="waiting");
+ V.innerHTML=`<div class="sub">Your agent is registered in Concordium's Agent Registry under your own verified account and buys from its own wallet. The prize pot checks the registry on chain at every buy, credits the cards to you, and enforces your daily cap and pause. The agent cannot change either.</div>
+ <div class="cols">${left_}${limits}</div><div class="cols" style="margin-top:18px"><div class="panel"><b>Agent activity</b><div class="log">${(g.log||[]).map(x=>`<div><time>${new Date(x.at).toLocaleTimeString()}</time>${esc(x.text)}${L(x.link)}</div>`).join("")||`<div class="muted">The agent has not run yet.</div>`}</div></div>
+ <div class="panel"><b>Waiting for your approval</b><div>${w.length?w.map(a=>{const e=events.find(x=>x.id===a.event_id);return`<div class="ap"><b>Your agent wants to go over your daily cap.</b><br>#${a.event_id} ${esc(e?.title)}: “${esc(e?.outcomes[a.outcome])}” · €${(Number(a.amount)/1e6).toFixed(2)}<br><span class="muted">Why: ${esc(a.reason)}</span><div class="row" style="margin-top:8px"><button class="btn small" data-vap="${a.id}" data-amt="${Number(a.amount)/1e6}">Approve €${(Number(a.amount)/1e6).toFixed(2)} (you sign)</button></div></div>`}).join(""):`<span class="muted">Nothing waiting. If your agent hits your cap, it asks here; the pot refuses it until you sign an approval.</span>`}</div></div></div>`;
+ const on=(id,f)=>{const el=$(id);if(el)el.onclick=e=>busy(e.target,f)};
+ on("vsetup",async()=>{let g2=await api(`/api/wallet/agent?account=${walletAccount}`);let ag2=g2.agent;
+  if(!ag2?.token_id){const h=await signStep("Register agent",()=>W.agent(walletAccount,"register"));if(!h)return;const t=await api("/api/wallet/agent/registered",{account:walletAccount,hash:h});if(!t.ok)return toast(esc(t.refused_with),"bad");toast(`Agent #${t.token_id} registered to your account`,"ok");g2=await api(`/api/wallet/agent?account=${walletAccount}`);ag2=g2.agent}
+  if(ag2.registry_record?.agent_wallet!==ag2.wallet){const h=await signStep("Bind agent wallet",()=>W.agent(walletAccount,"wallet"));if(!h)return;await api("/api/wallet/agent/step",{account:walletAccount,step:"wallet",hash:h})}
+  if(!ag2.linked_in_pot){const h=await signStep("Link agent in the pot",()=>W.agent(walletAccount,"link"));if(!h)return;await api("/api/wallet/agent/step",{account:walletAccount,step:"linked",hash:h})}
+  toast("Your agent is ready. Move some EUR-demo to it, then let it pick.","ok");drawAgent()});
+ on("vtopup",async()=>{await signStep("Move €6 to your agent",()=>W.agent(walletAccount,"topup",{amount_eur:6}));drawAgent();head()});
+ on("vrun",async()=>{toast("Your agent is reading the sources and picking…");const r=await api("/api/wallet/agent/run",{account:walletAccount,categories:cats3(),cards:3});if(r.refused_with)toast(esc(r.refused_with),"bad");
+  for(const a of r.actions||[])toast(a.action==="bought"?`Your agent bought a card for you (€${a.paid_eur})`+L(a.link):a.action==="needs_approval"?"Your agent hit your daily cap: waiting for your approval":`Agent: ${esc(a.action)} ${esc(a.refused_with||"")}`,a.action==="bought"?"ok":"bad");drawAgent();loadEvents();head()});
+ on("vsetcap",async()=>{await signStep("Set daily cap",()=>W.call(walletAccount,"setLimits",{daily_cap_eur:Number($("vcap").value)}));drawAgent();head()});
+ const vp=$("vpause");if(vp)vp.onclick=e=>{if(!confirm("Pause yourself and your agent for 30 days? Nobody can undo this early."))return;busy(e.target,async()=>{await signStep("Pause for 30 days",()=>W.call(walletAccount,"pauseMe",{days:30}));drawAgent();head()})};
+ V.querySelectorAll("[data-vap]").forEach(b=>b.onclick=()=>busy(b,async()=>{const h=await signStep("Approve extra",()=>W.call(walletAccount,"approveExtra",{amount_eur:Number(b.dataset.amt)}));if(!h)return;const t=await api("/api/wallet/agent/retry",{account:walletAccount,approval_id:b.dataset.vap});toast(t.action==="bought"?`Your agent bought it after your approval`+L(t.link):`Agent: ${esc(t.action)} ${esc(t.refused_with||t.error||"")}`,t.action==="bought"?"ok":"bad");drawAgent();head()}))}
+// ---------- results
+async function drawResults(){const r=await api("/api/results");
+ const done=events.filter(e=>e.proposal||e.status==="final"||e.result);
+ $("resultlist").innerHTML=done.map(e=>{const sha=e.proposal?.evidence_sha256||e.result?.evidence_sha256;const o=e.status==="final"?e.winner:e.proposal?.outcome;
+  return`<div style="border-top:1px solid var(--line);padding:10px 0"><div class="row" style="justify-content:space-between"><b>#${e.id} ${esc(e.title)}</b><span class="chip ${e.status==="final"?"ok":"gold"}">${e.status==="final"?"final":"disputes close in "+left(e.proposal.dispute_until)}</span></div>
+  <div class="muted">Result: <b style="color:#fff">${esc(e.outcomes[o])}</b>${e.result?.summary?` · ${esc(e.result.summary)}`:""}<br>Evidence SHA-256 on chain: <code>${esc((sha||"").slice(0,24))}…</code> <a href="/evidence/${sha}.json" target="_blank">source bytes</a> · <a href="${esc(e.result?.source_url||e.proposal?.source_url)}" target="_blank">live source</a>${L(e.result?.posted_tx&&"https://ccdexplorer.io/testnet/transaction/"+e.result.posted_tx,"posted")}${L(e.result?.final_tx&&"https://ccdexplorer.io/testnet/transaction/"+e.result.final_tx,"final")}${L(e.paid_out_tx&&"https://ccdexplorer.io/testnet/transaction/"+e.paid_out_tx,"payout")}</div></div>`}).join("")||`<div class="muted">No results yet. The first ones arrive a few minutes after the crypto events close.</div>`;
+ $("resultlog").innerHTML=r.log.map(x=>`<div><time>${new Date(x.at).toLocaleTimeString()}</time><span class="chip">${x.agent}</span> ${esc(x.text)}${L(x.link)}</div>`).join("")}
+// ---------- wiring
+function show(t){tab=t;document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));["live","packs","coll","agent","results"].forEach(x=>$("t-"+x).classList.toggle("hide",x!==t));
+ if(t==="live")drawLive();if(t==="coll")drawColl();if(t==="agent")drawAgent();if(t==="results")drawResults()}
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
+$("who").onchange=()=>{head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()};
+$("connect").onclick=e=>busy(e.target,async()=>{if(!(await W.detect(1500))){toast(`Concordium Wallet for Web was not found in this browser. <a href="${W.INSTALL_URL}" target="_blank">Install it from the Chrome Web Store</a>, set it to Testnet, create a test identity and an account, then reload this page. Or try the site as a demo person (top right).`,"bad");return}
+ walletAccount=await W.connect();$("who").value="wallet";toast("Wallet connected","ok");head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
+$("verify").onclick=e=>busy(e.target,async()=>{toast("Proof request anchored on chain; proving 18+ and not UK resident…");
+ const r=isWallet()?(walletAccount?await W.verify(walletAccount):(()=>{throw new Error("Connect your wallet first")})()):await api("/api/demo/verify",{who:who()});
+ r.ok?toast(`${nm()} verified with a zero-knowledge proof: 18+ and not resident in ${cfg.rules.blocked_countries.join(", ")}. Nothing else revealed. ${r.granted?"Play money: "+esc(r.granted):""}`+L(r.anchor_link,"request")+L(r.allow_link,"allow flag"),"ok"):toast(`${nm()} refused: ${esc(r.error)}. Nothing was paid.`+L(r.anchor_link,"request"),"bad");head()});
+const qs=new URLSearchParams(location.search);
+(async()=>{cfg=await api("/api/config");if(qs.get("who"))$("who").value=qs.get("who");
+ $("foot").innerHTML=`Concordium testnet only. Pot ${cfg.pot.index}${L(cfg.pot.link)} · EUR-demo token ${cfg.token.index}${L(cfg.token.link)} · Agent Registry 12802,0${L(cfg.registry.link)} · House fee 0%. EUR-demo is play money. Network fees are paid by EventScope. ${cfg.rules.min_age}+ and not resident in ${cfg.rules.blocked_countries.join(", ")}, proved with zero-knowledge proofs; a VPN does not help.`;
+ const has=await W.detect(1200);if(!has)$("connect").title="Concordium Wallet for Web not detected";W.onAccountChanged?.(a=>{walletAccount=a;head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
+ await loadEvents();head();show(qs.get("tab")||"live");setInterval(()=>{loadEvents();if(tab==="results")drawResults();if(tab==="coll")drawColl()},15000);setInterval(()=>{if(tab==="live")document.querySelectorAll(".drop").length&&drawLive()},30000)})();
+</script></body></html>

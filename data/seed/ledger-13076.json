@@ -1,0 +1,2899 @@
+{
+ "pot": "13076",
+ "events": {
+  "0": {
+   "id": 0,
+   "source_ref": "coinbase:BTC-USD:1795103100:line:63375",
+   "category": "crypto",
+   "title": "Bitcoin at 15:45 UTC: above $63,375?",
+   "outcomes": [
+    "Above $63,375",
+    "$63,375 or below"
+   ],
+   "closes_at": "2026-11-19T15:40:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T15:45:00Z",
+    "line": 63375,
+    "price_at_creation": 63364.57,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 15:45 UTC."
+   },
+   "created_tx": "119082c2487c038d72e89ca221b87d3460d0b9672232ddf55f277a825ea9a87d",
+   "created_at": "2026-11-19T15:25:06.326Z",
+   "void_checked_at": "2026-11-19T15:49:45.434Z",
+   "last_note": null,
+   "result": {
+    "outcome": 1,
+    "summary": "BTC-USD opened at $62,804 at 15:45 UTC",
+    "evidence_sha256": "6ea50ac54b5fa3abc6a12feac50a7664ffd345d9db77205bb45e519591e67b45",
+    "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+    "posted_tx": "4c8f5313c29e4c33e9fe40dba95fcd8baa07acc302869eff6ca6192630fc4947",
+    "posted_at": "2026-11-19T15:49:52.816Z",
+    "final_tx": "85c42c86b1e6677bff7f715af60ba5e24b42b706d2c99cc660beea7c101e71f0",
+    "final_at": "2026-11-19T15:53:30.278Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "1": {
+   "id": 1,
+   "source_ref": "coinbase:BTC-USD:1795105800:band:63125:63625",
+   "category": "crypto",
+   "title": "Bitcoin at 16:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $63,125",
+    "$63,125 to $63,625",
+    "Over $63,625"
+   ],
+   "closes_at": "2026-11-19T16:20:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T16:30:00Z",
+    "lo": 63125,
+    "hi": 63625,
+    "price_at_creation": 63364.57,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 16:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "d2d6af28c01dfe40e5cf60f551d59d5e23d35c4547e2b63eada9e479750e57a7",
+   "created_at": "2026-11-19T15:25:12.332Z",
+   "void_checked_at": "2026-11-19T16:32:04.024Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "BTC-USD opened at $63,028 at 16:30 UTC",
+    "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+    "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+    "posted_tx": "7d214ba5dd3d86dc33e454102511802f83eedd393cef863e602d7a5181793359",
+    "posted_at": "2026-11-19T16:32:10.674Z",
+    "final_tx": "c79b166bdee3b8b955a968d0b78574209f0476676183bf2e2e23cd020ba6d534",
+    "final_at": "2026-11-19T16:36:11.197Z"
+   },
+   "paid_out_tx": "13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b"
+  },
+  "2": {
+   "id": 2,
+   "source_ref": "coinbase:ETH-USD:1795103100:line:1789",
+   "category": "crypto",
+   "title": "Ether at 15:45 UTC: above $1,789?",
+   "outcomes": [
+    "Above $1,789",
+    "$1,789 or below"
+   ],
+   "closes_at": "2026-11-19T15:40:00Z",
+   "meta": {
+    "coin": "ETH",
+    "pair": "ETH-USD",
+    "target": "2026-11-19T15:45:00Z",
+    "line": 1789,
+    "price_at_creation": 1788.69,
+    "rule": "Opening price of the 1-minute Coinbase ETH-USD candle that starts at 15:45 UTC."
+   },
+   "created_tx": "da423455bd56870f4bd9218b4ab3ddbe6c0e1227caaba668cdefef1391e5e9c8",
+   "created_at": "2026-11-19T15:25:20.305Z",
+   "void_checked_at": "2026-11-19T15:49:53.227Z",
+   "last_note": null,
+   "result": {
+    "outcome": 1,
+    "summary": "ETH-USD opened at $1,774 at 15:45 UTC",
+    "evidence_sha256": "8d3b8263d7d355def15a0a67ccb8e55ac5139683a4666b5fd53e2d50c2459b3a",
+    "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+    "posted_tx": "e733cb1a269a8c5d818c90aeee15106ff6316c6c1d45ec892c74fb99d99adf93",
+    "posted_at": "2026-11-19T15:50:00.229Z",
+    "final_tx": "bc87191d4654ae8a9dbe6e354917710b51695f0a6ff6275b45a11eb21fb1ea03",
+    "final_at": "2026-11-19T15:53:38.232Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "3": {
+   "id": 3,
+   "source_ref": "coinbase:ETH-USD:1795105800:band:1782:1796",
+   "category": "crypto",
+   "title": "Ether at 16:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $1,782",
+    "$1,782 to $1,796",
+    "Over $1,796"
+   ],
+   "closes_at": "2026-11-19T16:20:00Z",
+   "meta": {
+    "coin": "ETH",
+    "pair": "ETH-USD",
+    "target": "2026-11-19T16:30:00Z",
+    "lo": 1782,
+    "hi": 1796,
+    "price_at_creation": 1788.69,
+    "rule": "Opening price of the 1-minute Coinbase ETH-USD candle that starts at 16:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "2da0f34f58dca1f05ad99773cd820e36ea1938a8baf0e7b8454af3f5e4607700",
+   "created_at": "2026-11-19T15:25:26.222Z",
+   "void_checked_at": "2026-11-19T16:32:11.383Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "ETH-USD opened at $1,778 at 16:30 UTC",
+    "evidence_sha256": "9f6131e697b8bfe314aff986a980539dad81e0aaa5ea7afe0ff1968f15b4eef2",
+    "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+    "posted_tx": "eb0e3dbf55a915a2958fddabca27c50bd59ca4ac9904bd4c9f928ad048c7cee1",
+    "posted_at": "2026-11-19T16:32:18.463Z",
+    "final_tx": "4c7f88139572801cf51c91c80e06f05762df9394bd949ea17aecfbf4e5a18424",
+    "final_at": "2026-11-19T16:36:39.866Z"
+   },
+   "paid_out_tx": "e9f246e20b86a097fe1879e5e0f2044aaf5020cefceb221e660615aee1cd1902"
+  },
+  "4": {
+   "id": 4,
+   "source_ref": "coinbase:SOL-USD:1795103100:line:74.7",
+   "category": "crypto",
+   "title": "Solana at 15:45 UTC: above $74.70?",
+   "outcomes": [
+    "Above $74.70",
+    "$74.70 or below"
+   ],
+   "closes_at": "2026-11-19T15:40:00Z",
+   "meta": {
+    "coin": "SOL",
+    "pair": "SOL-USD",
+    "target": "2026-11-19T15:45:00Z",
+    "line": 74.7,
+    "price_at_creation": 74.69,
+    "rule": "Opening price of the 1-minute Coinbase SOL-USD candle that starts at 15:45 UTC."
+   },
+   "created_tx": "632b805e1e83cf77df53884c793314c72ce84cae54f8209b0a144c47b7599809",
+   "created_at": "2026-11-19T15:25:32.099Z",
+   "void_checked_at": "2026-11-19T15:50:00.617Z",
+   "last_note": null,
+   "result": {
+    "outcome": 1,
+    "summary": "SOL-USD opened at $73.55 at 15:45 UTC",
+    "evidence_sha256": "e3f5756ca58fa01ff3f96024978547a4751da23a8736d0423f882cbd1ae30943",
+    "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+    "posted_tx": "a46d1b393c682ae654f5fa2963f82a20d0cabd1efab4be5b365b04aacead722b",
+    "posted_at": "2026-11-19T15:50:06.373Z",
+    "final_tx": "111f194ac699f089cbf8bca8985d1620553288d3a3b62c13cd8276206316a40a",
+    "final_at": "2026-11-19T15:53:47.178Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "5": {
+   "id": 5,
+   "source_ref": "coinbase:SOL-USD:1795105800:band:74.4:75",
+   "category": "crypto",
+   "title": "Solana at 16:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $74.40",
+    "$74.40 to $75.00",
+    "Over $75.00"
+   ],
+   "closes_at": "2026-11-19T16:20:00Z",
+   "meta": {
+    "coin": "SOL",
+    "pair": "SOL-USD",
+    "target": "2026-11-19T16:30:00Z",
+    "lo": 74.4,
+    "hi": 75,
+    "price_at_creation": 74.69,
+    "rule": "Opening price of the 1-minute Coinbase SOL-USD candle that starts at 16:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "562419e6a756e487b0693201005e90f7e8b331364c34d5f520a2886043fbbe20",
+   "created_at": "2026-11-19T15:25:38.109Z",
+   "void_checked_at": "2026-11-19T16:32:50.098Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "SOL-USD opened at $73.54 at 16:30 UTC",
+    "evidence_sha256": "5e5403d0165370dd2a956137add7e28ff5ef4361a50df0627236a89c56de91cc",
+    "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+    "posted_tx": "8bc674603c6eeb533dc9d16912174458e030b1e9b8bbc07f262b7ed145a7926f",
+    "posted_at": "2026-11-19T16:32:56.438Z",
+    "final_tx": "62131b4665397f5c8126408e31c7d98d9c1f640c45d383f352f023989c1cd95e",
+    "final_at": "2026-11-19T16:36:56.341Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "6": {
+   "id": 6,
+   "source_ref": "openmeteo:london:1795107600:rain",
+   "category": "weather",
+   "title": "Rain in London between 17:00 and 18:00 UTC?",
+   "outcomes": [
+    "Rain (0.1 mm or more)",
+    "Dry"
+   ],
+   "closes_at": "2026-11-19T17:00:00Z",
+   "meta": {
+    "city": "London",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_mm": 0,
+    "rule": "Open-Meteo hourly precipitation for that hour (model data, read about 2 hours after the hour)."
+   },
+   "created_tx": "f6d8fc56284294eaa0390548234299c037d5ab99e895db82b8d688b0bf0ac52f",
+   "created_at": "2026-11-19T15:25:44.099Z"
+  },
+  "7": {
+   "id": 7,
+   "source_ref": "openmeteo:london:1795107600:temp:9:11",
+   "category": "weather",
+   "title": "London at 17:00 UTC: how warm?",
+   "outcomes": [
+    "Below 9°C",
+    "9 to 11°C",
+    "Above 11°C"
+   ],
+   "closes_at": "2026-11-19T16:30:00Z",
+   "meta": {
+    "city": "London",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_c": 9.5,
+    "lo": 9,
+    "hi": 11,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "cf492e20caabf3bcf0c7525e9fa88c57a9138498cf3c0e723c9f7e04ce4a3216",
+   "created_at": "2026-11-19T15:25:50.251Z",
+   "void_checked_at": "2026-11-19T16:36:56.992Z",
+   "last_note": "waiting for the hour's data to settle"
+  },
+  "8": {
+   "id": 8,
+   "source_ref": "openmeteo:lagos:1795107600:rain",
+   "category": "weather",
+   "title": "Rain in Lagos between 17:00 and 18:00 UTC?",
+   "outcomes": [
+    "Rain (0.1 mm or more)",
+    "Dry"
+   ],
+   "closes_at": "2026-11-19T17:00:00Z",
+   "meta": {
+    "city": "Lagos",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_mm": 0,
+    "rule": "Open-Meteo hourly precipitation for that hour (model data, read about 2 hours after the hour)."
+   },
+   "created_tx": "791c505d9bab49d23c0a2c8d19b3806671a80db8fe1205d22b068d18e2b40136",
+   "created_at": "2026-11-19T15:25:58.025Z"
+  },
+  "9": {
+   "id": 9,
+   "source_ref": "openmeteo:lagos:1795107600:temp:27:29",
+   "category": "weather",
+   "title": "Lagos at 17:00 UTC: how warm?",
+   "outcomes": [
+    "Below 27°C",
+    "27 to 29°C",
+    "Above 29°C"
+   ],
+   "closes_at": "2026-11-19T16:30:00Z",
+   "meta": {
+    "city": "Lagos",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_c": 28.4,
+    "lo": 27,
+    "hi": 29,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "7c48aba011cb2b4153976fd9e379c40d9c694990ab34c2178be30a7b3fc79a45",
+   "created_at": "2026-11-19T15:26:04.142Z",
+   "void_checked_at": "2026-11-19T16:36:57.273Z",
+   "last_note": "waiting for the hour's data to settle"
+  },
+  "10": {
+   "id": 10,
+   "source_ref": "openmeteo:newyork:1795107600:rain",
+   "category": "weather",
+   "title": "Rain in New York between 17:00 and 18:00 UTC?",
+   "outcomes": [
+    "Rain (0.1 mm or more)",
+    "Dry"
+   ],
+   "closes_at": "2026-11-19T17:00:00Z",
+   "meta": {
+    "city": "New York",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_mm": 0,
+    "rule": "Open-Meteo hourly precipitation for that hour (model data, read about 2 hours after the hour)."
+   },
+   "created_tx": "fa8a621274550124f393853062941442d22e290047965646afbeecef5790b3ce",
+   "created_at": "2026-11-19T15:26:10.317Z"
+  },
+  "11": {
+   "id": 11,
+   "source_ref": "openmeteo:newyork:1795107600:temp:15:17",
+   "category": "weather",
+   "title": "New York at 17:00 UTC: how warm?",
+   "outcomes": [
+    "Below 15°C",
+    "15 to 17°C",
+    "Above 17°C"
+   ],
+   "closes_at": "2026-11-19T16:30:00Z",
+   "meta": {
+    "city": "New York",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_c": 16,
+    "lo": 15,
+    "hi": 17,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "7440d412719ec56b1795e2f37e8b55e9a64fe591b242755f04bbcfbb9e8ab65b",
+   "created_at": "2026-11-19T15:26:18.289Z",
+   "void_checked_at": "2026-11-19T16:36:57.577Z",
+   "last_note": "waiting for the hour's data to settle"
+  },
+  "12": {
+   "id": 12,
+   "source_ref": "openmeteo:tokyo:1795107600:rain",
+   "category": "weather",
+   "title": "Rain in Tokyo between 17:00 and 18:00 UTC?",
+   "outcomes": [
+    "Rain (0.1 mm or more)",
+    "Dry"
+   ],
+   "closes_at": "2026-11-19T17:00:00Z",
+   "meta": {
+    "city": "Tokyo",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_mm": 0,
+    "rule": "Open-Meteo hourly precipitation for that hour (model data, read about 2 hours after the hour)."
+   },
+   "created_tx": "3eaa800698d75d2208e5764ff52fbd385f35e7036f9f1c7e6e8d5194422ce619",
+   "created_at": "2026-11-19T15:26:26.192Z"
+  },
+  "13": {
+   "id": 13,
+   "source_ref": "openmeteo:tokyo:1795107600:temp:7:9",
+   "category": "weather",
+   "title": "Tokyo at 17:00 UTC: how warm?",
+   "outcomes": [
+    "Below 7°C",
+    "7 to 9°C",
+    "Above 9°C"
+   ],
+   "closes_at": "2026-11-19T16:30:00Z",
+   "meta": {
+    "city": "Tokyo",
+    "hour": "2026-11-19T17:00:00Z",
+    "forecast_c": 8.3,
+    "lo": 7,
+    "hi": 9,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "289c7196c5b9ea6c083cd5f7167376453a5456d0c416b910e9999820efb25fb2",
+   "created_at": "2026-11-19T15:26:32.257Z",
+   "void_checked_at": "2026-11-19T16:36:57.874Z",
+   "last_note": "waiting for the hour's data to settle"
+  },
+  "14": {
+   "id": 14,
+   "source_ref": "espn:soccer/eng.1:401879233",
+   "category": "football",
+   "title": "Manchester City v Fulham",
+   "outcomes": [
+    "Man City win",
+    "Draw",
+    "Fulham win"
+   ],
+   "closes_at": "2026-11-21T12:30:00Z",
+   "meta": {
+    "league": "Premier League",
+    "home": {
+     "name": "Manchester City",
+     "abbr": "MNC",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
+     "color": "99c5ea"
+    },
+    "away": {
+     "name": "Fulham",
+     "abbr": "FUL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
+     "color": "ffffff"
+    },
+    "venue": "Etihad Stadium",
+    "kickoff": "2026-11-21T12:30Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "cfbf5f3b509b3043307fc642dc14e47d452fce66fcb21da95801854a2ee7c709",
+   "created_at": "2026-11-19T15:26:52.254Z"
+  },
+  "15": {
+   "id": 15,
+   "source_ref": "espn:soccer/eng.1:401879238",
+   "category": "football",
+   "title": "AFC Bournemouth v Nottingham Forest",
+   "outcomes": [
+    "Bournemouth win",
+    "Draw",
+    "Nottm Forest win"
+   ],
+   "closes_at": "2026-11-21T15:00:00Z",
+   "meta": {
+    "league": "Premier League",
+    "home": {
+     "name": "AFC Bournemouth",
+     "abbr": "BOU",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
+     "color": "f42727"
+    },
+    "away": {
+     "name": "Nottingham Forest",
+     "abbr": "NFO",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/393.png",
+     "color": "c8102e"
+    },
+    "venue": "Vitality Stadium",
+    "kickoff": "2026-11-21T15:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "897c3501fafc7e725c7a09529a3b0b13b7721a46dbdd2db7d50929a3b62b6c7b",
+   "created_at": "2026-11-19T15:27:00.192Z"
+  },
+  "16": {
+   "id": 16,
+   "source_ref": "espn:soccer/eng.1:401878756",
+   "category": "football",
+   "title": "Aston Villa v Sunderland",
+   "outcomes": [
+    "Aston Villa win",
+    "Draw",
+    "Sunderland win"
+   ],
+   "closes_at": "2026-11-21T15:00:00Z",
+   "meta": {
+    "league": "Premier League",
+    "home": {
+     "name": "Aston Villa",
+     "abbr": "AVL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+     "color": "660e36"
+    },
+    "away": {
+     "name": "Sunderland",
+     "abbr": "SUN",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
+     "color": "EB172B"
+    },
+    "venue": "Villa Park",
+    "kickoff": "2026-11-21T15:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "6def08d3f25670356af44ca7caa7590375017fe6f74a6f6b91e4681fa0ffcb6f",
+   "created_at": "2026-11-19T15:27:06.307Z"
+  },
+  "17": {
+   "id": 17,
+   "source_ref": "espn:soccer/eng.1:401879236",
+   "category": "football",
+   "title": "Chelsea v Leeds United",
+   "outcomes": [
+    "Chelsea win",
+    "Draw",
+    "Leeds win"
+   ],
+   "closes_at": "2026-11-21T15:00:00Z",
+   "meta": {
+    "league": "Premier League",
+    "home": {
+     "name": "Chelsea",
+     "abbr": "CHE",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
+     "color": "144992"
+    },
+    "away": {
+     "name": "Leeds United",
+     "abbr": "LEE",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/357.png",
+     "color": "ffffff"
+    },
+    "venue": "Stamford Bridge",
+    "kickoff": "2026-11-21T15:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "b15e19302901b4be4c40ce5923e577a563086cb9bb76e7e5432fea74f9f66130",
+   "created_at": "2026-11-19T15:27:18.441Z"
+  },
+  "18": {
+   "id": 18,
+   "source_ref": "espn:soccer/esp.1:401882805",
+   "category": "football",
+   "title": "Athletic Club v Espanyol",
+   "outcomes": [
+    "Athletic win",
+    "Draw",
+    "Espanyol win"
+   ],
+   "closes_at": "2026-11-20T20:00:00Z",
+   "meta": {
+    "league": "LaLiga",
+    "home": {
+     "name": "Athletic Club",
+     "abbr": "ATH",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/93.png",
+     "color": "C8142F"
+    },
+    "away": {
+     "name": "Espanyol",
+     "abbr": "ESP",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/88.png",
+     "color": "3366CC"
+    },
+    "venue": "San Mamés",
+    "kickoff": "2026-11-20T20:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "bd5f4bc5ac6d74aaac9fc689085cff4fc23c26e652d6b3a8b7ab203592bdcb1b",
+   "created_at": "2026-11-19T15:27:30.416Z"
+  },
+  "19": {
+   "id": 19,
+   "source_ref": "espn:soccer/esp.1:401882806",
+   "category": "football",
+   "title": "Alavés v Deportivo",
+   "outcomes": [
+    "Alavés win",
+    "Draw",
+    "Deportivo win"
+   ],
+   "closes_at": "2026-11-21T13:00:00Z",
+   "meta": {
+    "league": "LaLiga",
+    "home": {
+     "name": "Alavés",
+     "abbr": "ALA",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
+     "color": "0000ff"
+    },
+    "away": {
+     "name": "Deportivo",
+     "abbr": "DEP",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
+     "color": "3366CC"
+    },
+    "venue": "Mendizorrotza",
+    "kickoff": "2026-11-21T13:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "29264842f2b035259162124045863f1cd7112e7115ec4bd46d96ab1491a9df7e",
+   "created_at": "2026-11-19T15:27:38.308Z"
+  },
+  "20": {
+   "id": 20,
+   "source_ref": "espn:soccer/esp.1:401882799",
+   "category": "football",
+   "title": "Rayo Vallecano v Valencia",
+   "outcomes": [
+    "Rayo win",
+    "Draw",
+    "Valencia win"
+   ],
+   "closes_at": "2026-11-21T15:15:00Z",
+   "meta": {
+    "league": "LaLiga",
+    "home": {
+     "name": "Rayo Vallecano",
+     "abbr": "RAY",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
+     "color": "ffffff"
+    },
+    "away": {
+     "name": "Valencia",
+     "abbr": "VAL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
+     "color": "ffffff"
+    },
+    "venue": "Estadio de Vallecas",
+    "kickoff": "2026-11-21T15:15Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "586b9a17c773d42a0458f32ee6dcc6104e230531f711b9625623f115cf6aea53",
+   "created_at": "2026-11-19T15:27:46.313Z"
+  },
+  "21": {
+   "id": 21,
+   "source_ref": "espn:soccer/ger.1:401884736",
+   "category": "football",
+   "title": "Bayern Munich v FC Cologne",
+   "outcomes": [
+    "Bayern win",
+    "Draw",
+    "Cologne win"
+   ],
+   "closes_at": "2026-11-20T19:30:00Z",
+   "meta": {
+    "league": "Bundesliga",
+    "home": {
+     "name": "Bayern Munich",
+     "abbr": "MUN",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132.png",
+     "color": "dc052d"
+    },
+    "away": {
+     "name": "FC Cologne",
+     "abbr": "KOE",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/122.png",
+     "color": "ffffff"
+    },
+    "venue": "Allianz Arena",
+    "kickoff": "2026-11-20T19:30Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "785a8ce21182647c66c51bbe5baf0cc4c8b39d7641d6cc6f30955b4dd1626179",
+   "created_at": "2026-11-19T15:27:54.337Z"
+  },
+  "22": {
+   "id": 22,
+   "source_ref": "espn:soccer/ger.1:401884732",
+   "category": "football",
+   "title": "1. FC Union Berlin v RB Leipzig",
+   "outcomes": [
+    "Union Berlin win",
+    "Draw",
+    "RB Leipzig win"
+   ],
+   "closes_at": "2026-11-21T14:30:00Z",
+   "meta": {
+    "league": "Bundesliga",
+    "home": {
+     "name": "1. FC Union Berlin",
+     "abbr": "FCU",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/598.png",
+     "color": "DA0308"
+    },
+    "away": {
+     "name": "RB Leipzig",
+     "abbr": "RBL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11420.png",
+     "color": "ffffff"
+    },
+    "venue": "Stadion An der Alten Försterei",
+    "kickoff": "2026-11-21T14:30Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "f23fd18542b4436e78ad83ee7eb86b21995b7caede6e3a42566eb0d2c06666db",
+   "created_at": "2026-11-19T15:28:04.434Z"
+  },
+  "23": {
+   "id": 23,
+   "source_ref": "espn:soccer/ger.1:401884735",
+   "category": "football",
+   "title": "Bayer Leverkusen v SC Paderborn 07",
+   "outcomes": [
+    "Leverkusen win",
+    "Draw",
+    "Paderborn win"
+   ],
+   "closes_at": "2026-11-21T14:30:00Z",
+   "meta": {
+    "league": "Bundesliga",
+    "home": {
+     "name": "Bayer Leverkusen",
+     "abbr": "B04",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/131.png",
+     "color": "DA0308"
+    },
+    "away": {
+     "name": "SC Paderborn 07",
+     "abbr": "SCP",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3307.png",
+     "color": "0000dd"
+    },
+    "venue": "BayArena",
+    "kickoff": "2026-11-21T14:30Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "a628a54c1a53045874601b6d0b0bddf2b68914d361322660b7278fc4f7e8b1d7",
+   "created_at": "2026-11-19T15:28:12.401Z"
+  },
+  "24": {
+   "id": 24,
+   "source_ref": "espn:soccer/ita.1:401875056",
+   "category": "football",
+   "title": "Como v Cagliari",
+   "outcomes": [
+    "Como win",
+    "Draw",
+    "Cagliari win"
+   ],
+   "closes_at": "2026-11-21T14:00:00Z",
+   "meta": {
+    "league": "Serie A",
+    "home": {
+     "name": "Como",
+     "abbr": "COMO",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2572.png",
+     "color": "4169E1"
+    },
+    "away": {
+     "name": "Cagliari",
+     "abbr": "CAG",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
+     "color": "282846"
+    },
+    "venue": "Giuseppe Sinigaglia",
+    "kickoff": "2026-11-21T14:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "3ef8f25f681b029d345541c429ddf528e1b66323b59710d40afef0a7d2a6707a",
+   "created_at": "2026-11-19T15:28:20.369Z"
+  },
+  "25": {
+   "id": 25,
+   "source_ref": "espn:soccer/ita.1:401874981",
+   "category": "football",
+   "title": "Lazio v Lecce",
+   "outcomes": [
+    "Lazio win",
+    "Draw",
+    "Lecce win"
+   ],
+   "closes_at": "2026-11-21T14:00:00Z",
+   "meta": {
+    "league": "Serie A",
+    "home": {
+     "name": "Lazio",
+     "abbr": "LAZ",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
+     "color": "74bde7"
+    },
+    "away": {
+     "name": "Lecce",
+     "abbr": "LEC",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/113.png",
+     "color": "FCED0B"
+    },
+    "venue": "Olimpico",
+    "kickoff": "2026-11-21T14:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "7a9b0c9964f126f56bb5b980a1a910f34b5de0c1dcf6022a354aa0b0a08c40b4",
+   "created_at": "2026-11-19T15:28:32.689Z"
+  },
+  "26": {
+   "id": 26,
+   "source_ref": "espn:soccer/ita.1:401874967",
+   "category": "football",
+   "title": "Parma v AS Roma",
+   "outcomes": [
+    "Parma win",
+    "Draw",
+    "AS Roma win"
+   ],
+   "closes_at": "2026-11-21T17:00:00Z",
+   "meta": {
+    "league": "Serie A",
+    "home": {
+     "name": "Parma",
+     "abbr": "PAR",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/115.png",
+     "color": "19161D"
+    },
+    "away": {
+     "name": "AS Roma",
+     "abbr": "ROMA",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+     "color": "990a2c"
+    },
+    "venue": "Ennio Tardini",
+    "kickoff": "2026-11-21T17:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "fab469ff09a52b55dd24bc6ec3fcd3d898ced462dac3bda5f9cefde5fdf66086",
+   "created_at": "2026-11-19T15:28:40.231Z"
+  },
+  "27": {
+   "id": 27,
+   "source_ref": "espn:soccer/fra.1:401876395",
+   "category": "football",
+   "title": "Troyes v Le Havre AC",
+   "outcomes": [
+    "Troyes win",
+    "Draw",
+    "Le Havre AC win"
+   ],
+   "closes_at": "2026-11-20T19:45:00Z",
+   "meta": {
+    "league": "Ligue 1",
+    "home": {
+     "name": "Troyes",
+     "abbr": "TRY",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/170.png",
+     "color": "0000bf"
+    },
+    "away": {
+     "name": "Le Havre AC",
+     "abbr": "HAC",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3236.png",
+     "color": "011F68"
+    },
+    "venue": "Stade de l'Aube",
+    "kickoff": "2026-11-20T19:45Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "b1f5937d73e94ea4eb9029a17866953de0eb8b334118a801c22b61079e38a577",
+   "created_at": "2026-11-19T15:28:46.252Z"
+  },
+  "28": {
+   "id": 28,
+   "source_ref": "espn:soccer/fra.1:401876398",
+   "category": "football",
+   "title": "Nice v Paris Saint-Germain",
+   "outcomes": [
+    "Nice win",
+    "Draw",
+    "PSG win"
+   ],
+   "closes_at": "2026-11-21T16:15:00Z",
+   "meta": {
+    "league": "Ligue 1",
+    "home": {
+     "name": "Nice",
+     "abbr": "NICE",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+     "color": "ef2f24"
+    },
+    "away": {
+     "name": "Paris Saint-Germain",
+     "abbr": "PSG",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
+     "color": "011F68"
+    },
+    "venue": "Allianz Riviera",
+    "kickoff": "2026-11-21T16:15Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "77909f571e5c91dd9c5d7d42d924ca395627dade90f733178015d25715b02d17",
+   "created_at": "2026-11-19T15:28:56.998Z"
+  },
+  "29": {
+   "id": 29,
+   "source_ref": "espn:soccer/usa.1:401933535",
+   "category": "football",
+   "title": "Orlando City SC v FC Cincinnati",
+   "outcomes": [
+    "Orlando win",
+    "Draw",
+    "Cincinnati win"
+   ],
+   "closes_at": "2026-11-20T00:30:00Z",
+   "meta": {
+    "league": "MLS",
+    "home": {
+     "name": "Orlando City SC",
+     "abbr": "ORL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/12011.png",
+     "color": "60269e"
+    },
+    "away": {
+     "name": "FC Cincinnati",
+     "abbr": "CIN",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/18267.png",
+     "color": "003087"
+    },
+    "venue": "Inter&Co Stadium",
+    "kickoff": "2026-11-20T00:30Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "2b618d39caa59a9b8520b8c6486a10b66b1ecb366d29eb37920bd40391f24e17",
+   "created_at": "2026-11-19T15:29:04.931Z"
+  },
+  "30": {
+   "id": 30,
+   "source_ref": "espn:soccer/usa.1:401933555",
+   "category": "football",
+   "title": "Seattle Sounders FC v Real Salt Lake",
+   "outcomes": [
+    "Seattle win",
+    "Draw",
+    "Salt Lake win"
+   ],
+   "closes_at": "2026-11-20T03:00:00Z",
+   "meta": {
+    "league": "MLS",
+    "home": {
+     "name": "Seattle Sounders FC",
+     "abbr": "SEA",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9726.png",
+     "color": "2dc84d"
+    },
+    "away": {
+     "name": "Real Salt Lake",
+     "abbr": "RSL",
+     "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4771.png",
+     "color": "a32035"
+    },
+    "venue": "Lumen Field",
+    "kickoff": "2026-11-20T03:00Z",
+    "rule": "Result after normal time as published by ESPN (full time)."
+   },
+   "created_tx": "468e5fb2ac83e0f8f417a4747cd32445f5980e1e7c0dc4193cc2abf77b8c3e6e",
+   "created_at": "2026-11-19T15:29:15.355Z"
+  },
+  "31": {
+   "id": 31,
+   "source_ref": "espn:basketball/nba:401910019",
+   "category": "basketball",
+   "title": "Memphis Grizzlies v Golden State Warriors",
+   "outcomes": [
+    "Grizzlies win",
+    "Warriors win"
+   ],
+   "closes_at": "2026-11-20T01:00:00Z",
+   "meta": {
+    "league": "NBA",
+    "home": {
+     "name": "Memphis Grizzlies",
+     "abbr": "MEM",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+     "color": "5d76a9"
+    },
+    "away": {
+     "name": "Golden State Warriors",
+     "abbr": "GS",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png",
+     "color": "fdb927"
+    },
+    "venue": "FedExForum",
+    "kickoff": "2026-11-20T01:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "e5a702a2078be488346892e3ee4a9d4209c7c62103d7f588ba25a7e21e4ea840",
+   "created_at": "2026-11-19T15:29:26.198Z"
+  },
+  "32": {
+   "id": 32,
+   "source_ref": "espn:basketball/nba:401910020",
+   "category": "basketball",
+   "title": "Milwaukee Bucks v Portland Trail Blazers",
+   "outcomes": [
+    "Bucks win",
+    "Trail Blazers win"
+   ],
+   "closes_at": "2026-11-20T01:00:00Z",
+   "meta": {
+    "league": "NBA",
+    "home": {
+     "name": "Milwaukee Bucks",
+     "abbr": "MIL",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
+     "color": "00471b"
+    },
+    "away": {
+     "name": "Portland Trail Blazers",
+     "abbr": "POR",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+     "color": "e03a3e"
+    },
+    "venue": "Fiserv Forum",
+    "kickoff": "2026-11-20T01:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "6ca331978bc344075d017908b0e52b87d651ee359a2694f65f172e69fc490357",
+   "created_at": "2026-11-19T15:29:32.290Z"
+  },
+  "33": {
+   "id": 33,
+   "source_ref": "espn:basketball/nba:401910021",
+   "category": "basketball",
+   "title": "Minnesota Timberwolves v New York Knicks",
+   "outcomes": [
+    "Timberwolves win",
+    "Knicks win"
+   ],
+   "closes_at": "2026-11-20T01:00:00Z",
+   "meta": {
+    "league": "NBA",
+    "home": {
+     "name": "Minnesota Timberwolves",
+     "abbr": "MIN",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/min.png",
+     "color": "266092"
+    },
+    "away": {
+     "name": "New York Knicks",
+     "abbr": "NY",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+     "color": "1d428a"
+    },
+    "venue": "Target Center",
+    "kickoff": "2026-11-20T01:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "3fb98ee114d187db99963ac5967f23fd59d2b7577242bda888d3e96d6a196389",
+   "created_at": "2026-11-19T15:29:38.157Z"
+  },
+  "34": {
+   "id": 34,
+   "source_ref": "espn:basketball/nba:401910022",
+   "category": "basketball",
+   "title": "San Antonio Spurs v LA Clippers",
+   "outcomes": [
+    "Spurs win",
+    "Clippers win"
+   ],
+   "closes_at": "2026-11-20T01:00:00Z",
+   "meta": {
+    "league": "NBA",
+    "home": {
+     "name": "San Antonio Spurs",
+     "abbr": "SA",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+     "color": "000000"
+    },
+    "away": {
+     "name": "LA Clippers",
+     "abbr": "LAC",
+     "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lac.png",
+     "color": "12173f"
+    },
+    "venue": "Frost Bank Center",
+    "kickoff": "2026-11-20T01:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "5b3ba6f1a04a655498582b592cb37c2ee84ac24b4e3ee4c915f4022043e0deee",
+   "created_at": "2026-11-19T15:29:44.237Z"
+  },
+  "35": {
+   "id": 35,
+   "source_ref": "espn:hockey/nhl:401892742",
+   "category": "hockey",
+   "title": "Toronto Maple Leafs v Los Angeles Kings",
+   "outcomes": [
+    "Maple Leafs win",
+    "Kings win"
+   ],
+   "closes_at": "2026-11-20T00:00:00Z",
+   "meta": {
+    "league": "NHL",
+    "home": {
+     "name": "Toronto Maple Leafs",
+     "abbr": "TOR",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/tor.png",
+     "color": "003e7e"
+    },
+    "away": {
+     "name": "Los Angeles Kings",
+     "abbr": "LA",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/la.png",
+     "color": "121212"
+    },
+    "venue": "Scotiabank Arena",
+    "kickoff": "2026-11-20T00:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "4083c389d5021b0061cebb0a1d45a3450985a50fb8288ef18507401a76e38385",
+   "created_at": "2026-11-19T15:29:50.424Z"
+  },
+  "36": {
+   "id": 36,
+   "source_ref": "espn:hockey/nhl:401892743",
+   "category": "hockey",
+   "title": "Ottawa Senators v Philadelphia Flyers",
+   "outcomes": [
+    "Senators win",
+    "Flyers win"
+   ],
+   "closes_at": "2026-11-20T00:00:00Z",
+   "meta": {
+    "league": "NHL",
+    "home": {
+     "name": "Ottawa Senators",
+     "abbr": "OTT",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/ott.png",
+     "color": "dd1a32"
+    },
+    "away": {
+     "name": "Philadelphia Flyers",
+     "abbr": "PHI",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/phi.png",
+     "color": "fe5823"
+    },
+    "venue": "Canadian Tire Centre",
+    "kickoff": "2026-11-20T00:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "45f77d1a38df4741b06bcb40ba89a541c2924b88ebc9b03ed538682102931f4c",
+   "created_at": "2026-11-19T15:29:56.422Z"
+  },
+  "37": {
+   "id": 37,
+   "source_ref": "espn:hockey/nhl:401892745",
+   "category": "hockey",
+   "title": "Pittsburgh Penguins v St. Louis Blues",
+   "outcomes": [
+    "Penguins win",
+    "Blues win"
+   ],
+   "closes_at": "2026-11-20T00:00:00Z",
+   "meta": {
+    "league": "NHL",
+    "home": {
+     "name": "Pittsburgh Penguins",
+     "abbr": "PIT",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/pit.png",
+     "color": "000000"
+    },
+    "away": {
+     "name": "St. Louis Blues",
+     "abbr": "STL",
+     "logo": "https://a.espncdn.com/i/teamlogos/nhl/500/scoreboard/stl.png",
+     "color": "0070b9"
+    },
+    "venue": "PPG Paints Arena",
+    "kickoff": "2026-11-20T00:00Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "9930ce902f2116e7823f7cd8990e864beaf35eb963f37c4eb1cb89b1fbcd168d",
+   "created_at": "2026-11-19T15:30:05.484Z"
+  },
+  "38": {
+   "id": 38,
+   "source_ref": "espn:football/nfl:401873066",
+   "category": "american-football",
+   "title": "Houston Texans v Indianapolis Colts",
+   "outcomes": [
+    "Texans win",
+    "Colts win"
+   ],
+   "closes_at": "2026-11-20T01:15:00Z",
+   "meta": {
+    "league": "NFL",
+    "home": {
+     "name": "Houston Texans",
+     "abbr": "HOU",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+     "color": "021018"
+    },
+    "away": {
+     "name": "Indianapolis Colts",
+     "abbr": "IND",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+     "color": "003b75"
+    },
+    "venue": "Reliant Stadium",
+    "kickoff": "2026-11-20T01:15Z",
+    "rule": "Final result including overtime as published by ESPN."
+   },
+   "created_tx": "c58594efc47e89bb89f874714af4899fbfb3ca8fde76cbc8aab8f878554ec1e1",
+   "created_at": "2026-11-19T15:30:12.329Z"
+  },
+  "39": {
+   "id": 39,
+   "source_ref": "coinbase:BTC-USD:1795104000:line:62800",
+   "category": "crypto",
+   "title": "Bitcoin at 16:00 UTC: above $62,800?",
+   "outcomes": [
+    "Above $62,800",
+    "$62,800 or below"
+   ],
+   "closes_at": "2026-11-19T15:55:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T16:00:00Z",
+    "line": 62800,
+    "price_at_creation": 62793.89,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 16:00 UTC."
+   },
+   "created_tx": "c78d08749e2f547f348e3b3017c8af5149c5e01185bd1171bc5d4b855414ce12",
+   "created_at": "2026-11-19T15:42:05.462Z",
+   "void_checked_at": "2026-11-19T16:08:23.660Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "BTC-USD opened at $63,033 at 16:00 UTC",
+    "evidence_sha256": "e0a4d006afed8a12d2b56c4fb0eb9e37efd0a4339ae49c2cb71649d3af150945",
+    "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+    "posted_tx": "2e48dcc8fd876d2fb9ee6daf0e9a74d261dc0d7d0848142b647cd8232a7a86b9",
+    "posted_at": "2026-11-19T16:08:47.514Z",
+    "final_tx": "eb49491080e302ed191e8a2a8cae766209f6bb75eb040dc59689903b6cb8ce30",
+    "final_at": "2026-11-19T16:11:58.478Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "40": {
+   "id": 40,
+   "source_ref": "coinbase:ETH-USD:1795104000:line:1772",
+   "category": "crypto",
+   "title": "Ether at 16:00 UTC: above $1,772?",
+   "outcomes": [
+    "Above $1,772",
+    "$1,772 or below"
+   ],
+   "closes_at": "2026-11-19T15:55:00Z",
+   "meta": {
+    "coin": "ETH",
+    "pair": "ETH-USD",
+    "target": "2026-11-19T16:00:00Z",
+    "line": 1772,
+    "price_at_creation": 1772.38,
+    "rule": "Opening price of the 1-minute Coinbase ETH-USD candle that starts at 16:00 UTC."
+   },
+   "created_tx": "475a931cc5e5492e7d92f6837d7bc08144637be63e01ef182c94f5e48d2e7fef",
+   "created_at": "2026-11-19T15:42:16.669Z",
+   "void_checked_at": "2026-11-19T16:08:50.626Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "ETH-USD opened at $1,780 at 16:00 UTC",
+    "evidence_sha256": "53e67c76a33fe2974ac5b90c6465934753cafd0a01b9b0f47fd93c21a72e2b9f",
+    "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+    "posted_tx": "ab42e55eec99d3a4c0ec4ba02b5a5d0530173d98394438c13af9724937c6310e",
+    "posted_at": "2026-11-19T16:09:06.095Z",
+    "final_tx": "6150159a72f2fc6f4a67cbf59d9abd9269eb369bceda3d5a39e65e43f2ef460d",
+    "final_at": "2026-11-19T16:12:42.358Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "41": {
+   "id": 41,
+   "source_ref": "coinbase:SOL-USD:1795104000:line:73.7",
+   "category": "crypto",
+   "title": "Solana at 16:00 UTC: above $73.70?",
+   "outcomes": [
+    "Above $73.70",
+    "$73.70 or below"
+   ],
+   "closes_at": "2026-11-19T15:55:00Z",
+   "meta": {
+    "coin": "SOL",
+    "pair": "SOL-USD",
+    "target": "2026-11-19T16:00:00Z",
+    "line": 73.7,
+    "price_at_creation": 73.69,
+    "rule": "Opening price of the 1-minute Coinbase SOL-USD candle that starts at 16:00 UTC."
+   },
+   "created_tx": "542c15ee57d46d1fc616eadc8945b1b4572d2a2416522b386577ae4da787cf70",
+   "created_at": "2026-11-19T15:42:24.526Z",
+   "void_checked_at": "2026-11-19T16:09:06.968Z",
+   "last_note": null,
+   "result": {
+    "outcome": 1,
+    "summary": "SOL-USD opened at $73.47 at 16:00 UTC",
+    "evidence_sha256": "ca2c9170c13f556a684394d5b1455ec0587cf2b97d8346ae89c7074dc51179b7",
+    "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+    "posted_tx": "b46c80e936edebee604ed63c03bd9d0102e3114744afe47c807c3e94d502bd66",
+    "posted_at": "2026-11-19T16:09:20.190Z",
+    "final_tx": "c8a1624a85f9f2f5b79554cc30925f7130c316bf1a7938d80aa7950887a5a368",
+    "final_at": "2026-11-19T16:12:50.500Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "42": {
+   "id": 42,
+   "source_ref": "coinbase:BTC-USD:1795104900:line:63000",
+   "category": "crypto",
+   "title": "Bitcoin at 16:15 UTC: above $63,000?",
+   "outcomes": [
+    "Above $63,000",
+    "$63,000 or below"
+   ],
+   "closes_at": "2026-11-19T16:10:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T16:15:00Z",
+    "line": 63000,
+    "price_at_creation": 63010.81,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 16:15 UTC."
+   },
+   "created_tx": "b772695587d3c1d445f2a2b937a9c25801d385b5e7152ed97216dc5dc611bfca",
+   "created_at": "2026-11-19T15:59:55.944Z",
+   "void_checked_at": "2026-11-19T16:17:05.732Z",
+   "last_note": null,
+   "result": {
+    "outcome": 0,
+    "summary": "BTC-USD opened at $63,084 at 16:15 UTC",
+    "evidence_sha256": "92b9e77a300a6b65d6da984e5795428d1a0b2e1ecab887eb3f5203dab94a844a",
+    "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:14:00Z&end=2026-11-19T16:17:00Z",
+    "posted_tx": "6779995dcec02b34b455cdcd4dc1776e822f0b7e04b70effaa83ec0d09feefef",
+    "posted_at": "2026-11-19T16:17:12.422Z",
+    "final_tx": "1a84fb90ba8adf3cc66796eb8e06b5703852702e84104e0b999015646f97f785",
+    "final_at": "2026-11-19T16:20:32.361Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "43": {
+   "id": 43,
+   "source_ref": "coinbase:BTC-USD:1795105800:line:63100",
+   "category": "crypto",
+   "title": "Bitcoin at 16:30 UTC: above $63,100?",
+   "outcomes": [
+    "Above $63,100",
+    "$63,100 or below"
+   ],
+   "closes_at": "2026-11-19T16:25:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T16:30:00Z",
+    "line": 63100,
+    "price_at_creation": 63099.7,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 16:30 UTC."
+   },
+   "created_tx": "0bcd55f647a337828645fd1acf3324d939fbe7be1409e4140f63a5b455d7114b",
+   "created_at": "2026-11-19T16:13:12.633Z",
+   "void_checked_at": "2026-11-19T16:32:59.042Z",
+   "last_note": null,
+   "result": {
+    "outcome": 1,
+    "summary": "BTC-USD opened at $63,028 at 16:30 UTC",
+    "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+    "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+    "posted_tx": "46443ba711245c272bf5b957fd094aeb4ae34d61eaabb48203fa8ce7be0d7593",
+    "posted_at": "2026-11-19T16:33:04.394Z",
+    "final_tx": "074df527be0c8b28f96c24ccbb094d5db3ffd9dc7cbd6a045e500d33aa9bae95",
+    "final_at": "2026-11-19T16:37:08.918Z"
+   },
+   "paid_out_tx": "none"
+  },
+  "44": {
+   "id": 44,
+   "source_ref": "coinbase:BTC-USD:1795109400:band:62775:63275",
+   "category": "crypto",
+   "title": "Bitcoin at 17:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $62,775",
+    "$62,775 to $63,275",
+    "Over $63,275"
+   ],
+   "closes_at": "2026-11-19T17:20:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T17:30:00Z",
+    "lo": 62775,
+    "hi": 63275,
+    "price_at_creation": 63027.52,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 17:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "1016b8112943287f2fb87108775332ccbed16c18a0d490ca56dc214561c951a2",
+   "created_at": "2026-11-19T16:23:11.056Z"
+  },
+  "45": {
+   "id": 45,
+   "source_ref": "coinbase:ETH-USD:1795109400:band:1768:1782",
+   "category": "crypto",
+   "title": "Ether at 17:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $1,768",
+    "$1,768 to $1,782",
+    "Over $1,782"
+   ],
+   "closes_at": "2026-11-19T17:20:00Z",
+   "meta": {
+    "coin": "ETH",
+    "pair": "ETH-USD",
+    "target": "2026-11-19T17:30:00Z",
+    "lo": 1768,
+    "hi": 1782,
+    "price_at_creation": 1775,
+    "rule": "Opening price of the 1-minute Coinbase ETH-USD candle that starts at 17:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "ae45a60aba2b3c6e4ddf9be4edff58e9054f09ad4a09b9a3bef9612d8797fed8",
+   "created_at": "2026-11-19T16:23:19.516Z"
+  },
+  "46": {
+   "id": 46,
+   "source_ref": "coinbase:SOL-USD:1795109400:band:73.15:73.75",
+   "category": "crypto",
+   "title": "Solana at 17:30 UTC: where will it be?",
+   "outcomes": [
+    "Under $73.15",
+    "$73.15 to $73.75",
+    "Over $73.75"
+   ],
+   "closes_at": "2026-11-19T17:20:00Z",
+   "meta": {
+    "coin": "SOL",
+    "pair": "SOL-USD",
+    "target": "2026-11-19T17:30:00Z",
+    "lo": 73.15,
+    "hi": 73.75,
+    "price_at_creation": 73.45,
+    "rule": "Opening price of the 1-minute Coinbase SOL-USD candle that starts at 17:30 UTC. Edges count as the middle band."
+   },
+   "created_tx": "bcb6ce06348ac183bcd9d554b9055da9d36c37b531bb6ae42884a7d68895216b",
+   "created_at": "2026-11-19T16:23:41.727Z"
+  },
+  "47": {
+   "id": 47,
+   "source_ref": "coinbase:BTC-USD:1795106700:line:63000",
+   "category": "crypto",
+   "title": "Bitcoin at 16:45 UTC: above $63,000?",
+   "outcomes": [
+    "Above $63,000",
+    "$63,000 or below"
+   ],
+   "closes_at": "2026-11-19T16:40:00Z",
+   "meta": {
+    "coin": "BTC",
+    "pair": "BTC-USD",
+    "target": "2026-11-19T16:45:00Z",
+    "line": 63000,
+    "price_at_creation": 63009.92,
+    "rule": "Opening price of the 1-minute Coinbase BTC-USD candle that starts at 16:45 UTC."
+   },
+   "created_tx": "1e8fd9151a1dc4cc90e15b2d83c2bfdfa3deddc649503438a50d49180ffed827",
+   "created_at": "2026-11-19T16:28:10.792Z"
+  },
+  "48": {
+   "id": 48,
+   "source_ref": "openmeteo:london:1795111200:temp:9:11",
+   "category": "weather",
+   "title": "London at 18:00 UTC: how warm?",
+   "outcomes": [
+    "Below 9°C",
+    "9 to 11°C",
+    "Above 11°C"
+   ],
+   "closes_at": "2026-11-19T17:30:00Z",
+   "meta": {
+    "city": "London",
+    "hour": "2026-11-19T18:00:00Z",
+    "forecast_c": 9.6,
+    "lo": 9,
+    "hi": 11,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "e136b94e08dd3325c60e9a345ac3fa6036a01d0260b68c59c78fd54da16a1de5",
+   "created_at": "2026-11-19T16:33:10.717Z"
+  },
+  "49": {
+   "id": 49,
+   "source_ref": "openmeteo:lagos:1795111200:temp:27:29",
+   "category": "weather",
+   "title": "Lagos at 18:00 UTC: how warm?",
+   "outcomes": [
+    "Below 27°C",
+    "27 to 29°C",
+    "Above 29°C"
+   ],
+   "closes_at": "2026-11-19T17:30:00Z",
+   "meta": {
+    "city": "Lagos",
+    "hour": "2026-11-19T18:00:00Z",
+    "forecast_c": 28,
+    "lo": 27,
+    "hi": 29,
+    "rule": "Open-Meteo hourly 2 m temperature for that hour (model data, read about 2 hours after the hour). Edges count as the middle band."
+   },
+   "created_tx": "020307924d85e31c221ed48c4876ce9af4a8a90ad71b62e7cfa13e9a80549f79",
+   "created_at": "2026-11-19T16:33:16.556Z"
+  }
+ },
+ "cards": [
+  {
+   "type": "CardsBought",
+   "event_id": 1,
+   "account": "3sv1jFSeTCehQpmpo4CXfVzKqSUcVodeW8yFsUSqu4oBxH7y2A",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "36bc82bb146e17179d221d7bcaccbc6b69a424bc68532bd8f647b1d8644e221f",
+   "at": "2026-11-19T15:40:10.842Z",
+   "via": "demo"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 1,
+   "account": "3sv1jFSeTCehQpmpo4CXfVzKqSUcVodeW8yFsUSqu4oBxH7y2A",
+   "outcome": 1,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "1b9c3233f552d76fbaa63c0fcb120a80f3afc047d282feeec7216007e6cd68ec",
+   "at": "2026-11-19T15:40:18.176Z",
+   "via": "demo"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 1,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 1,
+   "agent_id": null,
+   "tx": "8dd0aa66c28de9893cf84cfd0cb2229ce9c71c4594b0e4f39b9384ea63e4f6cd",
+   "at": "2026-11-19T15:40:30.559Z",
+   "via": "demo"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 29,
+   "account": "3sv1jFSeTCehQpmpo4CXfVzKqSUcVodeW8yFsUSqu4oBxH7y2A",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "7347b5bef19951a38b0422a76fb8c1c31b0d40dcfd4106c1019d157e9491aa60",
+   "at": "2026-11-19T15:40:59.302Z",
+   "via": "demo"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 1,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 2,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "3b4c4bfcff5ba7646683c3e4a0852421622fd4f0ddf155d91135827b49997d46",
+   "at": "2026-11-19T15:41:41.252Z",
+   "via": "pack"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 9,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 2,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "3b4c4bfcff5ba7646683c3e4a0852421622fd4f0ddf155d91135827b49997d46",
+   "at": "2026-11-19T15:41:41.252Z",
+   "via": "pack"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 31,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "3b4c4bfcff5ba7646683c3e4a0852421622fd4f0ddf155d91135827b49997d46",
+   "at": "2026-11-19T15:41:41.252Z",
+   "via": "pack"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 3,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": 1295,
+   "tx": "2869347348873b1ea8fd1a01cb899353c75af57d59f52e42d067976645c457e7",
+   "at": "2026-11-19T15:41:54.328Z",
+   "via": "buyer-agent"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 7,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 1,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": 1295,
+   "tx": "d77ee0dcae169a92eae8a84b3c3a7a545ba48529c39925352d72c58df171a32c",
+   "at": "2026-11-19T15:42:24.066Z",
+   "via": "buyer-agent"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 29,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 1,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": null,
+   "tx": "a396b92fdb35d681109bb3e1d8d5489e03e2ef310bef3d87061d2bcce3353ea1",
+   "at": "2026-11-19T15:56:12.564Z",
+   "via": "wallet"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 29,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 1,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 1,
+   "agent_id": null,
+   "tx": "af9511cee86640386243c263d8ac16b5d786888203ea8324023cfcf33e28b168",
+   "at": "2026-11-19T17:28:03.160Z",
+   "via": "wallet"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 29,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 1,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 2,
+   "agent_id": null,
+   "tx": "b62844370b791f6343346aa8ddd5e10795337f2655e8894af37686e320144703",
+   "at": "2026-11-19T17:33:43.287Z",
+   "via": "wallet"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 30,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": 1306,
+   "tx": "7d144b812da4a635e2cea872286db741a6c2e5f306896d1904c665ddbdf94ec1",
+   "at": "2026-11-19T17:34:04.972Z",
+   "via": "buyer-agent"
+  },
+  {
+   "type": "CardsBought",
+   "event_id": 21,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "outcome": 0,
+   "count": 1,
+   "paid": 2000000,
+   "serial_from": 0,
+   "agent_id": 1306,
+   "tx": "0cdb51abcd6b937928c142fdebf1e21560b0778611f9a94158e25d579eabd7a6",
+   "at": "2026-11-19T17:34:12.909Z",
+   "via": "buyer-agent"
+  }
+ ],
+ "claims": [
+  {
+   "type": "Claimed",
+   "event_id": 1,
+   "account": "3sv1jFSeTCehQpmpo4CXfVzKqSUcVodeW8yFsUSqu4oBxH7y2A",
+   "amount": 4000000,
+   "tx": "13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b",
+   "at": "2026-11-19T16:36:21.321Z"
+  },
+  {
+   "type": "Claimed",
+   "event_id": 1,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "amount": 4000000,
+   "tx": "13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b",
+   "at": "2026-11-19T16:36:21.321Z"
+  },
+  {
+   "type": "Claimed",
+   "event_id": 3,
+   "account": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "amount": 2000000,
+   "tx": "e9f246e20b86a097fe1879e5e0f2044aaf5020cefceb221e660615aee1cd1902",
+   "at": "2026-11-19T16:36:50.372Z"
+  }
+ ],
+ "results": [
+  {
+   "type": "ResultProposed",
+   "event_id": 0,
+   "winning_outcome": 1,
+   "evidence_hash": "6ea50ac54b5fa3abc6a12feac50a7664ffd345d9db77205bb45e519591e67b45",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "4c8f5313c29e4c33e9fe40dba95fcd8baa07acc302869eff6ca6192630fc4947",
+   "at": "2026-11-19T15:49:52.814Z",
+   "evidence_sha256": "6ea50ac54b5fa3abc6a12feac50a7664ffd345d9db77205bb45e519591e67b45",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "BTC-USD opened at $62,804 at 15:45 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 2,
+   "winning_outcome": 1,
+   "evidence_hash": "8d3b8263d7d355def15a0a67ccb8e55ac5139683a4666b5fd53e2d50c2459b3a",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "e733cb1a269a8c5d818c90aeee15106ff6316c6c1d45ec892c74fb99d99adf93",
+   "at": "2026-11-19T15:50:00.228Z",
+   "evidence_sha256": "8d3b8263d7d355def15a0a67ccb8e55ac5139683a4666b5fd53e2d50c2459b3a",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "ETH-USD opened at $1,774 at 15:45 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 4,
+   "winning_outcome": 1,
+   "evidence_hash": "e3f5756ca58fa01ff3f96024978547a4751da23a8736d0423f882cbd1ae30943",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "a46d1b393c682ae654f5fa2963f82a20d0cabd1efab4be5b365b04aacead722b",
+   "at": "2026-11-19T15:50:06.372Z",
+   "evidence_sha256": "e3f5756ca58fa01ff3f96024978547a4751da23a8736d0423f882cbd1ae30943",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "SOL-USD opened at $73.55 at 15:45 UTC"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 0,
+   "winning_outcome": 1,
+   "tx": "85c42c86b1e6677bff7f715af60ba5e24b42b706d2c99cc660beea7c101e71f0",
+   "at": "2026-11-19T15:53:30.276Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 2,
+   "winning_outcome": 1,
+   "tx": "bc87191d4654ae8a9dbe6e354917710b51695f0a6ff6275b45a11eb21fb1ea03",
+   "at": "2026-11-19T15:53:38.231Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 4,
+   "winning_outcome": 1,
+   "tx": "111f194ac699f089cbf8bca8985d1620553288d3a3b62c13cd8276206316a40a",
+   "at": "2026-11-19T15:53:47.176Z"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 39,
+   "winning_outcome": 0,
+   "evidence_hash": "e0a4d006afed8a12d2b56c4fb0eb9e37efd0a4339ae49c2cb71649d3af150945",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "2e48dcc8fd876d2fb9ee6daf0e9a74d261dc0d7d0848142b647cd8232a7a86b9",
+   "at": "2026-11-19T16:08:47.512Z",
+   "evidence_sha256": "e0a4d006afed8a12d2b56c4fb0eb9e37efd0a4339ae49c2cb71649d3af150945",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "BTC-USD opened at $63,033 at 16:00 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 40,
+   "winning_outcome": 0,
+   "evidence_hash": "53e67c76a33fe2974ac5b90c6465934753cafd0a01b9b0f47fd93c21a72e2b9f",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "ab42e55eec99d3a4c0ec4ba02b5a5d0530173d98394438c13af9724937c6310e",
+   "at": "2026-11-19T16:09:06.093Z",
+   "evidence_sha256": "53e67c76a33fe2974ac5b90c6465934753cafd0a01b9b0f47fd93c21a72e2b9f",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "ETH-USD opened at $1,780 at 16:00 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 41,
+   "winning_outcome": 1,
+   "evidence_hash": "ca2c9170c13f556a684394d5b1455ec0587cf2b97d8346ae89c7074dc51179b7",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "b46c80e936edebee604ed63c03bd9d0102e3114744afe47c807c3e94d502bd66",
+   "at": "2026-11-19T16:09:20.188Z",
+   "evidence_sha256": "ca2c9170c13f556a684394d5b1455ec0587cf2b97d8346ae89c7074dc51179b7",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "SOL-USD opened at $73.47 at 16:00 UTC"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 39,
+   "winning_outcome": 0,
+   "tx": "eb49491080e302ed191e8a2a8cae766209f6bb75eb040dc59689903b6cb8ce30",
+   "at": "2026-11-19T16:11:58.476Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 40,
+   "winning_outcome": 0,
+   "tx": "6150159a72f2fc6f4a67cbf59d9abd9269eb369bceda3d5a39e65e43f2ef460d",
+   "at": "2026-11-19T16:12:42.356Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 41,
+   "winning_outcome": 1,
+   "tx": "c8a1624a85f9f2f5b79554cc30925f7130c316bf1a7938d80aa7950887a5a368",
+   "at": "2026-11-19T16:12:50.498Z"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 42,
+   "winning_outcome": 0,
+   "evidence_hash": "92b9e77a300a6b65d6da984e5795428d1a0b2e1ecab887eb3f5203dab94a844a",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "6779995dcec02b34b455cdcd4dc1776e822f0b7e04b70effaa83ec0d09feefef",
+   "at": "2026-11-19T16:17:12.419Z",
+   "evidence_sha256": "92b9e77a300a6b65d6da984e5795428d1a0b2e1ecab887eb3f5203dab94a844a",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:14:00Z&end=2026-11-19T16:17:00Z",
+   "summary": "BTC-USD opened at $63,084 at 16:15 UTC"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 42,
+   "winning_outcome": 0,
+   "tx": "1a84fb90ba8adf3cc66796eb8e06b5703852702e84104e0b999015646f97f785",
+   "at": "2026-11-19T16:20:32.359Z"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 1,
+   "winning_outcome": 0,
+   "evidence_hash": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "7d214ba5dd3d86dc33e454102511802f83eedd393cef863e602d7a5181793359",
+   "at": "2026-11-19T16:32:10.672Z",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "BTC-USD opened at $63,028 at 16:30 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 3,
+   "winning_outcome": 0,
+   "evidence_hash": "9f6131e697b8bfe314aff986a980539dad81e0aaa5ea7afe0ff1968f15b4eef2",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "eb0e3dbf55a915a2958fddabca27c50bd59ca4ac9904bd4c9f928ad048c7cee1",
+   "at": "2026-11-19T16:32:18.460Z",
+   "evidence_sha256": "9f6131e697b8bfe314aff986a980539dad81e0aaa5ea7afe0ff1968f15b4eef2",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "ETH-USD opened at $1,778 at 16:30 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 5,
+   "winning_outcome": 0,
+   "evidence_hash": "5e5403d0165370dd2a956137add7e28ff5ef4361a50df0627236a89c56de91cc",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "8bc674603c6eeb533dc9d16912174458e030b1e9b8bbc07f262b7ed145a7926f",
+   "at": "2026-11-19T16:32:56.436Z",
+   "evidence_sha256": "5e5403d0165370dd2a956137add7e28ff5ef4361a50df0627236a89c56de91cc",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "SOL-USD opened at $73.54 at 16:30 UTC"
+  },
+  {
+   "type": "ResultProposed",
+   "event_id": 43,
+   "winning_outcome": 1,
+   "evidence_hash": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "resolver": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+   "agent_id": 1296,
+   "tx": "46443ba711245c272bf5b957fd094aeb4ae34d61eaabb48203fa8ce7be0d7593",
+   "at": "2026-11-19T16:33:04.392Z",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "BTC-USD opened at $63,028 at 16:30 UTC"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 1,
+   "winning_outcome": 0,
+   "tx": "c79b166bdee3b8b955a968d0b78574209f0476676183bf2e2e23cd020ba6d534",
+   "at": "2026-11-19T16:36:11.194Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 3,
+   "winning_outcome": 0,
+   "tx": "4c7f88139572801cf51c91c80e06f05762df9394bd949ea17aecfbf4e5a18424",
+   "at": "2026-11-19T16:36:39.864Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 5,
+   "winning_outcome": 0,
+   "tx": "62131b4665397f5c8126408e31c7d98d9c1f640c45d383f352f023989c1cd95e",
+   "at": "2026-11-19T16:36:56.339Z"
+  },
+  {
+   "type": "Resolved",
+   "event_id": 43,
+   "winning_outcome": 1,
+   "tx": "074df527be0c8b28f96c24ccbb094d5db3ffd9dc7cbd6a045e500d33aa9bae95",
+   "at": "2026-11-19T16:37:08.915Z"
+  }
+ ],
+ "txs": {
+  "36bc82bb146e17179d221d7bcaccbc6b69a424bc68532bd8f647b1d8644e221f": {
+   "logs": 1,
+   "at": "2026-11-19T15:40:10.842Z",
+   "via": "demo"
+  },
+  "1b9c3233f552d76fbaa63c0fcb120a80f3afc047d282feeec7216007e6cd68ec": {
+   "logs": 1,
+   "at": "2026-11-19T15:40:18.176Z",
+   "via": "demo"
+  },
+  "8dd0aa66c28de9893cf84cfd0cb2229ce9c71c4594b0e4f39b9384ea63e4f6cd": {
+   "logs": 1,
+   "at": "2026-11-19T15:40:30.559Z",
+   "via": "demo"
+  },
+  "7347b5bef19951a38b0422a76fb8c1c31b0d40dcfd4106c1019d157e9491aa60": {
+   "logs": 1,
+   "at": "2026-11-19T15:40:59.302Z",
+   "via": "demo"
+  },
+  "3b4c4bfcff5ba7646683c3e4a0852421622fd4f0ddf155d91135827b49997d46": {
+   "logs": 3,
+   "at": "2026-11-19T15:41:41.252Z",
+   "via": "pack"
+  },
+  "2869347348873b1ea8fd1a01cb899353c75af57d59f52e42d067976645c457e7": {
+   "logs": 1,
+   "at": "2026-11-19T15:41:54.328Z",
+   "via": "buyer-agent"
+  },
+  "d77ee0dcae169a92eae8a84b3c3a7a545ba48529c39925352d72c58df171a32c": {
+   "logs": 1,
+   "at": "2026-11-19T15:42:24.066Z",
+   "via": "buyer-agent"
+  },
+  "4c8f5313c29e4c33e9fe40dba95fcd8baa07acc302869eff6ca6192630fc4947": {
+   "logs": 1,
+   "at": "2026-11-19T15:49:52.814Z",
+   "evidence_sha256": "6ea50ac54b5fa3abc6a12feac50a7664ffd345d9db77205bb45e519591e67b45",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "BTC-USD opened at $62,804 at 15:45 UTC"
+  },
+  "e733cb1a269a8c5d818c90aeee15106ff6316c6c1d45ec892c74fb99d99adf93": {
+   "logs": 1,
+   "at": "2026-11-19T15:50:00.228Z",
+   "evidence_sha256": "8d3b8263d7d355def15a0a67ccb8e55ac5139683a4666b5fd53e2d50c2459b3a",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "ETH-USD opened at $1,774 at 15:45 UTC"
+  },
+  "a46d1b393c682ae654f5fa2963f82a20d0cabd1efab4be5b365b04aacead722b": {
+   "logs": 1,
+   "at": "2026-11-19T15:50:06.372Z",
+   "evidence_sha256": "e3f5756ca58fa01ff3f96024978547a4751da23a8736d0423f882cbd1ae30943",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:44:00Z&end=2026-11-19T15:47:00Z",
+   "summary": "SOL-USD opened at $73.55 at 15:45 UTC"
+  },
+  "85c42c86b1e6677bff7f715af60ba5e24b42b706d2c99cc660beea7c101e71f0": {
+   "logs": 1,
+   "at": "2026-11-19T15:53:30.276Z"
+  },
+  "bc87191d4654ae8a9dbe6e354917710b51695f0a6ff6275b45a11eb21fb1ea03": {
+   "logs": 1,
+   "at": "2026-11-19T15:53:38.231Z"
+  },
+  "111f194ac699f089cbf8bca8985d1620553288d3a3b62c13cd8276206316a40a": {
+   "logs": 1,
+   "at": "2026-11-19T15:53:47.176Z"
+  },
+  "a396b92fdb35d681109bb3e1d8d5489e03e2ef310bef3d87061d2bcce3353ea1": {
+   "logs": 1,
+   "at": "2026-11-19T15:56:12.564Z",
+   "via": "wallet"
+  },
+  "2e48dcc8fd876d2fb9ee6daf0e9a74d261dc0d7d0848142b647cd8232a7a86b9": {
+   "logs": 1,
+   "at": "2026-11-19T16:08:47.512Z",
+   "evidence_sha256": "e0a4d006afed8a12d2b56c4fb0eb9e37efd0a4339ae49c2cb71649d3af150945",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "BTC-USD opened at $63,033 at 16:00 UTC"
+  },
+  "ab42e55eec99d3a4c0ec4ba02b5a5d0530173d98394438c13af9724937c6310e": {
+   "logs": 1,
+   "at": "2026-11-19T16:09:06.093Z",
+   "evidence_sha256": "53e67c76a33fe2974ac5b90c6465934753cafd0a01b9b0f47fd93c21a72e2b9f",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "ETH-USD opened at $1,780 at 16:00 UTC"
+  },
+  "b46c80e936edebee604ed63c03bd9d0102e3114744afe47c807c3e94d502bd66": {
+   "logs": 1,
+   "at": "2026-11-19T16:09:20.188Z",
+   "evidence_sha256": "ca2c9170c13f556a684394d5b1455ec0587cf2b97d8346ae89c7074dc51179b7",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T15:59:00Z&end=2026-11-19T16:02:00Z",
+   "summary": "SOL-USD opened at $73.47 at 16:00 UTC"
+  },
+  "eb49491080e302ed191e8a2a8cae766209f6bb75eb040dc59689903b6cb8ce30": {
+   "logs": 1,
+   "at": "2026-11-19T16:11:58.476Z"
+  },
+  "6150159a72f2fc6f4a67cbf59d9abd9269eb369bceda3d5a39e65e43f2ef460d": {
+   "logs": 1,
+   "at": "2026-11-19T16:12:42.356Z"
+  },
+  "c8a1624a85f9f2f5b79554cc30925f7130c316bf1a7938d80aa7950887a5a368": {
+   "logs": 1,
+   "at": "2026-11-19T16:12:50.498Z"
+  },
+  "6779995dcec02b34b455cdcd4dc1776e822f0b7e04b70effaa83ec0d09feefef": {
+   "logs": 1,
+   "at": "2026-11-19T16:17:12.419Z",
+   "evidence_sha256": "92b9e77a300a6b65d6da984e5795428d1a0b2e1ecab887eb3f5203dab94a844a",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:14:00Z&end=2026-11-19T16:17:00Z",
+   "summary": "BTC-USD opened at $63,084 at 16:15 UTC"
+  },
+  "1a84fb90ba8adf3cc66796eb8e06b5703852702e84104e0b999015646f97f785": {
+   "logs": 1,
+   "at": "2026-11-19T16:20:32.359Z"
+  },
+  "7d214ba5dd3d86dc33e454102511802f83eedd393cef863e602d7a5181793359": {
+   "logs": 1,
+   "at": "2026-11-19T16:32:10.672Z",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "BTC-USD opened at $63,028 at 16:30 UTC"
+  },
+  "eb0e3dbf55a915a2958fddabca27c50bd59ca4ac9904bd4c9f928ad048c7cee1": {
+   "logs": 1,
+   "at": "2026-11-19T16:32:18.460Z",
+   "evidence_sha256": "9f6131e697b8bfe314aff986a980539dad81e0aaa5ea7afe0ff1968f15b4eef2",
+   "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "ETH-USD opened at $1,778 at 16:30 UTC"
+  },
+  "8bc674603c6eeb533dc9d16912174458e030b1e9b8bbc07f262b7ed145a7926f": {
+   "logs": 1,
+   "at": "2026-11-19T16:32:56.436Z",
+   "evidence_sha256": "5e5403d0165370dd2a956137add7e28ff5ef4361a50df0627236a89c56de91cc",
+   "source_url": "https://api.exchange.coinbase.com/products/SOL-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "SOL-USD opened at $73.54 at 16:30 UTC"
+  },
+  "46443ba711245c272bf5b957fd094aeb4ae34d61eaabb48203fa8ce7be0d7593": {
+   "logs": 1,
+   "at": "2026-11-19T16:33:04.392Z",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2",
+   "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=60&start=2026-11-19T16:29:00Z&end=2026-11-19T16:32:00Z",
+   "summary": "BTC-USD opened at $63,028 at 16:30 UTC"
+  },
+  "c79b166bdee3b8b955a968d0b78574209f0476676183bf2e2e23cd020ba6d534": {
+   "logs": 1,
+   "at": "2026-11-19T16:36:11.194Z"
+  },
+  "13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b": {
+   "logs": 2,
+   "at": "2026-11-19T16:36:21.321Z"
+  },
+  "4c7f88139572801cf51c91c80e06f05762df9394bd949ea17aecfbf4e5a18424": {
+   "logs": 1,
+   "at": "2026-11-19T16:36:39.864Z"
+  },
+  "e9f246e20b86a097fe1879e5e0f2044aaf5020cefceb221e660615aee1cd1902": {
+   "logs": 1,
+   "at": "2026-11-19T16:36:50.372Z"
+  },
+  "62131b4665397f5c8126408e31c7d98d9c1f640c45d383f352f023989c1cd95e": {
+   "logs": 1,
+   "at": "2026-11-19T16:36:56.339Z"
+  },
+  "074df527be0c8b28f96c24ccbb094d5db3ffd9dc7cbd6a045e500d33aa9bae95": {
+   "logs": 1,
+   "at": "2026-11-19T16:37:08.915Z"
+  },
+  "af9511cee86640386243c263d8ac16b5d786888203ea8324023cfcf33e28b168": {
+   "logs": 1,
+   "at": "2026-11-19T17:28:03.160Z",
+   "via": "wallet"
+  },
+  "d7c9a4f026558897ea7c66ac5ad154aaa72a5c538f151f296859fd051b8c707a": {
+   "logs": 0,
+   "at": "2026-11-19T17:28:19.193Z",
+   "via": "wallet"
+  },
+  "aa3848de13376876baa0511da9a3835facc41626fa651639bcd0964b81b277e1": {
+   "logs": 0,
+   "at": "2026-11-19T17:28:29.298Z",
+   "via": "wallet"
+  },
+  "52caca2156700530678e711a3b7cd3c1a6c2b07004d9568b4eb2a3fc41b2d9eb": {
+   "logs": 1,
+   "at": "2026-11-19T17:28:37.242Z",
+   "via": "wallet"
+  },
+  "624d4ff3db4e80674a770e95b2081ff1858571098b258c5e9e038fb96b25d494": {
+   "logs": 0,
+   "at": "2026-11-19T17:28:47.956Z",
+   "via": "wallet"
+  },
+  "b62844370b791f6343346aa8ddd5e10795337f2655e8894af37686e320144703": {
+   "logs": 1,
+   "at": "2026-11-19T17:33:43.287Z",
+   "via": "wallet"
+  },
+  "7d144b812da4a635e2cea872286db741a6c2e5f306896d1904c665ddbdf94ec1": {
+   "logs": 1,
+   "at": "2026-11-19T17:34:04.972Z",
+   "via": "buyer-agent"
+  },
+  "0cdb51abcd6b937928c142fdebf1e21560b0778611f9a94158e25d579eabd7a6": {
+   "logs": 1,
+   "at": "2026-11-19T17:34:12.909Z",
+   "via": "buyer-agent"
+  }
+ },
+ "agent_log": [
+  {
+   "at": "2026-11-19T15:25:06.326Z",
+   "agent": "feed",
+   "text": "New event #0 (crypto): Bitcoin at 15:45 UTC: above $63,375?",
+   "event_id": 0,
+   "tx": "119082c2487c038d72e89ca221b87d3460d0b9672232ddf55f277a825ea9a87d",
+   "link": "https://ccdexplorer.io/testnet/transaction/119082c2487c038d72e89ca221b87d3460d0b9672232ddf55f277a825ea9a87d"
+  },
+  {
+   "at": "2026-11-19T15:25:12.332Z",
+   "agent": "feed",
+   "text": "New event #1 (crypto): Bitcoin at 16:30 UTC: where will it be?",
+   "event_id": 1,
+   "tx": "d2d6af28c01dfe40e5cf60f551d59d5e23d35c4547e2b63eada9e479750e57a7",
+   "link": "https://ccdexplorer.io/testnet/transaction/d2d6af28c01dfe40e5cf60f551d59d5e23d35c4547e2b63eada9e479750e57a7"
+  },
+  {
+   "at": "2026-11-19T15:25:20.305Z",
+   "agent": "feed",
+   "text": "New event #2 (crypto): Ether at 15:45 UTC: above $1,789?",
+   "event_id": 2,
+   "tx": "da423455bd56870f4bd9218b4ab3ddbe6c0e1227caaba668cdefef1391e5e9c8",
+   "link": "https://ccdexplorer.io/testnet/transaction/da423455bd56870f4bd9218b4ab3ddbe6c0e1227caaba668cdefef1391e5e9c8"
+  },
+  {
+   "at": "2026-11-19T15:25:26.223Z",
+   "agent": "feed",
+   "text": "New event #3 (crypto): Ether at 16:30 UTC: where will it be?",
+   "event_id": 3,
+   "tx": "2da0f34f58dca1f05ad99773cd820e36ea1938a8baf0e7b8454af3f5e4607700",
+   "link": "https://ccdexplorer.io/testnet/transaction/2da0f34f58dca1f05ad99773cd820e36ea1938a8baf0e7b8454af3f5e4607700"
+  },
+  {
+   "at": "2026-11-19T15:25:32.100Z",
+   "agent": "feed",
+   "text": "New event #4 (crypto): Solana at 15:45 UTC: above $74.70?",
+   "event_id": 4,
+   "tx": "632b805e1e83cf77df53884c793314c72ce84cae54f8209b0a144c47b7599809",
+   "link": "https://ccdexplorer.io/testnet/transaction/632b805e1e83cf77df53884c793314c72ce84cae54f8209b0a144c47b7599809"
+  },
+  {
+   "at": "2026-11-19T15:25:38.110Z",
+   "agent": "feed",
+   "text": "New event #5 (crypto): Solana at 16:30 UTC: where will it be?",
+   "event_id": 5,
+   "tx": "562419e6a756e487b0693201005e90f7e8b331364c34d5f520a2886043fbbe20",
+   "link": "https://ccdexplorer.io/testnet/transaction/562419e6a756e487b0693201005e90f7e8b331364c34d5f520a2886043fbbe20"
+  },
+  {
+   "at": "2026-11-19T15:25:44.100Z",
+   "agent": "feed",
+   "text": "New event #6 (weather): Rain in London between 17:00 and 18:00 UTC?",
+   "event_id": 6,
+   "tx": "f6d8fc56284294eaa0390548234299c037d5ab99e895db82b8d688b0bf0ac52f",
+   "link": "https://ccdexplorer.io/testnet/transaction/f6d8fc56284294eaa0390548234299c037d5ab99e895db82b8d688b0bf0ac52f"
+  },
+  {
+   "at": "2026-11-19T15:25:50.252Z",
+   "agent": "feed",
+   "text": "New event #7 (weather): London at 17:00 UTC: how warm?",
+   "event_id": 7,
+   "tx": "cf492e20caabf3bcf0c7525e9fa88c57a9138498cf3c0e723c9f7e04ce4a3216",
+   "link": "https://ccdexplorer.io/testnet/transaction/cf492e20caabf3bcf0c7525e9fa88c57a9138498cf3c0e723c9f7e04ce4a3216"
+  },
+  {
+   "at": "2026-11-19T15:25:58.025Z",
+   "agent": "feed",
+   "text": "New event #8 (weather): Rain in Lagos between 17:00 and 18:00 UTC?",
+   "event_id": 8,
+   "tx": "791c505d9bab49d23c0a2c8d19b3806671a80db8fe1205d22b068d18e2b40136",
+   "link": "https://ccdexplorer.io/testnet/transaction/791c505d9bab49d23c0a2c8d19b3806671a80db8fe1205d22b068d18e2b40136"
+  },
+  {
+   "at": "2026-11-19T15:26:04.143Z",
+   "agent": "feed",
+   "text": "New event #9 (weather): Lagos at 17:00 UTC: how warm?",
+   "event_id": 9,
+   "tx": "7c48aba011cb2b4153976fd9e379c40d9c694990ab34c2178be30a7b3fc79a45",
+   "link": "https://ccdexplorer.io/testnet/transaction/7c48aba011cb2b4153976fd9e379c40d9c694990ab34c2178be30a7b3fc79a45"
+  },
+  {
+   "at": "2026-11-19T15:26:10.318Z",
+   "agent": "feed",
+   "text": "New event #10 (weather): Rain in New York between 17:00 and 18:00 UTC?",
+   "event_id": 10,
+   "tx": "fa8a621274550124f393853062941442d22e290047965646afbeecef5790b3ce",
+   "link": "https://ccdexplorer.io/testnet/transaction/fa8a621274550124f393853062941442d22e290047965646afbeecef5790b3ce"
+  },
+  {
+   "at": "2026-11-19T15:26:18.289Z",
+   "agent": "feed",
+   "text": "New event #11 (weather): New York at 17:00 UTC: how warm?",
+   "event_id": 11,
+   "tx": "7440d412719ec56b1795e2f37e8b55e9a64fe591b242755f04bbcfbb9e8ab65b",
+   "link": "https://ccdexplorer.io/testnet/transaction/7440d412719ec56b1795e2f37e8b55e9a64fe591b242755f04bbcfbb9e8ab65b"
+  },
+  {
+   "at": "2026-11-19T15:26:26.192Z",
+   "agent": "feed",
+   "text": "New event #12 (weather): Rain in Tokyo between 17:00 and 18:00 UTC?",
+   "event_id": 12,
+   "tx": "3eaa800698d75d2208e5764ff52fbd385f35e7036f9f1c7e6e8d5194422ce619",
+   "link": "https://ccdexplorer.io/testnet/transaction/3eaa800698d75d2208e5764ff52fbd385f35e7036f9f1c7e6e8d5194422ce619"
+  },
+  {
+   "at": "2026-11-19T15:26:32.257Z",
+   "agent": "feed",
+   "text": "New event #13 (weather): Tokyo at 17:00 UTC: how warm?",
+   "event_id": 13,
+   "tx": "289c7196c5b9ea6c083cd5f7167376453a5456d0c416b910e9999820efb25fb2",
+   "link": "https://ccdexplorer.io/testnet/transaction/289c7196c5b9ea6c083cd5f7167376453a5456d0c416b910e9999820efb25fb2"
+  },
+  {
+   "at": "2026-11-19T15:26:52.255Z",
+   "agent": "feed",
+   "text": "New event #14 (football): Manchester City v Fulham",
+   "event_id": 14,
+   "tx": "cfbf5f3b509b3043307fc642dc14e47d452fce66fcb21da95801854a2ee7c709",
+   "link": "https://ccdexplorer.io/testnet/transaction/cfbf5f3b509b3043307fc642dc14e47d452fce66fcb21da95801854a2ee7c709"
+  },
+  {
+   "at": "2026-11-19T15:27:00.192Z",
+   "agent": "feed",
+   "text": "New event #15 (football): AFC Bournemouth v Nottingham Forest",
+   "event_id": 15,
+   "tx": "897c3501fafc7e725c7a09529a3b0b13b7721a46dbdd2db7d50929a3b62b6c7b",
+   "link": "https://ccdexplorer.io/testnet/transaction/897c3501fafc7e725c7a09529a3b0b13b7721a46dbdd2db7d50929a3b62b6c7b"
+  },
+  {
+   "at": "2026-11-19T15:27:06.307Z",
+   "agent": "feed",
+   "text": "New event #16 (football): Aston Villa v Sunderland",
+   "event_id": 16,
+   "tx": "6def08d3f25670356af44ca7caa7590375017fe6f74a6f6b91e4681fa0ffcb6f",
+   "link": "https://ccdexplorer.io/testnet/transaction/6def08d3f25670356af44ca7caa7590375017fe6f74a6f6b91e4681fa0ffcb6f"
+  },
+  {
+   "at": "2026-11-19T15:27:18.442Z",
+   "agent": "feed",
+   "text": "New event #17 (football): Chelsea v Leeds United",
+   "event_id": 17,
+   "tx": "b15e19302901b4be4c40ce5923e577a563086cb9bb76e7e5432fea74f9f66130",
+   "link": "https://ccdexplorer.io/testnet/transaction/b15e19302901b4be4c40ce5923e577a563086cb9bb76e7e5432fea74f9f66130"
+  },
+  {
+   "at": "2026-11-19T15:27:30.417Z",
+   "agent": "feed",
+   "text": "New event #18 (football): Athletic Club v Espanyol",
+   "event_id": 18,
+   "tx": "bd5f4bc5ac6d74aaac9fc689085cff4fc23c26e652d6b3a8b7ab203592bdcb1b",
+   "link": "https://ccdexplorer.io/testnet/transaction/bd5f4bc5ac6d74aaac9fc689085cff4fc23c26e652d6b3a8b7ab203592bdcb1b"
+  },
+  {
+   "at": "2026-11-19T15:27:38.308Z",
+   "agent": "feed",
+   "text": "New event #19 (football): Alavés v Deportivo",
+   "event_id": 19,
+   "tx": "29264842f2b035259162124045863f1cd7112e7115ec4bd46d96ab1491a9df7e",
+   "link": "https://ccdexplorer.io/testnet/transaction/29264842f2b035259162124045863f1cd7112e7115ec4bd46d96ab1491a9df7e"
+  },
+  {
+   "at": "2026-11-19T15:27:46.314Z",
+   "agent": "feed",
+   "text": "New event #20 (football): Rayo Vallecano v Valencia",
+   "event_id": 20,
+   "tx": "586b9a17c773d42a0458f32ee6dcc6104e230531f711b9625623f115cf6aea53",
+   "link": "https://ccdexplorer.io/testnet/transaction/586b9a17c773d42a0458f32ee6dcc6104e230531f711b9625623f115cf6aea53"
+  },
+  {
+   "at": "2026-11-19T15:27:54.338Z",
+   "agent": "feed",
+   "text": "New event #21 (football): Bayern Munich v FC Cologne",
+   "event_id": 21,
+   "tx": "785a8ce21182647c66c51bbe5baf0cc4c8b39d7641d6cc6f30955b4dd1626179",
+   "link": "https://ccdexplorer.io/testnet/transaction/785a8ce21182647c66c51bbe5baf0cc4c8b39d7641d6cc6f30955b4dd1626179"
+  },
+  {
+   "at": "2026-11-19T15:28:04.435Z",
+   "agent": "feed",
+   "text": "New event #22 (football): 1. FC Union Berlin v RB Leipzig",
+   "event_id": 22,
+   "tx": "f23fd18542b4436e78ad83ee7eb86b21995b7caede6e3a42566eb0d2c06666db",
+   "link": "https://ccdexplorer.io/testnet/transaction/f23fd18542b4436e78ad83ee7eb86b21995b7caede6e3a42566eb0d2c06666db"
+  },
+  {
+   "at": "2026-11-19T15:28:12.402Z",
+   "agent": "feed",
+   "text": "New event #23 (football): Bayer Leverkusen v SC Paderborn 07",
+   "event_id": 23,
+   "tx": "a628a54c1a53045874601b6d0b0bddf2b68914d361322660b7278fc4f7e8b1d7",
+   "link": "https://ccdexplorer.io/testnet/transaction/a628a54c1a53045874601b6d0b0bddf2b68914d361322660b7278fc4f7e8b1d7"
+  },
+  {
+   "at": "2026-11-19T15:28:20.370Z",
+   "agent": "feed",
+   "text": "New event #24 (football): Como v Cagliari",
+   "event_id": 24,
+   "tx": "3ef8f25f681b029d345541c429ddf528e1b66323b59710d40afef0a7d2a6707a",
+   "link": "https://ccdexplorer.io/testnet/transaction/3ef8f25f681b029d345541c429ddf528e1b66323b59710d40afef0a7d2a6707a"
+  },
+  {
+   "at": "2026-11-19T15:28:32.689Z",
+   "agent": "feed",
+   "text": "New event #25 (football): Lazio v Lecce",
+   "event_id": 25,
+   "tx": "7a9b0c9964f126f56bb5b980a1a910f34b5de0c1dcf6022a354aa0b0a08c40b4",
+   "link": "https://ccdexplorer.io/testnet/transaction/7a9b0c9964f126f56bb5b980a1a910f34b5de0c1dcf6022a354aa0b0a08c40b4"
+  },
+  {
+   "at": "2026-11-19T15:28:40.232Z",
+   "agent": "feed",
+   "text": "New event #26 (football): Parma v AS Roma",
+   "event_id": 26,
+   "tx": "fab469ff09a52b55dd24bc6ec3fcd3d898ced462dac3bda5f9cefde5fdf66086",
+   "link": "https://ccdexplorer.io/testnet/transaction/fab469ff09a52b55dd24bc6ec3fcd3d898ced462dac3bda5f9cefde5fdf66086"
+  },
+  {
+   "at": "2026-11-19T15:28:46.253Z",
+   "agent": "feed",
+   "text": "New event #27 (football): Troyes v Le Havre AC",
+   "event_id": 27,
+   "tx": "b1f5937d73e94ea4eb9029a17866953de0eb8b334118a801c22b61079e38a577",
+   "link": "https://ccdexplorer.io/testnet/transaction/b1f5937d73e94ea4eb9029a17866953de0eb8b334118a801c22b61079e38a577"
+  },
+  {
+   "at": "2026-11-19T15:28:56.999Z",
+   "agent": "feed",
+   "text": "New event #28 (football): Nice v Paris Saint-Germain",
+   "event_id": 28,
+   "tx": "77909f571e5c91dd9c5d7d42d924ca395627dade90f733178015d25715b02d17",
+   "link": "https://ccdexplorer.io/testnet/transaction/77909f571e5c91dd9c5d7d42d924ca395627dade90f733178015d25715b02d17"
+  },
+  {
+   "at": "2026-11-19T15:29:04.932Z",
+   "agent": "feed",
+   "text": "New event #29 (football): Orlando City SC v FC Cincinnati",
+   "event_id": 29,
+   "tx": "2b618d39caa59a9b8520b8c6486a10b66b1ecb366d29eb37920bd40391f24e17",
+   "link": "https://ccdexplorer.io/testnet/transaction/2b618d39caa59a9b8520b8c6486a10b66b1ecb366d29eb37920bd40391f24e17"
+  },
+  {
+   "at": "2026-11-19T15:29:15.356Z",
+   "agent": "feed",
+   "text": "New event #30 (football): Seattle Sounders FC v Real Salt Lake",
+   "event_id": 30,
+   "tx": "468e5fb2ac83e0f8f417a4747cd32445f5980e1e7c0dc4193cc2abf77b8c3e6e",
+   "link": "https://ccdexplorer.io/testnet/transaction/468e5fb2ac83e0f8f417a4747cd32445f5980e1e7c0dc4193cc2abf77b8c3e6e"
+  },
+  {
+   "at": "2026-11-19T15:29:26.198Z",
+   "agent": "feed",
+   "text": "New event #31 (basketball): Memphis Grizzlies v Golden State Warriors",
+   "event_id": 31,
+   "tx": "e5a702a2078be488346892e3ee4a9d4209c7c62103d7f588ba25a7e21e4ea840",
+   "link": "https://ccdexplorer.io/testnet/transaction/e5a702a2078be488346892e3ee4a9d4209c7c62103d7f588ba25a7e21e4ea840"
+  },
+  {
+   "at": "2026-11-19T15:29:32.291Z",
+   "agent": "feed",
+   "text": "New event #32 (basketball): Milwaukee Bucks v Portland Trail Blazers",
+   "event_id": 32,
+   "tx": "6ca331978bc344075d017908b0e52b87d651ee359a2694f65f172e69fc490357",
+   "link": "https://ccdexplorer.io/testnet/transaction/6ca331978bc344075d017908b0e52b87d651ee359a2694f65f172e69fc490357"
+  },
+  {
+   "at": "2026-11-19T15:29:38.158Z",
+   "agent": "feed",
+   "text": "New event #33 (basketball): Minnesota Timberwolves v New York Knicks",
+   "event_id": 33,
+   "tx": "3fb98ee114d187db99963ac5967f23fd59d2b7577242bda888d3e96d6a196389",
+   "link": "https://ccdexplorer.io/testnet/transaction/3fb98ee114d187db99963ac5967f23fd59d2b7577242bda888d3e96d6a196389"
+  },
+  {
+   "at": "2026-11-19T15:29:44.238Z",
+   "agent": "feed",
+   "text": "New event #34 (basketball): San Antonio Spurs v LA Clippers",
+   "event_id": 34,
+   "tx": "5b3ba6f1a04a655498582b592cb37c2ee84ac24b4e3ee4c915f4022043e0deee",
+   "link": "https://ccdexplorer.io/testnet/transaction/5b3ba6f1a04a655498582b592cb37c2ee84ac24b4e3ee4c915f4022043e0deee"
+  },
+  {
+   "at": "2026-11-19T15:29:50.426Z",
+   "agent": "feed",
+   "text": "New event #35 (hockey): Toronto Maple Leafs v Los Angeles Kings",
+   "event_id": 35,
+   "tx": "4083c389d5021b0061cebb0a1d45a3450985a50fb8288ef18507401a76e38385",
+   "link": "https://ccdexplorer.io/testnet/transaction/4083c389d5021b0061cebb0a1d45a3450985a50fb8288ef18507401a76e38385"
+  },
+  {
+   "at": "2026-11-19T15:29:56.423Z",
+   "agent": "feed",
+   "text": "New event #36 (hockey): Ottawa Senators v Philadelphia Flyers",
+   "event_id": 36,
+   "tx": "45f77d1a38df4741b06bcb40ba89a541c2924b88ebc9b03ed538682102931f4c",
+   "link": "https://ccdexplorer.io/testnet/transaction/45f77d1a38df4741b06bcb40ba89a541c2924b88ebc9b03ed538682102931f4c"
+  },
+  {
+   "at": "2026-11-19T15:30:05.485Z",
+   "agent": "feed",
+   "text": "New event #37 (hockey): Pittsburgh Penguins v St. Louis Blues",
+   "event_id": 37,
+   "tx": "9930ce902f2116e7823f7cd8990e864beaf35eb963f37c4eb1cb89b1fbcd168d",
+   "link": "https://ccdexplorer.io/testnet/transaction/9930ce902f2116e7823f7cd8990e864beaf35eb963f37c4eb1cb89b1fbcd168d"
+  },
+  {
+   "at": "2026-11-19T15:30:12.329Z",
+   "agent": "feed",
+   "text": "New event #38 (american-football): Houston Texans v Indianapolis Colts",
+   "event_id": 38,
+   "tx": "c58594efc47e89bb89f874714af4899fbfb3ca8fde76cbc8aab8f878554ec1e1",
+   "link": "https://ccdexplorer.io/testnet/transaction/c58594efc47e89bb89f874714af4899fbfb3ca8fde76cbc8aab8f878554ec1e1"
+  },
+  {
+   "at": "2026-11-19T15:39:38.063Z",
+   "agent": "owner",
+   "text": "Amy signed setLimits {\"daily_cap\":{\"Some\":[10000000]}}",
+   "tx": "449010a061b7c45446821ed44e4abf9811b655158129c654b1928e7497ff31c3",
+   "link": "https://ccdexplorer.io/testnet/transaction/449010a061b7c45446821ed44e4abf9811b655158129c654b1928e7497ff31c3"
+  },
+  {
+   "at": "2026-11-19T15:39:58.049Z",
+   "agent": "owner",
+   "text": "Amy moved €10.00 EUR-demo to her agent's wallet",
+   "tx": "eba69014fdef655317fb0bb111c032a999bb1b9006b8b299bd68dca84cd3fd35",
+   "link": "https://ccdexplorer.io/testnet/transaction/eba69014fdef655317fb0bb111c032a999bb1b9006b8b299bd68dca84cd3fd35"
+  },
+  {
+   "at": "2026-11-19T15:41:41.265Z",
+   "agent": "buyer",
+   "text": "Run for Amy: looking at 32 open events in crypto, weather, football, basketball, hockey; picked 3.",
+   "agent_id": "1295"
+  },
+  {
+   "at": "2026-11-19T15:41:54.329Z",
+   "agent": "buyer",
+   "text": "Bought 1 card for Amy: #3 Ether at 16:30 UTC: where will it be? -> \"Under $1,782\" for €2.00. Why: ETH-USD projected 1768.25 (now 1774.08), band 1782 to 1796. Network fee paid by EventScope.",
+   "event_id": 3,
+   "tx": "2869347348873b1ea8fd1a01cb899353c75af57d59f52e42d067976645c457e7",
+   "link": "https://ccdexplorer.io/testnet/transaction/2869347348873b1ea8fd1a01cb899353c75af57d59f52e42d067976645c457e7",
+   "agent_id": "1295"
+  },
+  {
+   "at": "2026-11-19T15:41:57.508Z",
+   "agent": "buyer",
+   "text": "Over Amy's daily cap (€10.00; €0.00 left): #7 London at 17:00 UTC: how warm? -> \"9 to 11°C\" needs €2.00. Asking Amy for approval; the pot will refuse until she signs.",
+   "event_id": 7,
+   "refused_with": "OverDailyCap",
+   "approval_id": "64bacef3"
+  },
+  {
+   "at": "2026-11-19T15:41:59.199Z",
+   "agent": "buyer",
+   "text": "Over Amy's daily cap (€10.00; €0.00 left): #35 Toronto Maple Leafs v Los Angeles Kings -> \"Maple Leafs win\" needs €2.00. Asking Amy for approval; the pot will refuse until she signs.",
+   "event_id": 35,
+   "refused_with": "OverDailyCap",
+   "approval_id": "c901f575"
+  },
+  {
+   "at": "2026-11-19T15:42:05.463Z",
+   "agent": "feed",
+   "text": "New event #39 (crypto): Bitcoin at 16:00 UTC: above $62,800?",
+   "event_id": 39,
+   "tx": "c78d08749e2f547f348e3b3017c8af5149c5e01185bd1171bc5d4b855414ce12",
+   "link": "https://ccdexplorer.io/testnet/transaction/c78d08749e2f547f348e3b3017c8af5149c5e01185bd1171bc5d4b855414ce12"
+  },
+  {
+   "at": "2026-11-19T15:42:11.884Z",
+   "agent": "owner",
+   "text": "Amy signed approveExtra 2000000",
+   "tx": "24ea637d0df3e7343c9c6030da47cf578feef48432e19d8e96cf89b6c2465a94",
+   "link": "https://ccdexplorer.io/testnet/transaction/24ea637d0df3e7343c9c6030da47cf578feef48432e19d8e96cf89b6c2465a94"
+  },
+  {
+   "at": "2026-11-19T15:42:16.670Z",
+   "agent": "feed",
+   "text": "New event #40 (crypto): Ether at 16:00 UTC: above $1,772?",
+   "event_id": 40,
+   "tx": "475a931cc5e5492e7d92f6837d7bc08144637be63e01ef182c94f5e48d2e7fef",
+   "link": "https://ccdexplorer.io/testnet/transaction/475a931cc5e5492e7d92f6837d7bc08144637be63e01ef182c94f5e48d2e7fef"
+  },
+  {
+   "at": "2026-11-19T15:42:24.068Z",
+   "agent": "buyer",
+   "text": "Bought 1 card for Amy: #7 London at 17:00 UTC: how warm? -> \"9 to 11°C\" for €2.00. Why: latest Open-Meteo forecast for that hour: 9.5°C (after Amy's approval). Network fee paid by EventScope.",
+   "event_id": 7,
+   "tx": "d77ee0dcae169a92eae8a84b3c3a7a545ba48529c39925352d72c58df171a32c",
+   "link": "https://ccdexplorer.io/testnet/transaction/d77ee0dcae169a92eae8a84b3c3a7a545ba48529c39925352d72c58df171a32c",
+   "agent_id": "1295"
+  },
+  {
+   "at": "2026-11-19T15:42:24.528Z",
+   "agent": "feed",
+   "text": "New event #41 (crypto): Solana at 16:00 UTC: above $73.70?",
+   "event_id": 41,
+   "tx": "542c15ee57d46d1fc616eadc8945b1b4572d2a2416522b386577ae4da787cf70",
+   "link": "https://ccdexplorer.io/testnet/transaction/542c15ee57d46d1fc616eadc8945b1b4572d2a2416522b386577ae4da787cf70"
+  },
+  {
+   "at": "2026-11-19T15:42:38.386Z",
+   "agent": "owner",
+   "text": "Cal signed pauseMe 1",
+   "tx": "4869613a7072a635a62b8624bd8fb02795978b04293450e21944358e8a0e9529",
+   "link": "https://ccdexplorer.io/testnet/transaction/4869613a7072a635a62b8624bd8fb02795978b04293450e21944358e8a0e9529"
+  },
+  {
+   "at": "2026-11-19T15:49:52.822Z",
+   "agent": "results",
+   "text": "#0 Bitcoin at 15:45 UTC: above $63,375?: \"$63,375 or below\" (BTC-USD opened at $62,804 at 15:45 UTC). Posted with evidence hash 6ea50ac54b5f…; dispute window 3 min.",
+   "event_id": 0,
+   "tx": "4c8f5313c29e4c33e9fe40dba95fcd8baa07acc302869eff6ca6192630fc4947",
+   "link": "https://ccdexplorer.io/testnet/transaction/4c8f5313c29e4c33e9fe40dba95fcd8baa07acc302869eff6ca6192630fc4947",
+   "evidence_sha256": "6ea50ac54b5fa3abc6a12feac50a7664ffd345d9db77205bb45e519591e67b45"
+  },
+  {
+   "at": "2026-11-19T15:50:00.230Z",
+   "agent": "results",
+   "text": "#2 Ether at 15:45 UTC: above $1,789?: \"$1,789 or below\" (ETH-USD opened at $1,774 at 15:45 UTC). Posted with evidence hash 8d3b8263d7d3…; dispute window 3 min.",
+   "event_id": 2,
+   "tx": "e733cb1a269a8c5d818c90aeee15106ff6316c6c1d45ec892c74fb99d99adf93",
+   "link": "https://ccdexplorer.io/testnet/transaction/e733cb1a269a8c5d818c90aeee15106ff6316c6c1d45ec892c74fb99d99adf93",
+   "evidence_sha256": "8d3b8263d7d355def15a0a67ccb8e55ac5139683a4666b5fd53e2d50c2459b3a"
+  },
+  {
+   "at": "2026-11-19T15:50:06.374Z",
+   "agent": "results",
+   "text": "#4 Solana at 15:45 UTC: above $74.70?: \"$74.70 or below\" (SOL-USD opened at $73.55 at 15:45 UTC). Posted with evidence hash e3f5756ca58f…; dispute window 3 min.",
+   "event_id": 4,
+   "tx": "a46d1b393c682ae654f5fa2963f82a20d0cabd1efab4be5b365b04aacead722b",
+   "link": "https://ccdexplorer.io/testnet/transaction/a46d1b393c682ae654f5fa2963f82a20d0cabd1efab4be5b365b04aacead722b",
+   "evidence_sha256": "e3f5756ca58fa01ff3f96024978547a4751da23a8736d0423f882cbd1ae30943"
+  },
+  {
+   "at": "2026-11-19T15:53:30.279Z",
+   "agent": "results",
+   "text": "#0 dispute window over, result final: \"$63,375 or below\".",
+   "event_id": 0,
+   "tx": "85c42c86b1e6677bff7f715af60ba5e24b42b706d2c99cc660beea7c101e71f0",
+   "link": "https://ccdexplorer.io/testnet/transaction/85c42c86b1e6677bff7f715af60ba5e24b42b706d2c99cc660beea7c101e71f0"
+  },
+  {
+   "at": "2026-11-19T15:53:38.233Z",
+   "agent": "results",
+   "text": "#2 dispute window over, result final: \"$1,789 or below\".",
+   "event_id": 2,
+   "tx": "bc87191d4654ae8a9dbe6e354917710b51695f0a6ff6275b45a11eb21fb1ea03",
+   "link": "https://ccdexplorer.io/testnet/transaction/bc87191d4654ae8a9dbe6e354917710b51695f0a6ff6275b45a11eb21fb1ea03"
+  },
+  {
+   "at": "2026-11-19T15:53:47.179Z",
+   "agent": "results",
+   "text": "#4 dispute window over, result final: \"$74.70 or below\".",
+   "event_id": 4,
+   "tx": "111f194ac699f089cbf8bca8985d1620553288d3a3b62c13cd8276206316a40a",
+   "link": "https://ccdexplorer.io/testnet/transaction/111f194ac699f089cbf8bca8985d1620553288d3a3b62c13cd8276206316a40a"
+  },
+  {
+   "at": "2026-11-19T15:55:40.179Z",
+   "agent": "owner",
+   "text": "Amy signed setLimits {\"daily_cap\":{\"Some\":[20000000]}}",
+   "tx": "2bc659974edd6b11b78d2f62c34a056466f606b94fe9243459002bba68914932",
+   "link": "https://ccdexplorer.io/testnet/transaction/2bc659974edd6b11b78d2f62c34a056466f606b94fe9243459002bba68914932"
+  },
+  {
+   "at": "2026-11-19T15:59:55.947Z",
+   "agent": "feed",
+   "text": "New event #42 (crypto): Bitcoin at 16:15 UTC: above $63,000?",
+   "event_id": 42,
+   "tx": "b772695587d3c1d445f2a2b937a9c25801d385b5e7152ed97216dc5dc611bfca",
+   "link": "https://ccdexplorer.io/testnet/transaction/b772695587d3c1d445f2a2b937a9c25801d385b5e7152ed97216dc5dc611bfca"
+  },
+  {
+   "at": "2026-11-19T16:08:47.516Z",
+   "agent": "results",
+   "text": "#39 Bitcoin at 16:00 UTC: above $62,800?: \"Above $62,800\" (BTC-USD opened at $63,033 at 16:00 UTC). Posted with evidence hash e0a4d006afed…; dispute window 3 min.",
+   "event_id": 39,
+   "tx": "2e48dcc8fd876d2fb9ee6daf0e9a74d261dc0d7d0848142b647cd8232a7a86b9",
+   "link": "https://ccdexplorer.io/testnet/transaction/2e48dcc8fd876d2fb9ee6daf0e9a74d261dc0d7d0848142b647cd8232a7a86b9",
+   "evidence_sha256": "e0a4d006afed8a12d2b56c4fb0eb9e37efd0a4339ae49c2cb71649d3af150945"
+  },
+  {
+   "at": "2026-11-19T16:09:06.097Z",
+   "agent": "results",
+   "text": "#40 Ether at 16:00 UTC: above $1,772?: \"Above $1,772\" (ETH-USD opened at $1,780 at 16:00 UTC). Posted with evidence hash 53e67c76a33f…; dispute window 3 min.",
+   "event_id": 40,
+   "tx": "ab42e55eec99d3a4c0ec4ba02b5a5d0530173d98394438c13af9724937c6310e",
+   "link": "https://ccdexplorer.io/testnet/transaction/ab42e55eec99d3a4c0ec4ba02b5a5d0530173d98394438c13af9724937c6310e",
+   "evidence_sha256": "53e67c76a33fe2974ac5b90c6465934753cafd0a01b9b0f47fd93c21a72e2b9f"
+  },
+  {
+   "at": "2026-11-19T16:09:20.191Z",
+   "agent": "results",
+   "text": "#41 Solana at 16:00 UTC: above $73.70?: \"$73.70 or below\" (SOL-USD opened at $73.47 at 16:00 UTC). Posted with evidence hash ca2c9170c13f…; dispute window 3 min.",
+   "event_id": 41,
+   "tx": "b46c80e936edebee604ed63c03bd9d0102e3114744afe47c807c3e94d502bd66",
+   "link": "https://ccdexplorer.io/testnet/transaction/b46c80e936edebee604ed63c03bd9d0102e3114744afe47c807c3e94d502bd66",
+   "evidence_sha256": "ca2c9170c13f556a684394d5b1455ec0587cf2b97d8346ae89c7074dc51179b7"
+  },
+  {
+   "at": "2026-11-19T16:11:58.480Z",
+   "agent": "results",
+   "text": "#39 dispute window over, result final: \"Above $62,800\".",
+   "event_id": 39,
+   "tx": "eb49491080e302ed191e8a2a8cae766209f6bb75eb040dc59689903b6cb8ce30",
+   "link": "https://ccdexplorer.io/testnet/transaction/eb49491080e302ed191e8a2a8cae766209f6bb75eb040dc59689903b6cb8ce30"
+  },
+  {
+   "at": "2026-11-19T16:12:42.359Z",
+   "agent": "results",
+   "text": "#40 dispute window over, result final: \"Above $1,772\".",
+   "event_id": 40,
+   "tx": "6150159a72f2fc6f4a67cbf59d9abd9269eb369bceda3d5a39e65e43f2ef460d",
+   "link": "https://ccdexplorer.io/testnet/transaction/6150159a72f2fc6f4a67cbf59d9abd9269eb369bceda3d5a39e65e43f2ef460d"
+  },
+  {
+   "at": "2026-11-19T16:12:50.502Z",
+   "agent": "results",
+   "text": "#41 dispute window over, result final: \"$73.70 or below\".",
+   "event_id": 41,
+   "tx": "c8a1624a85f9f2f5b79554cc30925f7130c316bf1a7938d80aa7950887a5a368",
+   "link": "https://ccdexplorer.io/testnet/transaction/c8a1624a85f9f2f5b79554cc30925f7130c316bf1a7938d80aa7950887a5a368"
+  },
+  {
+   "at": "2026-11-19T16:13:12.636Z",
+   "agent": "feed",
+   "text": "New event #43 (crypto): Bitcoin at 16:30 UTC: above $63,100?",
+   "event_id": 43,
+   "tx": "0bcd55f647a337828645fd1acf3324d939fbe7be1409e4140f63a5b455d7114b",
+   "link": "https://ccdexplorer.io/testnet/transaction/0bcd55f647a337828645fd1acf3324d939fbe7be1409e4140f63a5b455d7114b"
+  },
+  {
+   "at": "2026-11-19T16:17:12.424Z",
+   "agent": "results",
+   "text": "#42 Bitcoin at 16:15 UTC: above $63,000?: \"Above $63,000\" (BTC-USD opened at $63,084 at 16:15 UTC). Posted with evidence hash 92b9e77a300a…; dispute window 3 min.",
+   "event_id": 42,
+   "tx": "6779995dcec02b34b455cdcd4dc1776e822f0b7e04b70effaa83ec0d09feefef",
+   "link": "https://ccdexplorer.io/testnet/transaction/6779995dcec02b34b455cdcd4dc1776e822f0b7e04b70effaa83ec0d09feefef",
+   "evidence_sha256": "92b9e77a300a6b65d6da984e5795428d1a0b2e1ecab887eb3f5203dab94a844a"
+  },
+  {
+   "at": "2026-11-19T16:20:32.362Z",
+   "agent": "results",
+   "text": "#42 dispute window over, result final: \"Above $63,000\".",
+   "event_id": 42,
+   "tx": "1a84fb90ba8adf3cc66796eb8e06b5703852702e84104e0b999015646f97f785",
+   "link": "https://ccdexplorer.io/testnet/transaction/1a84fb90ba8adf3cc66796eb8e06b5703852702e84104e0b999015646f97f785"
+  },
+  {
+   "at": "2026-11-19T16:23:11.058Z",
+   "agent": "feed",
+   "text": "New event #44 (crypto): Bitcoin at 17:30 UTC: where will it be?",
+   "event_id": 44,
+   "tx": "1016b8112943287f2fb87108775332ccbed16c18a0d490ca56dc214561c951a2",
+   "link": "https://ccdexplorer.io/testnet/transaction/1016b8112943287f2fb87108775332ccbed16c18a0d490ca56dc214561c951a2"
+  },
+  {
+   "at": "2026-11-19T16:23:19.518Z",
+   "agent": "feed",
+   "text": "New event #45 (crypto): Ether at 17:30 UTC: where will it be?",
+   "event_id": 45,
+   "tx": "ae45a60aba2b3c6e4ddf9be4edff58e9054f09ad4a09b9a3bef9612d8797fed8",
+   "link": "https://ccdexplorer.io/testnet/transaction/ae45a60aba2b3c6e4ddf9be4edff58e9054f09ad4a09b9a3bef9612d8797fed8"
+  },
+  {
+   "at": "2026-11-19T16:23:41.729Z",
+   "agent": "feed",
+   "text": "New event #46 (crypto): Solana at 17:30 UTC: where will it be?",
+   "event_id": 46,
+   "tx": "bcb6ce06348ac183bcd9d554b9055da9d36c37b531bb6ae42884a7d68895216b",
+   "link": "https://ccdexplorer.io/testnet/transaction/bcb6ce06348ac183bcd9d554b9055da9d36c37b531bb6ae42884a7d68895216b"
+  },
+  {
+   "at": "2026-11-19T16:28:10.794Z",
+   "agent": "feed",
+   "text": "New event #47 (crypto): Bitcoin at 16:45 UTC: above $63,000?",
+   "event_id": 47,
+   "tx": "1e8fd9151a1dc4cc90e15b2d83c2bfdfa3deddc649503438a50d49180ffed827",
+   "link": "https://ccdexplorer.io/testnet/transaction/1e8fd9151a1dc4cc90e15b2d83c2bfdfa3deddc649503438a50d49180ffed827"
+  },
+  {
+   "at": "2026-11-19T16:32:10.676Z",
+   "agent": "results",
+   "text": "#1 Bitcoin at 16:30 UTC: where will it be?: \"Under $63,125\" (BTC-USD opened at $63,028 at 16:30 UTC). Posted with evidence hash c9be099c1bdb…; dispute window 3 min.",
+   "event_id": 1,
+   "tx": "7d214ba5dd3d86dc33e454102511802f83eedd393cef863e602d7a5181793359",
+   "link": "https://ccdexplorer.io/testnet/transaction/7d214ba5dd3d86dc33e454102511802f83eedd393cef863e602d7a5181793359",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2"
+  },
+  {
+   "at": "2026-11-19T16:32:18.465Z",
+   "agent": "results",
+   "text": "#3 Ether at 16:30 UTC: where will it be?: \"Under $1,782\" (ETH-USD opened at $1,778 at 16:30 UTC). Posted with evidence hash 9f6131e697b8…; dispute window 3 min.",
+   "event_id": 3,
+   "tx": "eb0e3dbf55a915a2958fddabca27c50bd59ca4ac9904bd4c9f928ad048c7cee1",
+   "link": "https://ccdexplorer.io/testnet/transaction/eb0e3dbf55a915a2958fddabca27c50bd59ca4ac9904bd4c9f928ad048c7cee1",
+   "evidence_sha256": "9f6131e697b8bfe314aff986a980539dad81e0aaa5ea7afe0ff1968f15b4eef2"
+  },
+  {
+   "at": "2026-11-19T16:32:56.440Z",
+   "agent": "results",
+   "text": "#5 Solana at 16:30 UTC: where will it be?: \"Under $74.40\" (SOL-USD opened at $73.54 at 16:30 UTC). Posted with evidence hash 5e5403d01653…; dispute window 3 min.",
+   "event_id": 5,
+   "tx": "8bc674603c6eeb533dc9d16912174458e030b1e9b8bbc07f262b7ed145a7926f",
+   "link": "https://ccdexplorer.io/testnet/transaction/8bc674603c6eeb533dc9d16912174458e030b1e9b8bbc07f262b7ed145a7926f",
+   "evidence_sha256": "5e5403d0165370dd2a956137add7e28ff5ef4361a50df0627236a89c56de91cc"
+  },
+  {
+   "at": "2026-11-19T16:33:04.396Z",
+   "agent": "results",
+   "text": "#43 Bitcoin at 16:30 UTC: above $63,100?: \"$63,100 or below\" (BTC-USD opened at $63,028 at 16:30 UTC). Posted with evidence hash c9be099c1bdb…; dispute window 3 min.",
+   "event_id": 43,
+   "tx": "46443ba711245c272bf5b957fd094aeb4ae34d61eaabb48203fa8ce7be0d7593",
+   "link": "https://ccdexplorer.io/testnet/transaction/46443ba711245c272bf5b957fd094aeb4ae34d61eaabb48203fa8ce7be0d7593",
+   "evidence_sha256": "c9be099c1bdb98f459f352fd507139eb4fa78184a1b11b5cb47008b900e479c2"
+  },
+  {
+   "at": "2026-11-19T16:33:10.721Z",
+   "agent": "feed",
+   "text": "New event #48 (weather): London at 18:00 UTC: how warm?",
+   "event_id": 48,
+   "tx": "e136b94e08dd3325c60e9a345ac3fa6036a01d0260b68c59c78fd54da16a1de5",
+   "link": "https://ccdexplorer.io/testnet/transaction/e136b94e08dd3325c60e9a345ac3fa6036a01d0260b68c59c78fd54da16a1de5"
+  },
+  {
+   "at": "2026-11-19T16:33:16.559Z",
+   "agent": "feed",
+   "text": "New event #49 (weather): Lagos at 18:00 UTC: how warm?",
+   "event_id": 49,
+   "tx": "020307924d85e31c221ed48c4876ce9af4a8a90ad71b62e7cfa13e9a80549f79",
+   "link": "https://ccdexplorer.io/testnet/transaction/020307924d85e31c221ed48c4876ce9af4a8a90ad71b62e7cfa13e9a80549f79"
+  },
+  {
+   "at": "2026-11-19T16:36:11.200Z",
+   "agent": "results",
+   "text": "#1 dispute window over, result final: \"Under $63,125\".",
+   "event_id": 1,
+   "tx": "c79b166bdee3b8b955a968d0b78574209f0476676183bf2e2e23cd020ba6d534",
+   "link": "https://ccdexplorer.io/testnet/transaction/c79b166bdee3b8b955a968d0b78574209f0476676183bf2e2e23cd020ba6d534"
+  },
+  {
+   "at": "2026-11-19T16:36:21.326Z",
+   "agent": "results",
+   "text": "#1 paid automatically: €4.00 to 3sv1jF…, €4.00 to 3s58Yx….",
+   "event_id": 1,
+   "tx": "13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b",
+   "link": "https://ccdexplorer.io/testnet/transaction/13b2ff7944581b4778ec5c5a6f313e6bf15a51d733672fd5879e4f94333df28b"
+  },
+  {
+   "at": "2026-11-19T16:36:39.868Z",
+   "agent": "results",
+   "text": "#3 dispute window over, result final: \"Under $1,782\".",
+   "event_id": 3,
+   "tx": "4c7f88139572801cf51c91c80e06f05762df9394bd949ea17aecfbf4e5a18424",
+   "link": "https://ccdexplorer.io/testnet/transaction/4c7f88139572801cf51c91c80e06f05762df9394bd949ea17aecfbf4e5a18424"
+  },
+  {
+   "at": "2026-11-19T16:36:50.377Z",
+   "agent": "results",
+   "text": "#3 paid automatically: €2.00 to 3s58Yx….",
+   "event_id": 3,
+   "tx": "e9f246e20b86a097fe1879e5e0f2044aaf5020cefceb221e660615aee1cd1902",
+   "link": "https://ccdexplorer.io/testnet/transaction/e9f246e20b86a097fe1879e5e0f2044aaf5020cefceb221e660615aee1cd1902"
+  },
+  {
+   "at": "2026-11-19T16:36:56.344Z",
+   "agent": "results",
+   "text": "#5 dispute window over, result final: \"Under $74.40\".",
+   "event_id": 5,
+   "tx": "62131b4665397f5c8126408e31c7d98d9c1f640c45d383f352f023989c1cd95e",
+   "link": "https://ccdexplorer.io/testnet/transaction/62131b4665397f5c8126408e31c7d98d9c1f640c45d383f352f023989c1cd95e"
+  },
+  {
+   "at": "2026-11-19T16:37:08.921Z",
+   "agent": "results",
+   "text": "#43 dispute window over, result final: \"$63,100 or below\".",
+   "event_id": 43,
+   "tx": "074df527be0c8b28f96c24ccbb094d5db3ffd9dc7cbd6a045e500d33aa9bae95",
+   "link": "https://ccdexplorer.io/testnet/transaction/074df527be0c8b28f96c24ccbb094d5db3ffd9dc7cbd6a045e500d33aa9bae95"
+  },
+  {
+   "at": "2026-11-19T17:28:20.002Z",
+   "agent": "owner",
+   "text": "A visitor 3s58Yx… registered buyer agent #1306 in the Agent Registry",
+   "tx": "d7c9a4f026558897ea7c66ac5ad154aaa72a5c538f151f296859fd051b8c707a",
+   "link": "https://ccdexplorer.io/testnet/transaction/d7c9a4f026558897ea7c66ac5ad154aaa72a5c538f151f296859fd051b8c707a",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:28:48.017Z",
+   "agent": "buyer",
+   "text": "Run for you: looking at 16 open events in crypto, weather, football; picked 3.",
+   "agent_id": "1306",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:33:51.637Z",
+   "agent": "buyer",
+   "text": "Run for you: looking at 16 open events in crypto, weather, football; picked 3.",
+   "agent_id": "1306",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:34:04.975Z",
+   "agent": "buyer",
+   "text": "Bought 1 card for you: #30 Seattle Sounders FC v Real Salt Lake -> \"Seattle win\" for €2.00. Why: Seattle Sounders FC at home (home advantage; the agent never reads bookmaker odds). Network fee paid by EventScope.",
+   "event_id": 30,
+   "tx": "7d144b812da4a635e2cea872286db741a6c2e5f306896d1904c665ddbdf94ec1",
+   "link": "https://ccdexplorer.io/testnet/transaction/7d144b812da4a635e2cea872286db741a6c2e5f306896d1904c665ddbdf94ec1",
+   "agent_id": "1306",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:34:12.911Z",
+   "agent": "buyer",
+   "text": "Bought 1 card for you: #21 Bayern Munich v FC Cologne -> \"Bayern win\" for €2.00. Why: Bayern Munich at home (home advantage; the agent never reads bookmaker odds). Network fee paid by EventScope.",
+   "event_id": 21,
+   "tx": "0cdb51abcd6b937928c142fdebf1e21560b0778611f9a94158e25d579eabd7a6",
+   "link": "https://ccdexplorer.io/testnet/transaction/0cdb51abcd6b937928c142fdebf1e21560b0778611f9a94158e25d579eabd7a6",
+   "agent_id": "1306",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:34:13.565Z",
+   "agent": "buyer",
+   "text": "Over you's daily cap (€20.00; €0.00 left): #27 Troyes v Le Havre AC -> \"Troyes win\" needs €2.00. Asking you for approval; the pot will refuse until the owner signs.",
+   "event_id": 27,
+   "refused_with": "OverDailyCap",
+   "approval_id": "db50f2eb",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  },
+  {
+   "at": "2026-11-19T17:41:34.945Z",
+   "agent": "owner",
+   "text": "Amy signed setLimits {\"daily_cap\":{\"Some\":[50000000]}}",
+   "tx": "5580b1290fa43ba4efdcc0d4b9c78f9a835e622ab1f9b6ecf00f56312eb0ddc1",
+   "link": "https://ccdexplorer.io/testnet/transaction/5580b1290fa43ba4efdcc0d4b9c78f9a835e622ab1f9b6ecf00f56312eb0ddc1"
+  }
+ ],
+ "approvals": [
+  {
+   "id": "64bacef3",
+   "event_id": 7,
+   "outcome": 1,
+   "count": 1,
+   "amount": "2000000",
+   "reason": "latest Open-Meteo forecast for that hour: 9.5°C",
+   "asked_at": "2026-11-19T15:41:57.506Z",
+   "status": "used",
+   "approved_tx": "24ea637d0df3e7343c9c6030da47cf578feef48432e19d8e96cf89b6c2465a94",
+   "used_tx": "d77ee0dcae169a92eae8a84b3c3a7a545ba48529c39925352d72c58df171a32c"
+  },
+  {
+   "id": "c901f575",
+   "event_id": 35,
+   "outcome": 0,
+   "count": 1,
+   "amount": "2000000",
+   "reason": "Toronto Maple Leafs at home (home advantage; the agent never reads bookmaker odds)",
+   "asked_at": "2026-11-19T15:41:59.197Z",
+   "status": "waiting"
+  },
+  {
+   "id": "db50f2eb",
+   "event_id": 27,
+   "outcome": 0,
+   "count": 1,
+   "amount": "2000000",
+   "reason": "Troyes at home (home advantage; the agent never reads bookmaker odds)",
+   "asked_at": "2026-11-19T17:34:13.562Z",
+   "status": "waiting",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+  }
+ ]
+}

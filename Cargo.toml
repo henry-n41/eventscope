@@ -1,0 +1,7 @@
+[workspace]
+members = ["contracts/eurdemo", "contracts/eventscope", "contracts/mockregistry"]
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+codegen-units = 1

@@ -1,0 +1,13 @@
+{
+ "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA": {
+  "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+  "wallet": "3SAsvRbEJrDZ1NGLUTGkyhM4c4uTE6xXucqDqw1BxpXZsxHY8s",
+  "cred": 1,
+  "step": "linked",
+  "created": "2026-11-19T17:28:10.984Z",
+  "token_id": "1306",
+  "register_tx": "d7c9a4f026558897ea7c66ac5ad154aaa72a5c538f151f296859fd051b8c707a",
+  "wallet_tx": "aa3848de13376876baa0511da9a3835facc41626fa651639bcd0964b81b277e1",
+  "linked_tx": "52caca2156700530678e711a3b7cd3c1a6c2b07004d9568b4eb2a3fc41b2d9eb"
+ }
+}

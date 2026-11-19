@@ -1,0 +1,12 @@
+{
+ "network": "testnet",
+ "contract": "eventscope",
+ "index": "13068",
+ "subindex": "0",
+ "module_ref": "17ce18a0679ea557e90bb10f72a6319641ebe7a6945a68eab31742198fe601ce",
+ "deploy_tx": "65b80277d31cf761d0086a1d312f6491f791efd1f2a9c26dd6e804bb565e737f",
+ "init_tx": "70ad134c64c543d19461d3a9b99c81993cd42ff64e32f7f1d35cd5850c51feda",
+ "operator": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+ "verifier": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+ "deployed_at": "2026-11-19T10:35:51.690Z"
+}

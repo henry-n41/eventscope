@@ -1,0 +1,57 @@
+{
+  "name": "Amy's EventScope Buyer Agent",
+  "description": "Picks and buys EventScope prize cards for Amy inside the daily cap Amy set on chain. It cannot raise the cap, approve extra spending or lift Amy's self-exclusion; the EventScope pot enforces all three. Testnet demo.",
+  "url": "https://eventscope-demo.example/agents/buyer",
+  "version": "1.0.0",
+  "role": "buyer",
+  "provider": {
+    "organization": "EventScope (testnet demo)"
+  },
+  "capabilities": {
+    "streaming": false,
+    "extensions": [
+      {
+        "uri": "https://docs.concordium.com/a2a-extensions/concordium-badge/v1",
+        "description": "Verified by Concordium badge — on-chain agent identity in a CIS-8004 registry",
+        "required": false,
+        "params": {
+          "tokenAddress": "ccd:4221332d34e1694168c2a0c0b3fd0f27/cis-2:JyP9UAqevc5kGn5TfycGn",
+          "owner": {
+            "account": "ccd:4221332d34e1694168c2a0c0b3fd0f27:3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA"
+          },
+          "agentWallet": "ccd:4221332d34e1694168c2a0c0b3fd0f27:3ma5Eqtv2RpTj2zFzbwLigK3uku7KArnk29BKyqtJrwE7zQVi2",
+          "contracts": {
+            "cis8004": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12802.0",
+            "cis8": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12801.0"
+          },
+          "verify": "Resolve tokenAddress via CIS-8004 agent_of; confirm owner + status=Active + card SHA-256 == metadata_hash.",
+          "verification": {
+            "service": "Concordium Agent Registry",
+            "verifyUrl": "https://agent-registry-mcp.concordium.com/v1/badge-check/JyP9UAqevc5kGn5TfycGn",
+            "mcp": "https://agent-registry-mcp.concordium.com/mcp",
+            "docs": "https://docs.concordium.com/en/mainnet/technical-reference/agent-registry/concordium-badge.html"
+          }
+        }
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "buy-cards",
+      "name": "Buy event cards",
+      "description": "Chooses outcomes from Amy's preferences and buys cards with EUR-demo through the EventScope pot (CIS-2 transfer)."
+    }
+  ],
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "registrations": [
+    {
+      "agentId": 1295,
+      "agentRegistry": "ccd:4221332d34e1694168c2a0c0b3fd0f27:12802.0"
+    }
+  ]
+}

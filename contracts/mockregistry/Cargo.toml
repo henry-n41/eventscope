@@ -1,0 +1,13 @@
+[package]
+name = "mockregistry"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Test-only stand-in for Concordium's CIS-8004 Agent Registry (agentOf with the same wire layout). Never deployed."
+
+[dependencies]
+concordium-std = "11.0"
+concordium-cis2 = "7.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]

@@ -1,0 +1,43 @@
+{
+ "network": "testnet",
+ "operator": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+ "deployed_at": "2026-11-19T15:16:09.849Z",
+ "token": {
+  "name": "eurdemo",
+  "symbol": "EUR-demo",
+  "decimals": 6,
+  "index": "13069",
+  "module_ref": "ff62722dcd0822497f14926ca5f34c984c825cab9504e89f90b18ff4cfb91212",
+  "deploy_tx": "ade7802cd711dbd0083e2c29bdff33736b6b13801c9c2bf4f9eef06364ef9aec",
+  "init_tx": "2e6ba74c26a9f48d8e25726796b98b8aaaf64f43b9c1f27d0027ddd1b3ee37dc",
+  "metadata_url": "http://127.0.0.1:8100/eur-demo.json"
+ },
+ "pot": {
+  "name": "eventscope",
+  "index": "13076",
+  "module_ref": "1f2e0f0f86c259aeb8d8c0dcf52313b4e184ec72a534cc0d5788a8aa4895de6a",
+  "deploy_tx": "ac366035d65b4e05b5b5b0de751ce0d73238559efa5e4d1379409833560d72b8",
+  "init_tx": "18f30b2b6b463bd7075e7ff4a4f79db72eaa23f140eaa9159bfedf128070a1e6",
+  "verifier": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn",
+  "registry": "12802,0",
+  "max_daily_spend": 50000000,
+  "dispute_window_ms": 180000
+ },
+ "previous_pots": [
+  {
+   "index": "13070",
+   "module_ref": "d7fc03aab6a6bdbd4830285984409ed5d2fa445a66f46c8df63a48b49b47f68e"
+  }
+ ],
+ "agents": {
+  "buyer": {
+   "token_id": "1295",
+   "owner": "3s58YxqVSfmBA513tK3pnMDTyZrRvm72vdTzb4TSAtHCKFUyvA",
+   "wallet": "3ma5Eqtv2RpTj2zFzbwLigK3uku7KArnk29BKyqtJrwE7zQVi2"
+  },
+  "results": {
+   "token_id": "1296",
+   "owner": "3N9s8YUN2pxMuP5bszXUUk9vZ3ks7tDgxgzhG5arGr5qGYe6fn"
+  }
+ }
+}

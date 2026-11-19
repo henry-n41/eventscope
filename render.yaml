@@ -1,0 +1,26 @@
+# Render Blueprint for EventScope: one free Node web service. It serves the page and API and runs the feed agent and the
+# results agent on timers, so events are created and resolved on chain on their own.
+services:
+  - type: web
+    name: eventscope
+    runtime: node
+    plan: free
+    branch: main
+    healthCheckPath: /api/health
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: "24.22.1"
+      # Secrets: set by hand in the Render dashboard, never in this file
+      - key: CCD_SPONSOR_PRIVATE_KEY      # operator account key: pays network fees, runs the feed and results agents
+        sync: false
+      - key: EVENTSCOPE_DEMO_SECRETS_B64  # testnet keys of the demo people and the agent-wallet pool (optional)
+        sync: false
+      - key: REDIS_URL                    # Render Key Value, keeps the off-chain index across restarts
+        sync: false
+      # Settings
+      - key: EVENTSCOPE_KEEPALIVE
+        value: "1"
+      - key: EVENTSCOPE_SPONSOR_CCD_PER_HOUR
+        value: "750"
