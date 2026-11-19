@@ -7,7 +7,7 @@ import { chromium } from "playwright-core";
 import { VerificationRequestV1 } from "@concordium/web-sdk";
 import { load, prove, signer } from "../lib/testusers.mjs";
 import { signAndSubmitSponsored } from "../lib/chain.mjs";
-const B = "http://127.0.0.1:8100";
+const B = process.env.EVENTSCOPE_URL || "http://127.0.0.1:8100";
 const results = [];
 const t = (name, ok, extra = "") => { results.push({ name, ok, extra }); console.log(`${ok ? "PASS" : "FAIL"}  ${name} ${extra}`); };
 const b = await chromium.launch({ executablePath: "/usr/bin/google-chrome", args: ["--no-sandbox"] });
@@ -36,6 +36,8 @@ async function openAs(who) {
         return S.VerifiablePresentationV1.fromJSON(await window.__walletProve(JSON.parse(JSON.stringify(json))));
       },
       sendSponsoredTransaction: async (acct, tx, schema) => {
+        // Mirror the real extension's gate: it compares the raw accountAddress against the site's connected accounts.
+        if (typeof acct !== "string" || acct !== account) throw new Error("Site is not whitelisted");
         window.__walletCalls.push("sendSponsoredTransaction:" + (schema?.type || "no-schema"));
         return window.__walletSubmit(window.__EventScopeSdk.Transaction.toJSONString(tx));
       },

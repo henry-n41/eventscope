@@ -44,7 +44,11 @@ export async function verify(account) {
 /** The backend builds a sponsored transaction (operator pays the CCD fee); the wallet shows it, the user approves, the wallet submits. */
 async function approveSponsored(account, prepared) {
   const tx = Transaction.signableFromJSON(prepared.tx);
-  const hash = await provider.sendSponsoredTransaction(AccountAddress.fromBase58(account), tx, await moduleSchema(prepared.schema_for));
+  // Pass the base58 STRING. The extension's sendSponsoredTransaction (unlike sendTransaction) forwards accountAddress
+  // unconverted, and its gate does allowlist[origin].includes(accountAddress); an AccountAddress object never matches,
+  // so the wallet answers "Site is not whitelisted". (concordium-browser-wallet background/index.ts runIfAccountIsAllowlisted)
+  const addr = AccountAddress.toBase58(AccountAddress.fromBase58(account)); // validates, then back to a plain string
+  const hash = await provider.sendSponsoredTransaction(addr, tx, await moduleSchema(prepared.schema_for));
   return String(hash?.toString?.() ?? hash);
 }
 export async function buy(account, eventId, outcome, count) {
