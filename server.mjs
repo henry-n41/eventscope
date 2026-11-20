@@ -8,7 +8,7 @@ import path from "node:path";
 import { randomUUID, createHash } from "node:crypto";
 import { ROOT, OPERATOR, OPERATOR_KEY_ENV, CONTRACTS, SPONSOR, TOKEN_SYMBOL, TOKEN_DECIMALS, START_GRANT, deployment, explorerTx, explorerContract, explorerAccount, eur, jsonSafe } from "./lib/config.mjs";
 import { view, dryRun, signerFromHex, tokenBalance, address, buildSponsored, toWalletJSON, signAndSubmitSponsored, sponsoredCall, buyTransferJSON, packTransferJSON,
-  tokenTransferJSON, schema, grpc, withSender } from "./lib/chain.mjs";
+  tokenTransferJSON, schema, grpc, withSender, update } from "./lib/chain.mjs";
 import { createRequest, checkPresentation, markAllowed, grantPlayMoney, BLOCKED_COUNTRIES, MIN_AGE } from "./lib/verify.mjs";
 import { load, signer as userSigner, prove, keyHex } from "./lib/testusers.mjs";
 import { ledger, saveLedger, recordTx, cardsOf, agentLog, rarity } from "./lib/ledger.mjs";
@@ -427,8 +427,28 @@ if (process.env.EVENTSCOPE_KEEPALIVE === "1" && PUBLIC_URL.startsWith("https://"
 
 // ------------------------------------------------------------------ static
 const WEB = path.join(ROOT, "web");
-const TOKEN_METADATA = { name: "EUR demo (EventScope play money)", symbol: TOKEN_SYMBOL, decimals: TOKEN_DECIMALS, unique: false,
-  description: "Play-money euro token for the EventScope testnet demo. Not real money, not redeemable." };
+// CIS-2 token metadata the wallets fetch (Concordium Wallet for Web fetches it with mode "cors", so CORS must be open).
+const TOKEN_METADATA = { name: "EUR-demo", symbol: TOKEN_SYMBOL, decimals: TOKEN_DECIMALS, unique: false,
+  description: "EventScope play-money euro on Concordium testnet. Not real money, not redeemable.",
+  thumbnail: { url: `${PUBLIC_URL}/img/eur-demo-256.png` }, display: { url: `${PUBLIC_URL}/img/eur-demo-1024.png` } };
+const TOKEN_METADATA_URL = `${PUBLIC_URL}/eur-demo.json`;
+// The token contract (13069,0) was created on the box with metadata at 127.0.0.1, which no wallet can reach. On the public
+// host, the operator (token admin) points it at PUBLIC_URL once via the contract's setMetadataUrl (admin-only).
+const tokenMeta = { token_id: "", metadata_url: null, fixed_tx: null, error: null };
+async function ensureTokenMetadataUrl() {
+  try {
+    const r = await view("token", "tokenMetadata", [""]);
+    tokenMeta.metadata_url = r?.[0]?.url ?? null;
+    if (!PUBLIC_URL.startsWith("https://") || tokenMeta.metadata_url === TOKEN_METADATA_URL) return;
+    reserve(1, "token metadata url");
+    const t = await update(op, OPERATOR, "token", "setMetadataUrl", TOKEN_METADATA_URL);
+    tokenMeta.fixed_tx = t.tx; tokenMeta.fixed_outcome = t.outcome; tokenMeta.fixed_link = explorerTx(t.tx);
+    if (t.outcome === "success") tokenMeta.metadata_url = TOKEN_METADATA_URL; else tokenMeta.error = JSON.stringify(t.reject_reason ?? t);
+    console.log("token metadata url ->", TOKEN_METADATA_URL, t.outcome, t.tx);
+  } catch (e) { tokenMeta.error = String(e.message || e); console.error("token metadata url", tokenMeta.error); }
+}
+if (AGENTS) setTimeout(ensureTokenMetadataUrl, 15_000);
+routes["GET /api/token"] = async () => ({ contract: { index: Number(address("token").index), subindex: 0 }, ...tokenMeta, expected_url: TOKEN_METADATA_URL, metadata: TOKEN_METADATA });
 http.createServer(async (req, res) => {
   const u = new URL(req.url, "http://x");
   try {
@@ -460,7 +480,7 @@ http.createServer(async (req, res) => {
   const f = path.join(WEB, u.pathname === "/" ? "index.html" : path.normalize(u.pathname).replace(/^(\.\.[/\\])+/, ""));
   if (f.startsWith(WEB) && existsSync(f) && !f.endsWith("/")) {
     const type = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".wasm": "application/wasm", ".svg": "image/svg+xml", ".png": "image/png" }[path.extname(f)] || "application/octet-stream";
-    res.writeHead(200, { "content-type": type }); res.end(readFileSync(f)); return;
+    res.writeHead(200, { "content-type": type, ...(u.pathname.startsWith("/img/") ? { "access-control-allow-origin": "*", "cache-control": "max-age=86400" } : {}) }); res.end(readFileSync(f)); return;
   }
   send(res, 404, { error: "not found" });
 }).listen(PORT, HOST, () => console.log(`EventScope on http://${HOST}:${PORT} (demo people ${DEMO ? "on" : "off"}, agents ${AGENTS ? "on" : "off"})`));

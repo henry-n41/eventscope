@@ -60,7 +60,7 @@ main{padding:22px 0 60px}h2{font-size:22px;margin:4px 0 2px}.sub{color:var(--mut
  <label class="demosel" title="Demo people use test keys held by the server. Your own wallet is the real way to play."><span>Try as a demo person</span>
  <select id="who"><option value="wallet">No, use my wallet</option><option value="amy">Amy (DE, 31)</option><option value="cal">Cal (FR, 38)</option><option value="ben">Ben (UK, 36)</option></select></label>
  <span id="demobadge" class="chip gold hide">DEMO PERSON</span>
- <span id="bal" class="chip">…</span><span id="ver" class="chip">…</span><button id="verify" class="btn small">Verify age 18+</button>
+ <span id="bal" class="chip">…</span><span id="ver" class="chip">…</span><button id="verify" class="btn small">Verify age 18+</button><button id="addtok" class="btn small ghost hide" title="Show EUR-demo in Concordium Wallet for Web">Add EUR-demo to wallet</button>
 </div></header>
 <div class="wrap"><main>
  <section id="t-live">
@@ -96,11 +96,11 @@ async function busy(btn,fn){if(btn)btn.disabled=true;try{await fn()}catch(e){toa
 // ---------- header
 async function head(){const w=isWallet();$("connect").classList.toggle("hide",!w||!!walletAccount);$("acctchip").classList.toggle("hide",!w||!walletAccount);$("demobadge").classList.toggle("hide",w);
  if(walletAccount)$("acctchip").textContent="wallet "+walletAccount.slice(0,6)+"…"+walletAccount.slice(-4);
- const a=acct();if(!a){$("bal").textContent=w?"connect your wallet to play":"";$("ver").textContent="";$("ver").className="chip";$("verify").classList.add("hide");return}
+ const a=acct();if(!a){$("bal").textContent=w?"connect your wallet to play":"";$("ver").textContent="";$("ver").className="chip";$("verify").classList.add("hide");$("addtok").classList.add("hide");return}
  const p=await api(`/api/player?account=${a}`);$("bal").innerHTML=`€${p.tokens_eur} <span class="muted">EUR-demo</span>`;
  const paused=p.paused_until&&Date.parse(p.paused_until)>Date.now();
  $("ver").className="chip "+(paused?"bad":p.allowed_until?"ok":"bad");$("ver").textContent=paused?`paused until ${new Date(p.paused_until).toLocaleDateString()}`:p.allowed_until?`✓ verified 18+ · €${p.left_today_eur} left today`:"not verified";
- $("verify").classList.toggle("hide",!!p.allowed_until);return p}
+ $("verify").classList.toggle("hide",!!p.allowed_until);$("addtok").classList.toggle("hide",!(w&&walletAccount));return p}
 // ---------- live
 function drawCats(){const n={all:events.length};events.forEach(e=>n[e.category]=(n[e.category]||0)+1);
  $("cats").innerHTML=Object.keys(CATS).filter(k=>n[k]).map(k=>`<button class="${k===cat?"on":""}" data-c="${k}">${CATS[k]} <span class="muted">${n[k]}</span></button>`).join("");
@@ -211,6 +211,7 @@ function show(t){tab=t;document.querySelectorAll("#nav button").forEach(b=>b.cla
  if(t==="live")drawLive();if(t==="coll")drawColl();if(t==="agent")drawAgent();if(t==="results")drawResults()}
 document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
 $("who").onchange=()=>{head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()};
+$("addtok").onclick=e=>busy(e.target,async()=>{if(!walletAccount)throw new Error("Connect your wallet first");const added=await W.addTokenToWallet(walletAccount,cfg.token.index);toast(added?.length?"EUR-demo added to your wallet's token list.":"EUR-demo is already in your wallet (or you closed the prompt). In the wallet: Manage Tokens, then + , contract index "+cfg.token.index+".","ok")});
 $("connect").onclick=e=>busy(e.target,async()=>{if(!(await W.detect(1500))){toast(`Concordium Wallet for Web was not found in this browser. <a href="${W.INSTALL_URL}" target="_blank">Install it from the Chrome Web Store</a>, set it to Testnet, create a test identity and an account, then reload this page. Or try the site as a demo person (top right).`,"bad");return}
  walletAccount=await W.connect();$("who").value="wallet";toast("Wallet connected","ok");head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
 $("verify").onclick=e=>busy(e.target,async()=>{toast("Proof request anchored on chain; proving 18+ and not UK resident…");

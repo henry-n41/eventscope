@@ -28,6 +28,11 @@ export async function connect() {
   if (!accounts?.[0]) throw new Error("No account selected in the wallet");
   return accounts[0];
 }
+/** Ask the wallet to add EUR-demo (CIS-2 contract 13069,0, token ID "" = the single unit token) to this account's token list. */
+export async function addTokenToWallet(account, contractIndex) {
+  if (!provider && !(await detect())) throw new Error("Concordium Wallet for Web not found in this browser");
+  return provider.addCIS2Tokens(account, [""], BigInt(contractIndex), 0n);
+}
 export const onAccountChanged = (fn) => provider?.on?.("accountChanged", fn);
 
 /** Zero-knowledge account proof: 18+ and country of residence not in the blocked list. */
