@@ -47,6 +47,8 @@ Environment (secrets only from the environment, never from the repo):
 | `REDIS_URL` | Render Key Value; keeps the off-chain index (event display data, card serials, evidence) across restarts |
 | `EVENTSCOPE_SPONSOR_CCD_PER_HOUR` | hourly cap on CCD spent for visitors (default 750); over it the site says "busy, try later" |
 | `EVENTSCOPE_KEEPALIVE` | `1` pings the public URL every 10 minutes so Render's free plan does not put the agents to sleep |
-| `EVENTSCOPE_FEED` | `full` adds more rolling crypto and weather events (testnet fees are about 20 CCD per contract call) |
+| `EVENTSCOPE_FEED_DAILY` | max new events per rolling 24 h (default 10: 4 crypto slots, 3 cities, up to 3 fixtures) |
+| `EVENTSCOPE_WARN_CCD`, `EVENTSCOPE_STOP_FEED_CCD`, `EVENTSCOPE_STOP_ALL_CCD` | operator balance watchdog: warn (2000), stop creating events (1000), stop agent spending (300). Balance and burn per day are in `/api/health` |
+| `EVENTSCOPE_RUN_UNTIL` | end date for the projected-spend figure in `/api/health` (default 2026-12-11) |
 
 Deploy: `render.yaml` (Blueprint) or `node scripts/render-deploy.mjs <keyValueId>`.
