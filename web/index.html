@@ -106,7 +106,7 @@ function drawCats(){const n={all:events.length};events.forEach(e=>n[e.category]=
  $("cats").innerHTML=Object.keys(CATS).filter(k=>n[k]).map(k=>`<button class="${k===cat?"on":""}" data-c="${k}">${CATS[k]} <span class="muted">${n[k]}</span></button>`).join("");
  $("cats").querySelectorAll("button").forEach(b=>b.onclick=()=>{cat=b.dataset.c;drawLive()})}
 function ribbon(e){if(e.status==="final")return`<div class="ribbon final">FINAL</div>`;if(e.status==="result_posted")return`<div class="ribbon posted">RESULT POSTED</div>`;if(e.status==="awaiting_result")return`<div class="ribbon wait">AWAITING RESULT</div>`;if(e.status==="cancelled")return`<div class="ribbon wait">REFUNDED</div>`;return""}
-function drawLive(){drawCats();const order={live:0,result_posted:1,awaiting_result:2,final:3,cancelled:4};
+function drawLive(){drawCats();const order={live:0,result_posted:1,awaiting_result:2,final:3,cancelled:4,closed:5};
  const list=events.filter(e=>cat==="all"||e.category===cat).sort((a,b)=>order[a.status]-order[b.status]||Date.parse(a.closes_at)-Date.parse(b.closes_at)).slice(0,60);
  $("drops").innerHTML=list.map(e=>{const m=e.meta||{};const sub=m.league||(e.category==="crypto"?"Crypto · Coinbase":e.category==="weather"?`Weather · ${m.city} · Open-Meteo`:e.category);
   const st=e.status==="live"?`closes in <b>${left(e.closes_at)}</b>`:e.status==="result_posted"?`<b style="color:#fbbf24">${esc(e.outcomes[e.proposal.outcome])}</b> · disputes close in ${left(e.proposal.dispute_until)}`:e.status==="final"?`Won: <b style="color:#34d399">${esc(e.outcomes[e.winner])}</b>${e.result?.summary?` · ${esc(e.result.summary)}`:""}`:e.status==="awaiting_result"?"waiting for the official result":"cancelled, all refunded";
@@ -115,8 +115,8 @@ function drawLive(){drawCats();const order={live:0,result_posted:1,awaiting_resu
    ${e.status==="live"?`<button class="btn small" data-buy="${e.id}:${i}">Collect · €${e.card_price_eur}</button>`:""}<div class="n">${e.cards_sold[i]} minted</div></div>`).join("")}</div></div>`}).join("")||`<div class="muted">No events in this category right now.</div>`;
  $("drops").querySelectorAll("[data-buy]").forEach(b=>b.onclick=()=>busy(b,async()=>{const[id,o]=b.dataset.buy.split(":").map(Number);await buy(id,o)}));
  const c={};events.filter(e=>e.status==="live").forEach(e=>c[e.category]=1);
- $("feedstats").innerHTML=`<span class="chip">${events.filter(e=>e.status==="live").length} live</span><span class="chip">${Object.keys(c).length} categories</span><span class="chip gold">${events.filter(e=>e.status==="final").length} settled by the results agent</span>`}
-async function loadEvents(){events=(await api("/api/events")).events||[];if(tab==="live")drawLive()}
+ $("feedstats").innerHTML=`<span class="chip">${events.filter(e=>e.status==="live").length} live</span><span class="chip">${Object.keys(c).length} categories</span><span class="chip gold">${window.__settled??events.filter(e=>e.status==="final").length} settled by the results agent</span>`}
+async function loadEvents(){const r=await api("/api/events");events=r.events||[];window.__settled=r.settled_total;if(tab==="live")drawLive()}
 async function buy(id,o){const e=events.find(x=>x.id===id);
  if(isWallet()){if(!walletAccount)throw new Error("Connect your wallet first");const r=await W.buy(walletAccount,id,o,1);if(!r.ok)return toast(`Refused before paying: ${esc(r.refused_with||r.error)}`,"bad");toast("Approve in your wallet… then waiting for the chain");const s=await W.waitTx(r.hash);toast(`Card ${s.outcome||s.status}`+L(s.link),s.outcome==="success"?"ok":"bad");}
  else{const r=await api("/api/demo/buy",{who:who(),event_id:id,outcome:o,count:1});
