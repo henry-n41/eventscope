@@ -5,7 +5,7 @@
 :root{--bg:#0b0912;--panel:#14111d;--line:#2a2438;--ink:#f4f4f5;--mute:#a1a1aa;--dim:#71717a;--vio:#a78bfa;--gold:#fbbf24;--ok:#34d399;--bad:#fb7185}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,#2e1065 0,transparent 60%),radial-gradient(900px 500px at 110% 0,#3b0764 0,transparent 55%),var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
 a{color:var(--vio)}header{position:sticky;top:0;z-index:5;background:rgba(11,9,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.wrap{max-width:1220px;margin:0 auto;padding:0 20px}.bar{display:flex;align-items:center;gap:10px 14px;min-height:64px;flex-wrap:wrap;padding:6px 0}
+.wrap{max-width:1220px;margin:0 auto;padding:0 20px}.bar{display:flex;align-items:center;gap:10px 14px;min-height:64px;flex-wrap:wrap;padding:6px 20px}
 .logo{font-weight:900;letter-spacing:.5px;font-size:20px;background:linear-gradient(90deg,#c4b5fd,#f0abfc,#fcd34d);-webkit-background-clip:text;color:transparent}
 .tag{color:var(--mute);font-size:13px}.sp{flex:1}
 nav{display:flex;gap:6px}nav button{background:none;border:0;color:var(--mute);font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer;font-size:14px}
@@ -50,18 +50,48 @@ main{padding:22px 0 60px}h2{font-size:22px;margin:4px 0 2px}.sub{color:var(--mut
 #toast .ok{border-left-color:var(--ok)}#toast .bad{border-left-color:var(--bad)}
 .muted{color:var(--dim);font-size:12px}.hide{display:none!important}.foot{color:var(--dim);font-size:12px;margin-top:30px}
 .hero{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;z-index:20;background:rgba(5,3,10,.72);display:flex;align-items:center;justify-content:center;padding:16px}
+.mbox{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;width:100%;max-width:440px;max-height:90vh;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#120f1a;border:1px solid var(--line);border-radius:14px;padding:12px;margin:8px 0;color:var(--ink);font:inherit;cursor:pointer;text-decoration:none}
+.opt:hover{border-color:#7c3aed}.opt .ic{font-size:22px;line-height:1}
+#acctchip.phone:before{content:"📱"}
+@media(max-width:760px){
+ header{position:static}.wrap{padding:0 12px}.bar{gap:8px;min-height:auto;padding:8px 12px}.logo{font-size:18px}
+ nav{order:10;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:4px;margin:0 -2px}nav::-webkit-scrollbar{display:none}
+ nav button{white-space:nowrap;padding:8px 10px;font-size:13px}
+ .sp{display:none}.bar>div:first-child{flex:1}
+ .demosel{order:11;flex-direction:row;align-items:center;gap:6px;font-size:11px}.demosel select{max-width:170px}
+ .btn{min-height:40px}.btn.small{min-height:36px;padding:7px 11px}
+ .drops{grid-template-columns:1fr;gap:14px}.drop{padding:12px;border-radius:16px}
+ .picks{gap:8px}.pick .btn{font-size:12px;padding:8px 4px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cc .badge{font-size:13px;padding:5px 9px}
+ .cols{grid-template-columns:1fr}.kv{grid-template-columns:110px 1fr}
+ .packstage>img{width:170px}.reveal .cc{width:calc(50% - 8px)}
+ main{padding:14px 0 50px}h2{font-size:20px}
+ #toast{left:10px;right:10px;bottom:10px;max-width:none}
+ .stat{min-width:0;flex:1 1 40%}
+ .log{max-height:none}
+}
+@media(max-width:380px){.picks{flex-direction:column}.grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <header><div class="wrap bar">
  <div><div class="logo">EVENTSCOPE</div><div class="tag">Collect cards on real events. Winning cards pay out.</div></div>
  <nav id="nav"><button data-t="live" class="on">Live drops</button><button data-t="packs">Packs</button><button data-t="coll">My collection</button><button data-t="agent">My agent</button><button data-t="results">Results desk</button></nav>
  <div class="sp"></div>
- <button id="connect" class="btn small">Connect wallet</button><span id="acctchip" class="chip hide"></span>
+ <button id="connect" class="btn small">Connect wallet</button><button id="phone" class="btn small ghost" title="Connect a Concordium mobile wallet (CryptoX or Concordium Wallet) with WalletConnect">📱 Phone wallet</button><span id="acctchip" class="chip hide"></span><button id="wcoff" class="btn small ghost hide" title="Disconnect the phone wallet">Disconnect</button>
  <label class="demosel" title="Demo people use test keys held by the server. Your own wallet is the real way to play."><span>Try as a demo person</span>
  <select id="who"><option value="wallet">No, use my wallet</option><option value="amy">Amy (DE, 31)</option><option value="cal">Cal (FR, 38)</option><option value="ben">Ben (UK, 36)</option></select></label>
  <span id="demobadge" class="chip gold hide">DEMO PERSON</span>
  <span id="bal" class="chip">…</span><span id="ver" class="chip">…</span><button id="verify" class="btn small">Verify age 18+</button><button id="addtok" class="btn small ghost hide" title="Show EUR-demo in Concordium Wallet for Web">Add EUR-demo to wallet</button>
 </div></header>
+<div id="wmodal" class="modal hide" role="dialog" aria-modal="true" aria-labelledby="wmt"><div class="mbox">
+ <div class="row" style="justify-content:space-between"><b id="wmt">Connect a wallet</b><button class="btn small ghost" data-close>✕</button></div>
+ <p class="muted" style="margin:6px 0 12px">Concordium testnet. EventScope pays the network fees; your keys stay in your wallet.</p>
+ <button id="wm-phone" class="opt"><span class="ic">📱</span><span><b>Phone wallet</b><br><span class="muted">CryptoX or Concordium Wallet for mobile, set to Testnet. Scan a QR code on a computer, or tap to open the app on your phone.</span></span></button>
+ <a id="wm-ext" class="opt" target="_blank"><span class="ic">🧩</span><span><b>Browser extension</b><br><span class="muted" id="wm-ext-t">Concordium Wallet for Web (Chrome, desktop). Not found in this browser: install it, set it to Testnet, then reload.</span></span></a>
+ <button id="wm-demo" class="opt"><span class="ic">🎭</span><span><b>Just look around</b><br><span class="muted">Try the site as a demo person (test keys held by the server).</span></span></button>
+</div></div>
 <div class="wrap"><main>
  <section id="t-live">
   <div class="hero"><div><h2>Live drops</h2><div class="sub" id="feedsub">Real fixtures, prices and weather, pulled automatically from public sources and minted on Concordium testnet. Results are posted by an accountable results agent with a hash of the source.</div></div><div id="feedstats" class="row"></div></div>
@@ -94,13 +124,13 @@ const who=()=>$("who").value,isWallet=()=>who()==="wallet",acct=()=>isWallet()?w
 const left=t=>{let s=Math.max(0,(Date.parse(t)-Date.now())/1000);const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=Math.floor(s%60);return d?`${d}d ${h}h`:h?`${h}h ${m}m`:`${m}:${String(x).padStart(2,"0")}`};
 async function busy(btn,fn){if(btn)btn.disabled=true;try{await fn()}catch(e){toast(esc(e.message||e),"bad")}if(btn)btn.disabled=false}
 // ---------- header
-async function head(){const w=isWallet();$("connect").classList.toggle("hide",!w||!!walletAccount);$("acctchip").classList.toggle("hide",!w||!walletAccount);$("demobadge").classList.toggle("hide",w);
+async function head(){const w=isWallet(),ph=W.walletMode()==="phone"&&!!walletAccount;$("connect").classList.toggle("hide",!w||!!walletAccount);$("phone").classList.toggle("hide",!w||!!walletAccount);$("wcoff").classList.toggle("hide",!w||!ph);$("acctchip").classList.toggle("phone",ph);$("acctchip").classList.toggle("hide",!w||!walletAccount);$("demobadge").classList.toggle("hide",w);
  if(walletAccount)$("acctchip").textContent="wallet "+walletAccount.slice(0,6)+"…"+walletAccount.slice(-4);
  const a=acct();if(!a){$("bal").textContent=w?"connect your wallet to play":"";$("ver").textContent="";$("ver").className="chip";$("verify").classList.add("hide");$("addtok").classList.add("hide");return}
  const p=await api(`/api/player?account=${a}`);$("bal").innerHTML=`€${p.tokens_eur} <span class="muted">EUR-demo</span>`;
  const paused=p.paused_until&&Date.parse(p.paused_until)>Date.now();
  $("ver").className="chip "+(paused?"bad":p.allowed_until?"ok":"bad");$("ver").textContent=paused?`paused until ${new Date(p.paused_until).toLocaleDateString()}`:p.allowed_until?`✓ verified 18+ · €${p.left_today_eur} left today`:"not verified";
- $("verify").classList.toggle("hide",!!p.allowed_until);$("addtok").classList.toggle("hide",!(w&&walletAccount));return p}
+ $("verify").classList.toggle("hide",!!p.allowed_until);$("addtok").classList.toggle("hide",!(w&&walletAccount&&!ph));return p}
 // ---------- live
 function drawCats(){const n={all:events.length};events.forEach(e=>n[e.category]=(n[e.category]||0)+1);
  $("cats").innerHTML=Object.keys(CATS).filter(k=>n[k]).map(k=>`<button class="${k===cat?"on":""}" data-c="${k}">${CATS[k]} <span class="muted">${n[k]}</span></button>`).join("");
@@ -212,14 +242,27 @@ function show(t){tab=t;document.querySelectorAll("#nav button").forEach(b=>b.cla
 document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
 $("who").onchange=()=>{head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()};
 $("addtok").onclick=e=>busy(e.target,async()=>{if(!walletAccount)throw new Error("Connect your wallet first");const added=await W.addTokenToWallet(walletAccount,cfg.token.index);toast(added?.length?"EUR-demo added to your wallet's token list.":"EUR-demo is already in your wallet (or you closed the prompt). In the wallet: Manage Tokens, then + , contract index "+cfg.token.index+".","ok")});
-$("connect").onclick=e=>busy(e.target,async()=>{if(!(await W.detect(1500))){toast(`Concordium Wallet for Web was not found in this browser. <a href="${W.INSTALL_URL}" target="_blank">Install it from the Chrome Web Store</a>, set it to Testnet, create a test identity and an account, then reload this page. Or try the site as a demo person (top right).`,"bad");return}
- walletAccount=await W.connect();$("who").value="wallet";toast("Wallet connected","ok");head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
+// Extension present: connect it directly (unchanged). No extension (phones, other browsers): offer the phone wallet.
+const afterConnect=()=>{$("who").value="wallet";head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()};
+const isPhone=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+const openWM=()=>{$("wm-ext").href=W.INSTALL_URL;$("wm-ext").classList.toggle("hide",isPhone);$("wmodal").classList.remove("hide")},closeWM=()=>$("wmodal").classList.add("hide");
+$("wmodal").onclick=e=>{if(e.target.id==="wmodal"||e.target.closest("[data-close]"))closeWM()};
+$("wm-demo").onclick=()=>{closeWM();$("who").value="amy";$("who").onchange()};
+async function connectPhone(){closeWM();toast(isPhone?"Pick your wallet app (CryptoX or Concordium Wallet, Testnet) and approve the connection, then come back here.":"Scan the QR code with CryptoX or Concordium Wallet (Testnet) on your phone and approve.");
+ walletAccount=await W.connectPhone(cfg.walletconnect?.project_id||undefined);localStorage.setItem("es_wallet","phone");toast("Phone wallet connected","ok");afterConnect()}
+// A request was sent to the phone wallet: tell the person where to approve it (on a phone, offer to open the app).
+window.__esPhoneRequest=k=>toast(`Approve the ${k} in your phone wallet.`+(isPhone?` <a href="cryptoxtestnet://">Open CryptoX</a> · <a href="concordiumwallettest://">Open Concordium Wallet</a> (if it does not pop up, switch to it yourself, then come back).`:` Open the wallet app on your phone; the request is waiting there.`));
+$("wm-phone").onclick=e=>busy(e.target,connectPhone);$("phone").onclick=e=>busy(e.target,connectPhone);
+$("wcoff").onclick=e=>busy(e.target,async()=>{await W.disconnectPhone();localStorage.removeItem("es_wallet");walletAccount=null;toast("Phone wallet disconnected");afterConnect()});
+$("connect").onclick=e=>busy(e.target,async()=>{if(!(await W.detect(1500))){openWM();return}
+ walletAccount=await W.connect();localStorage.removeItem("es_wallet");toast("Wallet connected","ok");afterConnect()});
 $("verify").onclick=e=>busy(e.target,async()=>{toast("Proof request anchored on chain; proving 18+ and not UK resident…");
  const r=isWallet()?(walletAccount?await W.verify(walletAccount):(()=>{throw new Error("Connect your wallet first")})()):await api("/api/demo/verify",{who:who()});
  r.ok?toast(`${nm()} verified with a zero-knowledge proof: 18+ and not resident in ${cfg.rules.blocked_countries.join(", ")}. Nothing else revealed. ${r.granted?"Play money: "+esc(r.granted):""}`+L(r.anchor_link,"request")+L(r.allow_link,"allow flag"),"ok"):toast(`${nm()} refused: ${esc(r.error)}. Nothing was paid.`+L(r.anchor_link,"request"),"bad");head()});
 const qs=new URLSearchParams(location.search);
 (async()=>{cfg=await api("/api/config");if(qs.get("who"))$("who").value=qs.get("who");
  $("foot").innerHTML=`Concordium testnet only. Pot ${cfg.pot.index}${L(cfg.pot.link)} · EUR-demo token ${cfg.token.index}${L(cfg.token.link)} · Agent Registry 12802,0${L(cfg.registry.link)} · House fee 0%. EUR-demo is play money. Network fees are paid by EventScope. ${cfg.rules.min_age}+ and not resident in ${cfg.rules.blocked_countries.join(", ")}, proved with zero-knowledge proofs; a VPN does not help.`;
- const has=await W.detect(1200);if(!has)$("connect").title="Concordium Wallet for Web not detected";W.onAccountChanged?.(a=>{walletAccount=a;head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
+ const has=await W.detect(1200);if(!has)$("connect").title="Concordium Wallet for Web not detected";
+ if(localStorage.getItem("es_wallet")==="phone")W.restorePhone(cfg.walletconnect?.project_id||undefined,a=>{walletAccount=a;head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()}).then(a=>{if(a){walletAccount=a;afterConnect()}else localStorage.removeItem("es_wallet")}).catch(e=>console.warn("phone wallet restore",e));W.onAccountChanged?.(a=>{walletAccount=a;head();if(tab==="coll")drawColl();if(tab==="agent")drawAgent()});
  await loadEvents();head();show(qs.get("tab")||"live");setInterval(()=>{loadEvents();if(tab==="results")drawResults();if(tab==="coll")drawColl()},15000);setInterval(()=>{if(tab==="live")document.querySelectorAll(".drop").length&&drawLive()},30000)})();
 </script></body></html>

@@ -9,6 +9,32 @@ import { Buffer } from "buffer";
 export const INSTALL_URL = "https://chromewebstore.google.com/detail/concordium-wallet/mnnkpffndmickbiakofclnpoiajlegmg";
 const TESTNET = "4221332d34e1694168c2a0c0b3fd0f27";
 let provider = null;
+// Which wallet is in use: "extension" (Concordium Wallet for Web) or "phone" (a mobile wallet over WalletConnect).
+let mode = "extension", wc = null, wcProjectId = null;
+export const walletMode = () => mode;
+/** Load the WalletConnect bundle on demand (it is large; extension users never download it). */
+async function loadWc(projectId) {
+  if (projectId !== undefined) wcProjectId = projectId;
+  const url = "/wc.js?v=" + (globalThis.__ES_BUILD || "1"); // kept external: separate bundle
+  wc ||= await import(url);
+  return wc;
+}
+/** Phone wallet via WalletConnect: QR on desktop, deep link on a phone. Returns the account address. */
+export async function connectPhone(projectId) {
+  const m = await loadWc(projectId);
+  const a = await m.connect(wcProjectId);
+  mode = "phone";
+  return a;
+}
+/** Re-attach to a phone-wallet session after a reload. */
+export async function restorePhone(projectId, onChange) {
+  const m = await loadWc(projectId);
+  const a = await m.restore(wcProjectId);
+  if (a) { mode = "phone"; if (onChange) m.onAccount(onChange); }
+  return a;
+}
+export async function onPhoneAccount(fn) { (await loadWc()).onAccount(fn); }
+export async function disconnectPhone() { if (wc) await wc.disconnect(); mode = "extension"; }
 const api = async (p, b) => { const r = await fetch(p, b ? { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(b) } : {}); return r.json(); };
 const schemas = {};
 async function moduleSchema(which) {
@@ -26,6 +52,7 @@ export async function connect() {
   const chain = await provider.getSelectedChain().catch(() => undefined);
   if (chain && !String(chain).toLowerCase().startsWith(TESTNET)) throw new Error("The wallet is not on Testnet. Switch the network to Testnet in the wallet settings.");
   if (!accounts?.[0]) throw new Error("No account selected in the wallet");
+  mode = "extension";
   return accounts[0];
 }
 /** Ask the wallet to add EUR-demo (CIS-2 contract 13069,0, token ID "" = the single unit token) to this account's token list. */
@@ -39,15 +66,23 @@ export const onAccountChanged = (fn) => provider?.on?.("accountChanged", fn);
 export async function verify(account) {
   const s = await api("/api/wallet/verify/start", { account });
   if (!s.request) throw new Error(s.error || "could not start verification");
-  const request = VerificationRequestV1.fromJSON(s.request);
-  const presentation = await provider.requestVerifiablePresentationV1(request); // the wallet shows the request; the user approves
-  const pj = typeof presentation?.toJSON === "function" ? presentation.toJSON() : presentation;
+  let pj;
+  if (mode === "phone") {
+    globalThis.__esPhoneRequest?.("proof");
+    pj = await wc.presentationV1(s.request); // same VerificationRequestV1 JSON (with the on-chain anchor transactionRef)
+  } else {
+    const request = VerificationRequestV1.fromJSON(s.request);
+    const presentation = await provider.requestVerifiablePresentationV1(request); // the wallet shows the request; the user approves
+    pj = typeof presentation?.toJSON === "function" ? presentation.toJSON() : presentation;
+  }
   const r = await api("/api/wallet/verify/finish", { id: s.id, presentation: pj });
   return { ...r, anchor_link: s.anchor_link };
 }
 
 /** The backend builds a sponsored transaction (operator pays the CCD fee); the wallet shows it, the user approves, the wallet submits. */
 async function approveSponsored(account, prepared) {
+  if (mode === "phone") globalThis.__esPhoneRequest?.("transaction");
+  if (mode === "phone") return wc.sponsored(account, prepared.tx, await moduleSchema(prepared.schema_for));
   const tx = Transaction.signableFromJSON(prepared.tx);
   // Pass the base58 STRING. The extension's sendSponsoredTransaction (unlike sendTransaction) forwards accountAddress
   // unconverted, and its gate does allowlist[origin].includes(accountAddress); an AccountAddress object never matches,

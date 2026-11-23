@@ -3,7 +3,7 @@
 // Runs three agents on timers (EVENTSCOPE_AGENTS=1, default): the live events feed, the results agent, and (on request)
 // Amy's buyer agent. Real wallet flow: /api/wallet/*. Demo people with server-held testnet keys: /api/demo/* (default on).
 import http from "node:http";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { randomUUID, createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
@@ -193,7 +193,10 @@ const routes = {
       registry: { index: "12802", link: explorerContract(12802) }, agents: agentInfo(), max_daily_eur: eur(cfg.max_daily_spend), dispute_window_min: Number(cfg.dispute_window_ms) / 60000,
       sponsor: SPONSOR, rules: { min_age: MIN_AGE, blocked_countries: BLOCKED_COUNTRIES }, fee: "none (0%); CCD network fees paid by the operator (sponsored transactions)",
       demo: DEMO, demo_people: DEMO ? people() : undefined, agent_wallet: agentInfo().buyer?.wallet, visitor_agents: VISITOR_AGENTS,
-      public_url: PUBLIC_URL, store: storeInfo(), budget: budget() };
+      public_url: PUBLIC_URL, store: storeInfo(), budget: budget(),
+      // Phone wallets over WalletConnect. A Reown (WalletConnect Cloud) project ID is public by design (it ships to every browser);
+      // set WALLETCONNECT_PROJECT_ID to use EventScope's own. Unset = Concordium's shared dApp project ID from @concordium/wallet-connectors.
+      walletconnect: { project_id: process.env.WALLETCONNECT_PROJECT_ID || null, chain: "ccd:testnet" } };
   },
   "GET /api/events": async (q) => {
     const all = await eventsNow();
@@ -522,6 +525,7 @@ async function fixLocalAgentUris() {
 if (process.env.EVENTSCOPE_KEEPALIVE === "1" && PUBLIC_URL.startsWith("https://")) setInterval(() => fetch(`${PUBLIC_URL}/api/health`).catch(() => {}), 10 * 60_000);
 
 // ------------------------------------------------------------------ static
+const gzCache = new Map();
 const WEB = path.join(ROOT, "web");
 // CIS-2 token metadata the wallets fetch (Concordium Wallet for Web fetches it with mode "cors", so CORS must be open).
 const TOKEN_METADATA = { name: "EUR-demo", symbol: TOKEN_SYMBOL, decimals: TOKEN_DECIMALS, unique: false,
@@ -576,7 +580,14 @@ http.createServer(async (req, res) => {
   const f = path.join(WEB, u.pathname === "/" ? "index.html" : path.normalize(u.pathname).replace(/^(\.\.[/\\])+/, ""));
   if (f.startsWith(WEB) && existsSync(f) && !f.endsWith("/")) {
     const type = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".wasm": "application/wasm", ".svg": "image/svg+xml", ".png": "image/png" }[path.extname(f)] || "application/octet-stream";
-    res.writeHead(200, { "content-type": type, ...(u.pathname.startsWith("/img/") ? { "access-control-allow-origin": "*", "cache-control": "max-age=86400" } : {}) }); res.end(readFileSync(f)); return;
+    const extra = u.pathname.startsWith("/img/") ? { "access-control-allow-origin": "*", "cache-control": "max-age=86400" } : {};
+    // Gzip text assets (wc.js, the phone-wallet bundle, is ~1.5 MB raw; phones on mobile data should not pay that).
+    if (/\.(js|html|css|svg)$/.test(f) && /\bgzip\b/.test(req.headers["accept-encoding"] || "")) {
+      const st = statSync(f), k = f + ":" + st.mtimeMs; let z = gzCache.get(f);
+      if (!z || z.k !== k) { z = { k, body: gzipSync(readFileSync(f)) }; gzCache.set(f, z); }
+      res.writeHead(200, { "content-type": type, "content-encoding": "gzip", vary: "accept-encoding", ...extra }); res.end(z.body); return;
+    }
+    res.writeHead(200, { "content-type": type, ...extra }); res.end(readFileSync(f)); return;
   }
   send(res, 404, { error: "not found" });
 }).listen(PORT, HOST, () => console.log(`EventScope on http://${HOST}:${PORT} (demo people ${DEMO ? "on" : "off"}, agents ${AGENTS ? "on" : "off"})`));
